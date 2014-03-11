@@ -13,6 +13,12 @@
 - (void)didLoadFromCCB
 {
     NSLog(@"Main Menu loaded.");
+    
+    CCSprite *sprite = [CCSprite spriteWithImageNamed:@"Sprites/number3.png"];
+    [sprite setPosition:CGPointMake(100, 100)];
+    [self addChild:sprite];
+    NSLog(@"Width: %f", sprite.contentSizeInPoints.width);
+    NSLog(@"Height: %f", sprite.contentSizeInPoints.height);
 }
 
 - (void)startGame:(id)sender
