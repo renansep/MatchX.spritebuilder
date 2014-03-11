@@ -14,9 +14,10 @@
 {
     NSLog(@"Main Menu loaded.");
     
-    CCSprite *sprite = [CCSprite spriteWithImageNamed:@"Sprites/number3.png"];
+    CCSprite *sprite = [CCSprite spriteWithImageNamed:@"Sprites/number9.png"];
     [sprite setPosition:CGPointMake(100, 100)];
     [self addChild:sprite];
+    [sprite setScale:2];
     NSLog(@"Width: %f", sprite.contentSizeInPoints.width);
     NSLog(@"Height: %f", sprite.contentSizeInPoints.height);
 }
