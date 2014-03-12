@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28DB126A18D0CFEE00D78650 /* GameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 28DB126918D0CFEE00D78650 /* GameLayer.m */; };
 		7551DF0618C8BB3E000A2EBE /* MainMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 7551DF0518C8BB3E000A2EBE /* MainMenuScene.m */; };
 		B71F5911188484E7003F4D28 /* iPad-old.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5907188484E7003F4D28 /* iPad-old.png */; };
 		B71F5912188484E7003F4D28 /* iPad-old@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5908188484E7003F4D28 /* iPad-old@2x.png */; };
@@ -55,6 +56,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		28DB126818D0CFEE00D78650 /* GameLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameLayer.h; path = Source/GameLayer.h; sourceTree = "<group>"; };
+		28DB126918D0CFEE00D78650 /* GameLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameLayer.m; path = Source/GameLayer.m; sourceTree = "<group>"; };
 		7551DF0418C8BB3E000A2EBE /* MainMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainMenuScene.h; path = Source/MainMenuScene.h; sourceTree = "<group>"; };
 		7551DF0518C8BB3E000A2EBE /* MainMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainMenuScene.m; path = Source/MainMenuScene.m; sourceTree = "<group>"; };
 		B71F5907188484E7003F4D28 /* iPad-old.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPad-old.png"; path = "Icons/iPad-old.png"; sourceTree = "<group>"; };
@@ -124,6 +127,8 @@
 			children = (
 				7551DF0418C8BB3E000A2EBE /* MainMenuScene.h */,
 				7551DF0518C8BB3E000A2EBE /* MainMenuScene.m */,
+				28DB126818D0CFEE00D78650 /* GameLayer.h */,
+				28DB126918D0CFEE00D78650 /* GameLayer.m */,
 				B737893D1807617C0076A88C /* AppDelegate.h */,
 				B737893E1807617C0076A88C /* AppDelegate.m */,
 			);
@@ -319,6 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B737893F1807617C0076A88C /* AppDelegate.m in Sources */,
+				28DB126A18D0CFEE00D78650 /* GameLayer.m in Sources */,
 				7551DF0618C8BB3E000A2EBE /* MainMenuScene.m in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
 			);

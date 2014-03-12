@@ -7,14 +7,17 @@
 //
 
 #import "CCNode.h"
+@class GameLayer;
 
 @interface MainMenuScene : CCNode
 {
-    CCLabelTTF *highscoreLabel;
+    CCNode *numbersLayer;
     
     NSMutableArray *numbers;
     
-    CCNodeColor *numbersLayer;
+    CCLabelTTF *highscoreLabel;
+    
+    GameLayer *gameLayer;
 }
 
 - (void)startGame:(id)sender;

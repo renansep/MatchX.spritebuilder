@@ -18,17 +18,11 @@
     
     for (int i=0; i<8; i++)
     {
-        CCSprite *sprite = [CCSprite spriteWithImageNamed:[NSString stringWithFormat:@"number%d.png", i]];
+        CCSprite *sprite = [CCSprite spriteWithImageNamed:[NSString stringWithFormat:@"number%d.png", arc4random() % 10]];
         [numbers addObject:sprite];
-        [numbersLayer addChild:sprite];
-        [sprite setPosition:CGPointMake(numbersLayer.contentSize.width, 0)];
+        [self addChild:sprite];
+        [sprite setPosition:CGPointMake((i+1) * [CCDirector sharedDirector].viewSize.width / 8 - sprite.contentSize.width / 2, 100)];
     }
-    
-    CCSprite *sprite = [CCSprite spriteWithImageNamed:@"number9.png"];
-    [sprite setPosition:CGPointMake(100, 100)];
-    [self addChild:sprite];
-    NSLog(@"Width: %f", sprite.contentSizeInPoints.width);
-    NSLog(@"Height: %f", sprite.contentSizeInPoints.height);
 }
 
 - (void)startGame:(id)sender
