@@ -11,6 +11,10 @@
 @interface MainMenuScene : CCNode
 {
     CCLabelTTF *highscoreLabel;
+    
+    NSMutableArray *numbers;
+    
+    CCNodeColor *numbersLayer;
 }
 
 - (void)startGame:(id)sender;
