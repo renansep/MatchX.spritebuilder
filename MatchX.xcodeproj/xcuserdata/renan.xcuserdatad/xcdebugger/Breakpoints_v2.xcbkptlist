@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Source/MainMenuScene.m"
-            timestampString = "416327241.904195"
+            timestampString = "416409016.855468"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "-didLoadFromCCB"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "-startGame:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

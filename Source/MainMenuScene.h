@@ -11,13 +11,6 @@
 
 @interface MainMenuScene : CCNode
 {
-    CCNode *numbersLayer;
-    
-    NSMutableArray *numbers;
-    
-    CCLabelTTF *highscoreLabel;
-    
-    GameLayer *gameLayer;
 }
 
 - (void)startGame:(id)sender;

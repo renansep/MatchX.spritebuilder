@@ -1,18 +1,15 @@
 //
-//  GameLayer.h
+//  GameScene.h
 //  MatchX
 //
-//  Created by Renan Benevides Cargnin on 3/12/14.
+//  Created by Renan Cargnin on 3/13/14.
 //  Copyright (c) 2014 Apportable. All rights reserved.
 //
 
 #import "CCNode.h"
 
-@interface GameLayer : CCNode
+@interface GameScene : CCNode
 {
-    CCNode *numbersLayer;
-    
     NSMutableArray *numbers;
 }
-
 @end
