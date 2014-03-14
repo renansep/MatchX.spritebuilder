@@ -11,8 +11,12 @@
 @interface GameNumber : CCSprite
 {
     int intValue;
+    BOOL selected;
 }
 
 @property int intValue;
+
+- (BOOL)selected;
+- (void)setSelected:(BOOL)s;
 
 @end

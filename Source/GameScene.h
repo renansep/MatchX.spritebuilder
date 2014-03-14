@@ -7,9 +7,10 @@
 //
 
 #import "CCNode.h"
+@class NumberLayer;
 
 @interface GameScene : CCNode
 {
-    NSMutableArray *numbers;
+    NumberLayer *numbersLayer;
 }
 @end

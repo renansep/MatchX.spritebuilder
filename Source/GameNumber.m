@@ -19,15 +19,23 @@
     if (self)
     {
         intValue = random;
-        self.userInteractionEnabled = YES;
+        selected = NO;
     }
     return self;
 }
 
-- (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event
+- (BOOL)selected
 {
-    NSLog(@"%d", [self intValue]);
-    [self setColor:[CCColor colorWithRed:0.0f green:0.0f blue:0.0f]];
+    return selected;
+}
+
+- (void)setSelected:(BOOL)s
+{
+    selected = s;
+    if (selected)
+        [self setColor:[CCColor blackColor]];
+    else
+        [self setColor:nil];
 }
 
 @end
