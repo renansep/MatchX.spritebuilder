@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Level1</key>
+	<dict>
+		<key>numbersMatrix</key>
+		<string>111\n111\n111</string>
+	</dict>
+</dict>
+</plist>

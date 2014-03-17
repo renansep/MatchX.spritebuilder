@@ -273,6 +273,10 @@
             "target": "Published-iOS/resources-phone/number9.png"
         }, 
         {
+            "asset": "Source/Resources/Published-iOS/resources-phone/numberBorder.png", 
+            "target": "Published-iOS/resources-phone/numberBorder.png"
+        }, 
+        {
             "asset": "Source/Resources/Published-iOS/resources-phonehd/number0.png", 
             "target": "Published-iOS/resources-phonehd/number0.png"
         }, 
@@ -315,6 +319,10 @@
         {
             "asset": "Source/Resources/Published-iOS/resources-phonehd/number9.png", 
             "target": "Published-iOS/resources-phonehd/number9.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/resources-phonehd/numberBorder.png", 
+            "target": "Published-iOS/resources-phonehd/numberBorder.png"
         }, 
         {
             "asset": "Source/Resources/Published-iOS/resources-tablet/number0.png", 
@@ -361,6 +369,10 @@
             "target": "Published-iOS/resources-tablet/number9.png"
         }, 
         {
+            "asset": "Source/Resources/Published-iOS/resources-tablet/numberBorder.png", 
+            "target": "Published-iOS/resources-tablet/numberBorder.png"
+        }, 
+        {
             "asset": "Source/Resources/Published-iOS/resources-tablethd/number0.png", 
             "target": "Published-iOS/resources-tablethd/number0.png"
         }, 
@@ -405,6 +417,10 @@
             "target": "Published-iOS/resources-tablethd/number9.png"
         }, 
         {
+            "asset": "Source/Resources/Published-iOS/resources-tablethd/numberBorder.png", 
+            "target": "Published-iOS/resources-tablethd/numberBorder.png"
+        }, 
+        {
             "asset": "Source/Resources/Icons/Settings@2x.png", 
             "target": "Settings@2x.png"
         }, 
@@ -431,6 +447,10 @@
         {
             "asset": "Source/Resources/Default.png", 
             "target": "Default.png"
+        }, 
+        {
+            "asset": "Source/Resources/Levels.plist", 
+            "target": "Levels.plist"
         }, 
         {
             "asset": "Source/Resources/Icons/iPad-old.png", 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28D209CA18D779C400D56D9C /* Levels.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28D209C918D779C400D56D9C /* Levels.plist */; };
 		7551DF0618C8BB3E000A2EBE /* MainMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 7551DF0518C8BB3E000A2EBE /* MainMenuScene.m */; };
 		75D37E9618D1DFDD008EEB88 /* GameNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D37E9518D1DFDD008EEB88 /* GameNumber.m */; };
 		75D37E9D18D1E3D9008EEB88 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D37E9C18D1E3D9008EEB88 /* GameScene.m */; };
@@ -58,6 +59,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		28D209C918D779C400D56D9C /* Levels.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Levels.plist; sourceTree = "<group>"; };
 		7551DF0418C8BB3E000A2EBE /* MainMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainMenuScene.h; path = Source/MainMenuScene.h; sourceTree = "<group>"; };
 		7551DF0518C8BB3E000A2EBE /* MainMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainMenuScene.m; path = Source/MainMenuScene.m; sourceTree = "<group>"; };
 		75D37E9418D1DFDD008EEB88 /* GameNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameNumber.h; path = Source/GameNumber.h; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 			children = (
 				B73789911807667A0076A88C /* Icons */,
 				B737893A180761570076A88C /* Published-iOS */,
+				28D209C918D779C400D56D9C /* Levels.plist */,
 			);
 			name = Resources;
 			path = Source/Resources;
@@ -322,6 +325,7 @@
 				B7378975180762440076A88C /* Default-568h@2x.png in Resources */,
 				B71F5918188484E7003F4D28 /* iPhone@2x.png in Resources */,
 				B7378977180762440076A88C /* Default.png in Resources */,
+				28D209CA18D779C400D56D9C /* Levels.plist in Resources */,
 				B71F5911188484E7003F4D28 /* iPad-old.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -57,6 +57,10 @@
             "target": "Default.png"
         }, 
         {
+            "asset": "Source/Resources/Levels.plist", 
+            "target": "Levels.plist"
+        }, 
+        {
             "asset": "Source/Resources/Icons/iPad-old.png", 
             "target": "iPad-old.png"
         }

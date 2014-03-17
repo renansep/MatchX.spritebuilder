@@ -13,12 +13,12 @@
 
 - (void)didLoadFromCCB
 {
-    int random = /*arc4random() % 4 + */3;
+    int random = /*arc4random() % 4 + */5;
     
     numbersLayer = [[NumberLayer alloc] initWithLines:random andWithColumns:random];
     [numbersLayer setAnchorPoint:CGPointMake(0.5, 0.5)];
     [numbersLayer setPosition:CGPointMake([[CCDirector sharedDirector] viewSize].width / 2, [[CCDirector sharedDirector] viewSize].height / 2)];
-    [numbersLayer setScale:[[CCDirector sharedDirector] viewSize].width / numbersLayer.contentSize.width];
+    [numbersLayer setScale:[[CCDirector sharedDirector] viewSize].width / numbersLayer.contentSize.width - 0.1];
     [self addChild:numbersLayer];
     
     [self updateResult:[numbersLayer result]];

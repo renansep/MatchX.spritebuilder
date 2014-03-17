@@ -17,7 +17,7 @@
 - (NumberLayer *)initWithLines:(int)lines andWithColumns:(int)columns
 {
     GameNumber *n = [GameNumber new];
-    self = [super initWithColor:[CCColor whiteColor] width:lines*n.contentSize.height height:columns*n.contentSize.width];
+    self = [super initWithColor:[CCColor clearColor] width:lines*n.contentSize.height height:columns*n.contentSize.width];
     n = nil;
     if (self)
     {
@@ -36,6 +36,10 @@
                 [[numbers objectAtIndex:i] addObject:number];
                 [number setPosition:CGPointMake(j * number.contentSize.width + number.contentSize.width / 2, i * number.contentSize.height + number.contentSize.height / 2)];
                 [self addChild:number];
+                
+                CCSprite *border = [CCSprite spriteWithImageNamed:@"numberBorder.png"];
+                [border setPosition:number.position];
+                [self addChild:border];
             }
             
             numbersSelected = 0;
