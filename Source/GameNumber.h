@@ -11,7 +11,8 @@
 @interface GameNumber : CCSprite
 {
     int intValue;
-    BOOL selected;
+    
+    CCNodeColor *background;
 }
 
 @property int intValue;

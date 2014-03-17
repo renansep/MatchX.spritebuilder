@@ -1,7 +1,7 @@
 {
   "configuration_format_version": 2,
 
-   "default_target": {"project": "MatchX", "project_config": "Release", "target": "MatchX"},
+  "default_target": {"project": "cocos2d-ios", "project_config": "Release", "target": "cocos2d"},
 
 
   // Dictionary of global configuration parameters.
@@ -57,7 +57,7 @@
     //   "write_external_storage"
     //   "write_settings"
     //   "xperia"
-    "FEATURES": ["opengles2", "portrait"],
+    //"FEATURES": []
 
     // Preferred way of handling URLs in the code.
     // Leave it null for most cases.

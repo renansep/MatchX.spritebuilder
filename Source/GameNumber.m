@@ -12,30 +12,32 @@
 
 @synthesize intValue;
 
-- (GameNumber *) init
+- (GameNumber *)init
 {
-    int random = arc4random() % 10;
+    int random = arc4random() % 9 + 1;
     self = [super initWithImageNamed:[NSString stringWithFormat:@"number%d.png", random]];
     if (self)
     {
         intValue = random;
-        selected = NO;
+        
+        background = [CCNodeColor nodeWithColor:[CCColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:0.5] width:self.contentSize.width height:self.contentSize.height];
+        [background setAnchorPoint:CGPointMake(0.5, 0.5)];
+        [background setPosition:CGPointMake(self.contentSize.width / 2, self.contentSize.height / 2)];
+        [background setScale:0.95];
+        [background setVisible:NO];
+        [self addChild:background];
     }
     return self;
 }
 
 - (BOOL)selected
 {
-    return selected;
+    return [background visible];
 }
 
 - (void)setSelected:(BOOL)s
 {
-    selected = s;
-    if (selected)
-        [self setColor:[CCColor blackColor]];
-    else
-        [self setColor:nil];
+    [background setVisible:s];
 }
 
 @end

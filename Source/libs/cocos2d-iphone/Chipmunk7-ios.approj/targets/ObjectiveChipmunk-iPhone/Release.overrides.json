@@ -1,8 +1,7 @@
 {
   "configuration_format_version": 2,
 
-   "default_target": {"project": "MatchX", "project_config": "Release", "target": "MatchX"},
-
+  
 
   // Dictionary of global configuration parameters.
   // These parameters are not taken from the xcode project,
@@ -57,7 +56,7 @@
     //   "write_external_storage"
     //   "write_settings"
     //   "xperia"
-    "FEATURES": ["opengles2", "portrait"],
+    //"FEATURES": []
 
     // Preferred way of handling URLs in the code.
     // Leave it null for most cases.
