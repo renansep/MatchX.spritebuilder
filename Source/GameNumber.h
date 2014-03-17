@@ -19,5 +19,6 @@
 
 - (BOOL)selected;
 - (void)setSelected:(BOOL)s;
+- (void)runDestroyAnimation;
 
 @end

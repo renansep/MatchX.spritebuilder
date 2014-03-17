@@ -14,7 +14,7 @@
 
 - (GameNumber *)init
 {
-    int random = arc4random() % 9 + 1;
+    int random = arc4random() % 10 + 1;
     self = [super initWithImageNamed:[NSString stringWithFormat:@"number%d.png", random]];
     if (self)
     {
@@ -38,6 +38,31 @@
 - (void)setSelected:(BOOL)s
 {
     [background setVisible:s];
+}
+
+- (void)runDestroyAnimation
+{
+    int random = arc4random() % 9 + 1;
+    
+    [self setIntValue:random];
+    
+    CCActionRotateBy *rotateBy = [CCActionRotateBy actionWithDuration:0.5 angle:1440];
+    CCActionScaleTo *scaleToZero = [CCActionScaleTo actionWithDuration:0.5 scale:0];
+    CCActionScaleTo *scaleToOne = [CCActionScaleTo actionWithDuration:0.5 scale:1];
+    
+    CCActionSpawn *actionDestroy = [CCActionSpawn actionOne:rotateBy two:scaleToZero];
+    CCActionCallFunc *changeTexture = [CCActionCallFunc actionWithTarget:self selector:@selector(changeNumberTexture)];
+    CCActionSpawn *actionRegen = [CCActionSpawn actionOne:rotateBy two:scaleToOne];
+    
+    CCActionSequence *sequence = [CCActionSequence actions:actionDestroy, changeTexture, actionRegen, nil];
+    
+    [self runAction:sequence];
+}
+                                  
+- (void)changeNumberTexture
+{
+    CCTexture *texture = [CCTexture textureWithFile:[NSString stringWithFormat:@"number%d.png", [self intValue]]];
+    [self setTexture:texture];
 }
 
 @end

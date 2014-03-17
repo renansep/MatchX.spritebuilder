@@ -11,6 +11,7 @@
 
 @interface MainMenuScene : CCNode
 {
+    CCLabelTTF *highscoreLabel;
 }
 
 - (void)startGame:(id)sender;

@@ -1,8 +1,8 @@
 {
     "assets": [
         {
-            "asset": "../../../../../../var/folders/dc/btmsg2117m5b6vn2xw75c6y40000gn/T/tmpdBu1Mx/TARGET_BUILD_DIR/libcocos2d.a", 
-            "target": "../../../../../../../../Users/renansep/Desktop/XcodeProjects/Games/MatchX.spritebuilder/normal"
+            "asset": "../../../../../../var/folders/bd/d9n4_nm15fj_vg5h2t323ynm0000gn/T/tmpnBVqhY/TARGET_BUILD_DIR/libcocos2d.a", 
+            "target": "../../../../../../../../Users/renan/Desktop/Xcode Projects/Games/MatchX.spritebuilder/normal"
         }
     ], 
     "config": {}, 

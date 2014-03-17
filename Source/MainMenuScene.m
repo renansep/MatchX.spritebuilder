@@ -13,12 +13,10 @@
 
 - (void)didLoadFromCCB
 {
-    NSLog(@"Main Menu loaded.");
 }
 
 - (void)startGame:(id)sender
 {
-    NSLog(@"startGame");
     CCScene *gameScene = [CCBReader loadAsScene:@"GameScene"];
     [[CCDirector sharedDirector] replaceScene:gameScene withTransition:[CCTransition transitionRevealWithDirection:CCTransitionDirectionDown duration:0.5f]];
 }

@@ -18,6 +18,7 @@
 {
     GameNumber *n = [GameNumber new];
     self = [super initWithColor:[CCColor whiteColor] width:lines*n.contentSize.height height:columns*n.contentSize.width];
+    n = nil;
     if (self)
     {
         self.userInteractionEnabled = YES;
@@ -34,7 +35,6 @@
                 GameNumber *number = [GameNumber new];
                 [[numbers objectAtIndex:i] addObject:number];
                 [number setPosition:CGPointMake(j * number.contentSize.width + number.contentSize.width / 2, i * number.contentSize.height + number.contentSize.height / 2)];
-                
                 [self addChild:number];
             }
             
@@ -152,6 +152,7 @@
     
     if (traceResult == result)
     {
+        [self tradeNumbers:trace];
         [self generateOperation];
         [self generateResult];
         GameScene *scene = (GameScene *) self.parent;
@@ -177,7 +178,7 @@
     int randomColumn = arc4random() % line.count;
     
     //defines the max numbers of operands thart the calculation will have
-    int operandsCount = arc4random() % 3 + 2;
+    int operandsCount = /*arc4random() % 3 + */2;
     
     NSMutableArray *operands = [[NSMutableArray alloc] init];
     
@@ -284,6 +285,14 @@
 {
     NSArray *operations = [NSArray arrayWithObjects:@"add", @"sub", @"mult", nil];
     operation = [operations objectAtIndex:arc4random() % [operations count]];
+}
+
+- (void)tradeNumbers:(NSArray *)tradeList
+{
+    for (GameNumber *n in tradeList)
+    {
+        [n runDestroyAnimation];
+    }
 }
 
 
