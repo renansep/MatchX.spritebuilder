@@ -15,16 +15,11 @@
 {
     NSDictionary *dictionary = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Levels" ofType:@"plist"]];
     NSDictionary *level = [dictionary objectForKey:@"Level1"];
-    NSNumber *width = [level objectForKey:@"width"];
-    int w = [width intValue];
-    NSNumber *height = [level objectForKey:@"width"];
-    int h = [height intValue];
     
-    
-    numbersLayer = [[NumberLayer alloc] initWithLines:w andWithColumns:h];
+    numbersLayer = [[NumberLayer alloc] initWithLevel:level];
     [numbersLayer setAnchorPoint:CGPointMake(0.5, 0.5)];
     [numbersLayer setPosition:CGPointMake([[CCDirector sharedDirector] viewSize].width / 2, [[CCDirector sharedDirector] viewSize].height / 2)];
-    [numbersLayer setScale:[[CCDirector sharedDirector] viewSize].width / numbersLayer.contentSize.width - 0.1];
+    [numbersLayer setScale:[[CCDirector sharedDirector] viewSize].width * 0.90 / numbersLayer.contentSize.width];
     [self addChild:numbersLayer];
     
     [self updateResult:[numbersLayer result]];

@@ -13,12 +13,16 @@
     int intValue;
     
     CCNodeColor *background;
+    
+    BOOL isEmpty;
 }
 
 @property int intValue;
+@property BOOL isEmpty;
 
 - (BOOL)selected;
 - (void)setSelected:(BOOL)s;
 - (void)runDestroyAnimation;
+- (GameNumber *)initEmpty;
 
 @end

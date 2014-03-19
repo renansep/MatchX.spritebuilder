@@ -14,11 +14,19 @@
 
 @synthesize operation, result;
 
-- (NumberLayer *)initWithLines:(int)lines andWithColumns:(int)columns
+- (NumberLayer *)initWithLevel:(NSDictionary *)level
 {
+    int lines = [(NSNumber *)[level objectForKey:@"height"] intValue];
+    int columns = [(NSNumber *)[level objectForKey:@"width"] intValue];
+    
+    NSArray *map = [level objectForKey:@"map"];
+    
     GameNumber *n = [GameNumber new];
-    self = [super initWithColor:[CCColor clearColor] width:lines*n.contentSize.height height:columns*n.contentSize.width];
+    
+    self = [super initWithColor:[CCColor clearColor] width:columns*n.contentSize.height height:lines*n.contentSize.width];
+    
     n = nil;
+    
     if (self)
     {
         self.userInteractionEnabled = YES;
@@ -27,19 +35,28 @@
         
         numbers = [[NSMutableArray alloc] init];
         
-        for (int i=0; i<lines; i++)
+        for (int i=0; i<map.count; i++)
         {
             [numbers addObject:[[NSMutableArray alloc] init]];
-            for (int j=0; j<columns; j++)
+            NSString *line = map[i];
+            for (int j=0; j<[line length]; j++)
             {
-                GameNumber *number = [GameNumber new];
-                [[numbers objectAtIndex:i] addObject:number];
-                [number setPosition:CGPointMake(j * number.contentSize.width + number.contentSize.width / 2, i * number.contentSize.height + number.contentSize.height / 2)];
-                [self addChild:number];
-                
-                CCSprite *border = [CCSprite spriteWithImageNamed:@"numberBorder.png"];
-                [border setPosition:number.position];
-                [self addChild:border];
+                if ([line characterAtIndex:j] == '1')
+                {
+                    GameNumber *number = [GameNumber new];
+                    [[numbers objectAtIndex:i] addObject:number];
+                    [number setPosition:CGPointMake(j * number.contentSize.width + number.contentSize.width / 2, i * number.contentSize.height + number.contentSize.height / 2)];
+                    [self addChild:number];
+                    /*
+                    CCSprite *border = [CCSprite spriteWithImageNamed:@"numberBorder.png"];
+                    [border setPosition:number.position];
+                    [self addChild:border];
+                     */
+                }
+                else if ([line characterAtIndex:j] == '0')
+                {
+                    [[numbers objectAtIndex:i] addObject:[[GameNumber alloc] initEmpty]];
+                }
             }
             
             numbersSelected = 0;
@@ -174,19 +191,26 @@
 
 - (int)generateResult
 {
-    //selects a random line in the number`s grid
-    int randomLine = arc4random() % numbers.count;
-    NSMutableArray *line = numbers[randomLine];
+    GameNumber *randomNumber;
+    NSMutableArray *line;
+    do
+    {
+        //selects a random line in the number`s grid
+        int randomLine = arc4random() % numbers.count;
+        line = numbers[randomLine];
     
-    //selects a random column within the line
-    int randomColumn = arc4random() % line.count;
+        //selects a random column within the line
+        int randomColumn = arc4random() % line.count;
+        
+        randomNumber = line[randomColumn];
+    } while ([randomNumber isEmpty]);
     
     //defines the max numbers of operands thart the calculation will have
     int operandsCount = /*arc4random() % 3 + */2;
     
     NSMutableArray *operands = [[NSMutableArray alloc] init];
     
-    [operands addObject:line[randomColumn]];
+    [operands addObject:randomNumber];
     GameNumber *lastOperand = [operands objectAtIndex:0];
     
     int newResult = [lastOperand intValue];
@@ -245,34 +269,40 @@
             
             NSMutableArray *neighbors = [[NSMutableArray alloc] init];
             
+            GameNumber *n;
+            
             if (i > 0)
             {
                 NSMutableArray *lineBelow = numbers[i-1];
-                if (![excludeNumbers containsObject:lineBelow[column]])
+                n = lineBelow[column];
+                if (![excludeNumbers containsObject:n] && ![n isEmpty])
                 {
-                    [neighbors addObject:lineBelow[column]];
+                    [neighbors addObject:n];
                 }
             }
             if (i < numbers.count - 1)
             {
                 NSMutableArray *lineAbove = numbers[i+1];
-                if (![excludeNumbers containsObject:lineAbove[column]])
+                n = lineAbove[column];
+                if (![excludeNumbers containsObject:n] && ![n isEmpty])
                 {
-                    [neighbors addObject:lineAbove[column]];
+                    [neighbors addObject:n];
                 }
             }
             if (column > 0)
             {
-                if (![excludeNumbers containsObject:line[column-1]])
+                n = line[column-1];
+                if (![excludeNumbers containsObject:n] && ![n isEmpty])
                 {
-                    [neighbors addObject:line[column-1]];
+                    [neighbors addObject:n];
                 }
             }
             if (column < line.count-1)
             {
-                if (![excludeNumbers containsObject:line[column+1]])
+                n = line[column+1];
+                if (![excludeNumbers containsObject:n] && ![n isEmpty])
                 {
-                    [neighbors addObject:line[column+1]];
+                    [neighbors addObject:n];
                 }
             }
             

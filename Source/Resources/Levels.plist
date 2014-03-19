@@ -9,7 +9,11 @@
 		<key>width</key>
 		<integer>3</integer>
 		<key>map</key>
-		<string>11121112111</string>
+		<array>
+			<string>011</string>
+			<string>101</string>
+			<string>110</string>
+		</array>
 	</dict>
 </dict>
 </plist>

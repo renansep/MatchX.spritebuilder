@@ -32,7 +32,7 @@
     NSMutableArray *trace;
 }
 
-- (NumberLayer *)initWithLines:(int)lines andWithColumns:(int)columns;
+- (NumberLayer *)initWithLevel:(NSDictionary *)level;
 - (int)generateResult;
 - (void)generateOperation;
 

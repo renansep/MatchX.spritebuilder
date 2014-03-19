@@ -10,7 +10,7 @@
 
 @implementation GameNumber
 
-@synthesize intValue;
+@synthesize intValue, isEmpty;
 
 - (GameNumber *)init
 {
@@ -18,6 +18,8 @@
     self = [super initWithImageNamed:[NSString stringWithFormat:@"number%d.png", random]];
     if (self)
     {
+        isEmpty = NO;
+        
         intValue = random;
         
         background = [CCNodeColor nodeWithColor:[CCColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:0.5] width:self.contentSize.width height:self.contentSize.height];
@@ -30,8 +32,20 @@
     return self;
 }
 
+- (GameNumber *)initEmpty
+{
+    self = [super init];
+    if (self)
+    {
+        isEmpty = YES;
+    }
+    return self;
+}
+
 - (BOOL)selected
 {
+    if (isEmpty)
+        return YES;
     return [background visible];
 }
 
