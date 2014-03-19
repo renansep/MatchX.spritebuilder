@@ -4,14 +4,12 @@
 <dict>
 	<key>Level1</key>
 	<dict>
-		<key>numbersMatrix</key>
-		<string>111\n111\n111</string>
+		<key>height</key>
+		<integer>3</integer>
+		<key>width</key>
+		<integer>3</integer>
+		<key>map</key>
+		<string>11121112111</string>
 	</dict>
-	<key>width</key>
-	<integer>3</integer>
-	<key>height</key>
-	<integer>3</integer>
-	<key>map</key>
-	<string>11121112111</string>
 </dict>
 </plist>

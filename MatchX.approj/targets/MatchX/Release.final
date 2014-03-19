@@ -25,6 +25,10 @@
             "target": "iPhone-old@2x.png"
         }, 
         {
+            "asset": "Source/Resources/Published-iOS/.DS_Store", 
+            "target": "Published-iOS/.DS_Store"
+        }, 
+        {
             "asset": "Source/Resources/Published-iOS/configCocos2d.plist", 
             "target": "Published-iOS/configCocos2d.plist"
         }, 
@@ -229,6 +233,14 @@
             "target": "Published-iOS/ccbResources/resources-tablethd/ccbTextField.png"
         }, 
         {
+            "asset": "Source/Resources/Published-iOS/resources-phone/background.png", 
+            "target": "Published-iOS/resources-phone/background.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/resources-phone/notePaper.png", 
+            "target": "Published-iOS/resources-phone/notePaper.png"
+        }, 
+        {
             "asset": "Source/Resources/Published-iOS/resources-phone/number0.png", 
             "target": "Published-iOS/resources-phone/number0.png"
         }, 
@@ -275,6 +287,14 @@
         {
             "asset": "Source/Resources/Published-iOS/resources-phone/numberBorder.png", 
             "target": "Published-iOS/resources-phone/numberBorder.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/resources-phonehd/background.png", 
+            "target": "Published-iOS/resources-phonehd/background.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/resources-phonehd/notePaper.png", 
+            "target": "Published-iOS/resources-phonehd/notePaper.png"
         }, 
         {
             "asset": "Source/Resources/Published-iOS/resources-phonehd/number0.png", 
@@ -325,6 +345,14 @@
             "target": "Published-iOS/resources-phonehd/numberBorder.png"
         }, 
         {
+            "asset": "Source/Resources/Published-iOS/resources-tablet/background.png", 
+            "target": "Published-iOS/resources-tablet/background.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/resources-tablet/notePaper.png", 
+            "target": "Published-iOS/resources-tablet/notePaper.png"
+        }, 
+        {
             "asset": "Source/Resources/Published-iOS/resources-tablet/number0.png", 
             "target": "Published-iOS/resources-tablet/number0.png"
         }, 
@@ -371,6 +399,14 @@
         {
             "asset": "Source/Resources/Published-iOS/resources-tablet/numberBorder.png", 
             "target": "Published-iOS/resources-tablet/numberBorder.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/resources-tablethd/background.png", 
+            "target": "Published-iOS/resources-tablethd/background.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/resources-tablethd/notePaper.png", 
+            "target": "Published-iOS/resources-tablethd/notePaper.png"
         }, 
         {
             "asset": "Source/Resources/Published-iOS/resources-tablethd/number0.png", 
