@@ -24,6 +24,9 @@
     [self updateResult:[numbersLayer result]];
     [self updateOperation:[numbersLayer operation]];
     
+    [background setScaleX:([[CCDirector sharedDirector] viewSize].width / background.contentSize.width)];
+    [background setScaleY:([[CCDirector sharedDirector] viewSize].height / background.contentSize.height)];
+    
     self.userInteractionEnabled = YES;
 }
 

@@ -16,6 +16,8 @@
     CCNodeColor *bottomNode;
     CCLabelTTF *resultLabel;
     CCLabelTTF *operationLabel;
+    
+    CCSprite *background;
 }
 
 - (void)updateResult:(int)newResult;

@@ -14,7 +14,7 @@
 
 - (GameNumber *)init
 {
-    int random = arc4random() % 10;
+    int random = arc4random() % 9 + 1;
     self = [super initWithImageNamed:[NSString stringWithFormat:@"number%d.png", random]];
     if (self)
     {
@@ -42,7 +42,7 @@
 
 - (void)runDestroyAnimation
 {
-    int random = arc4random() % 10;
+    int random = arc4random() % 9 + 1;
     
     [self setIntValue:random];
     
