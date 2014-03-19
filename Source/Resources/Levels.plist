@@ -10,9 +10,9 @@
 		<integer>3</integer>
 		<key>map</key>
 		<array>
-			<string>011</string>
-			<string>101</string>
-			<string>110</string>
+			<string>1111</string>
+			<string>1001</string>
+			<string>1111</string>
 		</array>
 	</dict>
 </dict>
