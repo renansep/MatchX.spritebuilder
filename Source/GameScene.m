@@ -16,8 +16,11 @@
     NSDictionary *dictionary = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Levels" ofType:@"plist"]];
     NSDictionary *level = [dictionary objectForKey:@"Level1"];
     
+    remainingTime = [(NSNumber *) [level objectForKeyedSubscript:@"calculationTime"] intValue];
+    
     paper = [CCSprite spriteWithImageNamed:@"numberPaper.png"];
     [paper setPosition:ccp([[CCDirector sharedDirector] viewSize].width / 2, [[CCDirector sharedDirector] viewSize].height / 2)];
+    [paper setScale:0.9];
     [self addChild:paper];
     
     numbersLayer = [[NumberLayer alloc] initWithLevel:level];
@@ -37,6 +40,12 @@
     [background setScaleY:([[CCDirector sharedDirector] viewSize].height / background.contentSize.height)];
     
     self.userInteractionEnabled = YES;
+    
+    [self schedule:@selector(decreaseRemainingTime) interval:1];
+}
+
+- (void)update:(CCTime)delta
+{
 }
 
 - (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event
@@ -63,6 +72,16 @@
 - (void)updateOperation:(NSString *)newOperation
 {
     [operationLabel setString:newOperation];
+}
+
+- (void)decreaseRemainingTime
+{
+    remainingTime--;
+    [clockLabel setString:[NSString stringWithFormat:@"%d", remainingTime]];
+    if (remainingTime == 0)
+    {
+        [self unschedule:@selector(decreaseRemainingTime)];
+    }
 }
 
 @end

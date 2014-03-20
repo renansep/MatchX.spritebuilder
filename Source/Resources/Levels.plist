@@ -4,15 +4,16 @@
 <dict>
 	<key>Level1</key>
 	<dict>
+		<key>calculationTime</key>
+		<integer>15</integer>
 		<key>map</key>
 		<array>
-			<string>1111111</string>
-			<string>1111111</string>
-			<string>1111111</string>
-			<string>1111111</string>
-			<string>1111111</string>
-			<string>1111111</string>
-			<string>1111111</string>
+			<string>111111</string>
+			<string>111111</string>
+			<string>111111</string>
+			<string>111111</string>
+			<string>111111</string>
+			<string>111111</string>
 		</array>
 	</dict>
 </dict>

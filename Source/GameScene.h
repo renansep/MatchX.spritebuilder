@@ -15,6 +15,9 @@
     
     CCSprite *paper;
     
+    CCLabelTTF *clockLabel;
+    int remainingTime;
+    
     CCNodeColor *bottomNode;
     CCLabelTTF *resultLabel;
     CCLabelTTF *operationLabel;

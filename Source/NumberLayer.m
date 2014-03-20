@@ -20,8 +20,6 @@
     int lines = map.count;
     int columns = [(NSString *) [map objectAtIndex:0] length];
     
-    int greater = lines > columns ? lines : columns;
-    
     GameNumber *n = [GameNumber new];
     self = [super initWithColor:[CCColor clearColor] width:columns*n.contentSize.height height:lines*n.contentSize.width];
     n = nil;
@@ -202,7 +200,7 @@
     } while ([randomNumber isEmpty]);
     
     //defines the max numbers of operands thart the calculation will have
-    int operandsCount = /*arc4random() % 3 + */2;
+    int operandsCount = /*arc4random() % 3 + */3;
     
     NSMutableArray *operands = [[NSMutableArray alloc] init];
     
