@@ -16,10 +16,10 @@
 
 - (NumberLayer *)initWithLevel:(NSDictionary *)level
 {
-    int lines = [(NSNumber *)[level objectForKey:@"height"] intValue];
-    int columns = [(NSNumber *)[level objectForKey:@"width"] intValue];
-    
     NSArray *map = [level objectForKey:@"map"];
+    
+    int lines = map.count;
+    int columns = [(NSString *) [map objectAtIndex:0] length];
     
     GameNumber *n = [GameNumber new];
     
@@ -118,11 +118,11 @@
                 
                 if (i > 0)
                     under = numbers[i-1][j];
-                if (i < line.count-1)
+                if (i < numbers.count-1)
                     above = numbers[i+1][j];
                 if (j > 0)
                     left = numbers[i][j-1];
-                if (j < numbers.count-1)
+                if (j < line.count-1)
                     right = numbers[i][j+1];
                 
                 if (lastNumberSelected == under || lastNumberSelected == above || lastNumberSelected == right || lastNumberSelected == left)

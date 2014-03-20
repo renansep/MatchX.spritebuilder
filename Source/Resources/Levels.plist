@@ -4,15 +4,11 @@
 <dict>
 	<key>Level1</key>
 	<dict>
-		<key>height</key>
-		<integer>3</integer>
-		<key>width</key>
-		<integer>3</integer>
 		<key>map</key>
 		<array>
-			<string>1111</string>
-			<string>1001</string>
-			<string>1111</string>
+			<string>0111</string>
+			<string>0001</string>
+			<string>0111</string>
 		</array>
 	</dict>
 </dict>
