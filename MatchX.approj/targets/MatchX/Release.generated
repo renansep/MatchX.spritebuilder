@@ -182,6 +182,10 @@
             "type": "iquote"
         }, 
         {
+            "header_path": "/var/folders/bd/d9n4_nm15fj_vg5h2t323ynm0000gn/T/tmp7APnhd/BUILT_PRODUCTS_DIR/include", 
+            "type": "I"
+        }, 
+        {
             "header_path": "Source/libs/cocos2d-iphone/external/kazmath/include", 
             "type": "I"
         }, 
@@ -251,6 +255,14 @@
         }, 
         {
             "header_path": "Source/libs/cocos2d-iphone/external/ObjectAL/Support", 
+            "type": "I"
+        }, 
+        {
+            "header_path": "/var/folders/bd/d9n4_nm15fj_vg5h2t323ynm0000gn/T/tmp7APnhd/DERIVED_FILE_DIR/armv7", 
+            "type": "I"
+        }, 
+        {
+            "header_path": "/var/folders/bd/d9n4_nm15fj_vg5h2t323ynm0000gn/T/tmp7APnhd/DERIVED_FILE_DIR", 
             "type": "I"
         }
     ], 
@@ -322,7 +334,9 @@
             "source": "Source/main.m"
         }
     ], 
+    "storyboards": [], 
     "type": "app", 
-    "version": "1", 
-    "xcode_project": "MatchX.xcodeproj"
+    "version": "3", 
+    "xcode_project": "MatchX.xcodeproj", 
+    "xibs": []
 }

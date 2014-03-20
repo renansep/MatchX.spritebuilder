@@ -20,6 +20,8 @@
     int lines = map.count;
     int columns = [(NSString *) [map objectAtIndex:0] length];
     
+    int greater = lines > columns ? lines : columns;
+    
     GameNumber *n = [GameNumber new];
     self = [super initWithColor:[CCColor clearColor] width:columns*n.contentSize.height height:lines*n.contentSize.width];
     n = nil;
@@ -170,7 +172,7 @@
         [self tradeNumbers:trace];
         [self generateOperation];
         [self generateResult];
-        GameScene *scene = (GameScene *) self.parent;
+        GameScene *scene = (GameScene *) self.parent.parent;
         [scene updateResult:result];
         [scene updateOperation:operation];
     }

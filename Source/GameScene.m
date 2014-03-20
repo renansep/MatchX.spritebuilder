@@ -16,11 +16,19 @@
     NSDictionary *dictionary = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Levels" ofType:@"plist"]];
     NSDictionary *level = [dictionary objectForKey:@"Level1"];
     
+    paper = [CCSprite spriteWithImageNamed:@"numberPaper.png"];
+    [paper setPosition:ccp([[CCDirector sharedDirector] viewSize].width / 2, [[CCDirector sharedDirector] viewSize].height / 2)];
+    [self addChild:paper];
+    
     numbersLayer = [[NumberLayer alloc] initWithLevel:level];
     [numbersLayer setAnchorPoint:CGPointMake(0.5, 0.5)];
-    [numbersLayer setPosition:CGPointMake([[CCDirector sharedDirector] viewSize].width / 2, [[CCDirector sharedDirector] viewSize].height / 2)];
-    [numbersLayer setScale:[[CCDirector sharedDirector] viewSize].width * 0.90 / numbersLayer.contentSize.width];
-    [self addChild:numbersLayer];
+    [numbersLayer setPosition:ccp(paper.contentSize.width / 2, paper.contentSize.height / 2 - paper.contentSize.height / 20)];
+    if (numbersLayer.contentSize.width > numbersLayer.contentSize.height)
+        [numbersLayer setScale:paper.contentSize.width * 0.75 / numbersLayer.contentSize.width];
+    else
+        [numbersLayer setScale:paper.contentSize.width * 0.75 / numbersLayer.contentSize.height];
+    
+    [paper addChild:numbersLayer];
     
     [self updateResult:[numbersLayer result]];
     [self updateOperation:[numbersLayer operation]];
@@ -49,7 +57,7 @@
 
 - (void)updateResult:(int)newResult
 {
-    [resultLabel setString:[NSString stringWithFormat:@"%d", newResult]];
+    [resultLabel setString:[NSString stringWithFormat:@"X = %d", newResult]];
 }
 
 - (void)updateOperation:(NSString *)newOperation

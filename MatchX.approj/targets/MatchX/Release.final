@@ -25,20 +25,12 @@
             "target": "iPhone-old@2x.png"
         }, 
         {
-            "asset": "Source/Resources/Published-iOS/.DS_Store", 
-            "target": "Published-iOS/.DS_Store"
-        }, 
-        {
             "asset": "Source/Resources/Published-iOS/configCocos2d.plist", 
             "target": "Published-iOS/configCocos2d.plist"
         }, 
         {
             "asset": "Source/Resources/Published-iOS/fileLookup.plist", 
             "target": "Published-iOS/fileLookup.plist"
-        }, 
-        {
-            "asset": "Source/Resources/Published-iOS/GameLayer.ccbi", 
-            "target": "Published-iOS/GameLayer.ccbi"
         }, 
         {
             "asset": "Source/Resources/Published-iOS/GameScene.ccbi", 
@@ -241,16 +233,8 @@
             "target": "Published-iOS/resources-phone/notePaper.png"
         }, 
         {
-            "asset": "Source/Resources/Published-iOS/resources-phone/number0.png", 
-            "target": "Published-iOS/resources-phone/number0.png"
-        }, 
-        {
             "asset": "Source/Resources/Published-iOS/resources-phone/number1.png", 
             "target": "Published-iOS/resources-phone/number1.png"
-        }, 
-        {
-            "asset": "Source/Resources/Published-iOS/resources-phone/number10.png", 
-            "target": "Published-iOS/resources-phone/number10.png"
         }, 
         {
             "asset": "Source/Resources/Published-iOS/resources-phone/number2.png", 
@@ -289,6 +273,10 @@
             "target": "Published-iOS/resources-phone/numberBorder.png"
         }, 
         {
+            "asset": "Source/Resources/Published-iOS/resources-phone/numberPaper.png", 
+            "target": "Published-iOS/resources-phone/numberPaper.png"
+        }, 
+        {
             "asset": "Source/Resources/Published-iOS/resources-phonehd/background.png", 
             "target": "Published-iOS/resources-phonehd/background.png"
         }, 
@@ -297,16 +285,8 @@
             "target": "Published-iOS/resources-phonehd/notePaper.png"
         }, 
         {
-            "asset": "Source/Resources/Published-iOS/resources-phonehd/number0.png", 
-            "target": "Published-iOS/resources-phonehd/number0.png"
-        }, 
-        {
             "asset": "Source/Resources/Published-iOS/resources-phonehd/number1.png", 
             "target": "Published-iOS/resources-phonehd/number1.png"
-        }, 
-        {
-            "asset": "Source/Resources/Published-iOS/resources-phonehd/number10.png", 
-            "target": "Published-iOS/resources-phonehd/number10.png"
         }, 
         {
             "asset": "Source/Resources/Published-iOS/resources-phonehd/number2.png", 
@@ -345,6 +325,10 @@
             "target": "Published-iOS/resources-phonehd/numberBorder.png"
         }, 
         {
+            "asset": "Source/Resources/Published-iOS/resources-phonehd/numberPaper.png", 
+            "target": "Published-iOS/resources-phonehd/numberPaper.png"
+        }, 
+        {
             "asset": "Source/Resources/Published-iOS/resources-tablet/background.png", 
             "target": "Published-iOS/resources-tablet/background.png"
         }, 
@@ -353,16 +337,8 @@
             "target": "Published-iOS/resources-tablet/notePaper.png"
         }, 
         {
-            "asset": "Source/Resources/Published-iOS/resources-tablet/number0.png", 
-            "target": "Published-iOS/resources-tablet/number0.png"
-        }, 
-        {
             "asset": "Source/Resources/Published-iOS/resources-tablet/number1.png", 
             "target": "Published-iOS/resources-tablet/number1.png"
-        }, 
-        {
-            "asset": "Source/Resources/Published-iOS/resources-tablet/number10.png", 
-            "target": "Published-iOS/resources-tablet/number10.png"
         }, 
         {
             "asset": "Source/Resources/Published-iOS/resources-tablet/number2.png", 
@@ -401,6 +377,10 @@
             "target": "Published-iOS/resources-tablet/numberBorder.png"
         }, 
         {
+            "asset": "Source/Resources/Published-iOS/resources-tablet/numberPaper.png", 
+            "target": "Published-iOS/resources-tablet/numberPaper.png"
+        }, 
+        {
             "asset": "Source/Resources/Published-iOS/resources-tablethd/background.png", 
             "target": "Published-iOS/resources-tablethd/background.png"
         }, 
@@ -409,16 +389,8 @@
             "target": "Published-iOS/resources-tablethd/notePaper.png"
         }, 
         {
-            "asset": "Source/Resources/Published-iOS/resources-tablethd/number0.png", 
-            "target": "Published-iOS/resources-tablethd/number0.png"
-        }, 
-        {
             "asset": "Source/Resources/Published-iOS/resources-tablethd/number1.png", 
             "target": "Published-iOS/resources-tablethd/number1.png"
-        }, 
-        {
-            "asset": "Source/Resources/Published-iOS/resources-tablethd/number10.png", 
-            "target": "Published-iOS/resources-tablethd/number10.png"
         }, 
         {
             "asset": "Source/Resources/Published-iOS/resources-tablethd/number2.png", 
@@ -455,6 +427,10 @@
         {
             "asset": "Source/Resources/Published-iOS/resources-tablethd/numberBorder.png", 
             "target": "Published-iOS/resources-tablethd/numberBorder.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/resources-tablethd/numberPaper.png", 
+            "target": "Published-iOS/resources-tablethd/numberPaper.png"
         }, 
         {
             "asset": "Source/Resources/Icons/Settings@2x.png", 
@@ -615,6 +591,10 @@
             "type": "iquote"
         }, 
         {
+            "header_path": "/var/folders/bd/d9n4_nm15fj_vg5h2t323ynm0000gn/T/tmp7APnhd/BUILT_PRODUCTS_DIR/include", 
+            "type": "I"
+        }, 
+        {
             "header_path": "Source/libs/cocos2d-iphone/external/kazmath/include", 
             "type": "I"
         }, 
@@ -684,6 +664,14 @@
         }, 
         {
             "header_path": "Source/libs/cocos2d-iphone/external/ObjectAL/Support", 
+            "type": "I"
+        }, 
+        {
+            "header_path": "/var/folders/bd/d9n4_nm15fj_vg5h2t323ynm0000gn/T/tmp7APnhd/DERIVED_FILE_DIR/armv7", 
+            "type": "I"
+        }, 
+        {
+            "header_path": "/var/folders/bd/d9n4_nm15fj_vg5h2t323ynm0000gn/T/tmp7APnhd/DERIVED_FILE_DIR", 
             "type": "I"
         }
     ], 
@@ -760,7 +748,9 @@
             "source": "Source/main.m"
         }
     ], 
+    "storyboards": [], 
     "type": "app", 
-    "version": "1", 
-    "xcode_project": "MatchX.xcodeproj"
+    "version": "3", 
+    "xcode_project": "MatchX.xcodeproj", 
+    "xibs": []
 }

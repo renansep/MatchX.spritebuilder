@@ -6,9 +6,13 @@
 	<dict>
 		<key>map</key>
 		<array>
-			<string>0111</string>
-			<string>0001</string>
-			<string>0111</string>
+			<string>1111111</string>
+			<string>1111111</string>
+			<string>1111111</string>
+			<string>1111111</string>
+			<string>1111111</string>
+			<string>1111111</string>
+			<string>1111111</string>
 		</array>
 	</dict>
 </dict>

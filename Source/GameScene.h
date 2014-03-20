@@ -13,6 +13,8 @@
 {
     NumberLayer *numbersLayer;
     
+    CCSprite *paper;
+    
     CCNodeColor *bottomNode;
     CCLabelTTF *resultLabel;
     CCLabelTTF *operationLabel;
