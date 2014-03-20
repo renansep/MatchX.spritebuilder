@@ -17,22 +17,17 @@
 - (NumberLayer *)initWithLevel:(NSDictionary *)level
 {
     NSArray *map = [level objectForKey:@"map"];
-    
     int lines = map.count;
     int columns = [(NSString *) [map objectAtIndex:0] length];
     
     GameNumber *n = [GameNumber new];
-    
     self = [super initWithColor:[CCColor clearColor] width:columns*n.contentSize.height height:lines*n.contentSize.width];
-    
     n = nil;
     
     if (self)
     {
         self.userInteractionEnabled = YES;
-        
         trace = [[NSMutableArray alloc] init];
-        
         numbers = [[NSMutableArray alloc] init];
         
         for (int i=0; i<map.count; i++)
@@ -45,7 +40,7 @@
                 {
                     GameNumber *number = [GameNumber new];
                     [[numbers objectAtIndex:i] addObject:number];
-                    [number setPosition:CGPointMake(j * number.contentSize.width + number.contentSize.width / 2, i * number.contentSize.height + number.contentSize.height / 2)];
+                    [number setPosition:ccp(j * number.contentSize.width + number.contentSize.width / 2, i * number.contentSize.height + number.contentSize.height / 2)];
                     [self addChild:number];
                     /*
                     CCSprite *border = [CCSprite spriteWithImageNamed:@"numberBorder.png"];
@@ -58,10 +53,9 @@
                     [[numbers objectAtIndex:i] addObject:[[GameNumber alloc] initEmpty]];
                 }
             }
-            
-            numbersSelected = 0;
-            lastNumberSelected = nil;
         }
+        numbersSelected = 0;
+        lastNumberSelected = nil;
         
         [self generateOperation];
         [self generateResult];
