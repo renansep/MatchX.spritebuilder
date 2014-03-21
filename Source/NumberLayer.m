@@ -57,6 +57,8 @@
         numbersSelected = 0;
         lastNumberSelected = nil;
         
+        operations = [level objectForKey:@"operations"];
+        
         [self generateOperation];
         [self generateResult];
     }
@@ -84,6 +86,8 @@
                     numbersSelected++;
                     lastNumberSelected = n;
                     [trace addObject:n];
+                    [gameScene updateCalculationLabel:[NSString stringWithFormat:@"%d", [n intValue]]];
+                    operation = [operations objectAtIndex:0];
                 }
             }
         }
@@ -125,6 +129,15 @@
                     [n setSelected:YES];
                     numbersSelected++;
                     [trace addObject:n];
+                    [gameScene updateCalculationLabel:[NSString stringWithFormat:@"%@%d", operation, [n intValue]]];
+                    if ([operations count] - 1 != [operations indexOfObject:operation])
+                    {
+                        operation = [operations objectAtIndex:[operations indexOfObject:operation] + 1];
+                    }
+                    else
+                    {
+                        operation = [operations objectAtIndex:0];
+                    }
                 }
                 else
                 {
@@ -176,7 +189,10 @@
         [gameScene updateOperation:operation];
         [gameScene increaseScore:pontos];
         [gameScene updateScore];
+        [gameScene increaseRemainingTime];
     }
+    [gameScene updateCalculationLabel:[NSString stringWithFormat:@"=%d", traceResult]];
+    [gameScene scheduleOnce:@selector(clearCalculationLabel) delay:0.5];
     
     trace = [[NSMutableArray alloc] init];
     
@@ -233,19 +249,19 @@
 
 - (int)calculateWithFirstNumber:(int)n1 andSecondNumber:(int)n2 andOperation:(NSString *)op
 {
-    if ([op isEqualToString:@"add"])
+    if ([op isEqualToString:@"+"])
     {
         return n1 + n2;
     }
-    else if ([op isEqualToString:@"sub"])
+    else if ([op isEqualToString:@"-"])
     {
         return n1 - n2;
     }
-    else if ([op isEqualToString:@"mult"])
+    else if ([op isEqualToString:@"*"])
     {
         return n1 * n2;
     }
-    else if ([op isEqualToString:@"div"])
+    else if ([op isEqualToString:@"/"])
     {
         return n1 / n2;
     }
@@ -314,7 +330,6 @@
 
 - (void)generateOperation
 {
-    NSArray *operations = [NSArray arrayWithObjects:@"add", @"sub", @"mult", nil];
     operation = [operations objectAtIndex:arc4random() % [operations count]];
 }
 
@@ -326,5 +341,9 @@
     }
 }
 
+- (void)setScene:(GameScene *)scene
+{
+    gameScene = scene;
+}
 
 @end

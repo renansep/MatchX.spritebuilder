@@ -25,10 +25,6 @@
             "target": "iPhone-old@2x.png"
         }, 
         {
-            "asset": "Source/Resources/Published-iOS/.DS_Store", 
-            "target": "Published-iOS/.DS_Store"
-        }, 
-        {
             "asset": "Source/Resources/Published-iOS/configCocos2d.plist", 
             "target": "Published-iOS/configCocos2d.plist"
         }, 
@@ -229,10 +225,6 @@
             "target": "Published-iOS/ccbResources/resources-tablethd/ccbTextField.png"
         }, 
         {
-            "asset": "Source/Resources/Published-iOS/Fonts/.DS_Store", 
-            "target": "Published-iOS/Fonts/.DS_Store"
-        }, 
-        {
             "asset": "Source/Resources/Published-iOS/Fonts/New Athletic M54.ttf", 
             "target": "Published-iOS/Fonts/New Athletic M54.ttf"
         }, 
@@ -243,6 +235,10 @@
         {
             "asset": "Source/Resources/Published-iOS/resources-phone/background.png", 
             "target": "Published-iOS/resources-phone/background.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/resources-phone/board.png", 
+            "target": "Published-iOS/resources-phone/board.png"
         }, 
         {
             "asset": "Source/Resources/Published-iOS/resources-phone/clock.png", 
@@ -293,6 +289,10 @@
             "target": "Published-iOS/resources-phone/numberBorder.png"
         }, 
         {
+            "asset": "Source/Resources/Published-iOS/resources-phone/numberLayer.png", 
+            "target": "Published-iOS/resources-phone/numberLayer.png"
+        }, 
+        {
             "asset": "Source/Resources/Published-iOS/resources-phone/numberPaper.png", 
             "target": "Published-iOS/resources-phone/numberPaper.png"
         }, 
@@ -303,6 +303,10 @@
         {
             "asset": "Source/Resources/Published-iOS/resources-phonehd/background.png", 
             "target": "Published-iOS/resources-phonehd/background.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/resources-phonehd/board.png", 
+            "target": "Published-iOS/resources-phonehd/board.png"
         }, 
         {
             "asset": "Source/Resources/Published-iOS/resources-phonehd/clock.png", 
@@ -353,6 +357,10 @@
             "target": "Published-iOS/resources-phonehd/numberBorder.png"
         }, 
         {
+            "asset": "Source/Resources/Published-iOS/resources-phonehd/numberLayer.png", 
+            "target": "Published-iOS/resources-phonehd/numberLayer.png"
+        }, 
+        {
             "asset": "Source/Resources/Published-iOS/resources-phonehd/numberPaper.png", 
             "target": "Published-iOS/resources-phonehd/numberPaper.png"
         }, 
@@ -363,6 +371,10 @@
         {
             "asset": "Source/Resources/Published-iOS/resources-tablet/background.png", 
             "target": "Published-iOS/resources-tablet/background.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/resources-tablet/board.png", 
+            "target": "Published-iOS/resources-tablet/board.png"
         }, 
         {
             "asset": "Source/Resources/Published-iOS/resources-tablet/clock.png", 
@@ -413,6 +425,10 @@
             "target": "Published-iOS/resources-tablet/numberBorder.png"
         }, 
         {
+            "asset": "Source/Resources/Published-iOS/resources-tablet/numberLayer.png", 
+            "target": "Published-iOS/resources-tablet/numberLayer.png"
+        }, 
+        {
             "asset": "Source/Resources/Published-iOS/resources-tablet/numberPaper.png", 
             "target": "Published-iOS/resources-tablet/numberPaper.png"
         }, 
@@ -423,6 +439,10 @@
         {
             "asset": "Source/Resources/Published-iOS/resources-tablethd/background.png", 
             "target": "Published-iOS/resources-tablethd/background.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/resources-tablethd/board.png", 
+            "target": "Published-iOS/resources-tablethd/board.png"
         }, 
         {
             "asset": "Source/Resources/Published-iOS/resources-tablethd/clock.png", 
@@ -471,6 +491,10 @@
         {
             "asset": "Source/Resources/Published-iOS/resources-tablethd/numberBorder.png", 
             "target": "Published-iOS/resources-tablethd/numberBorder.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/resources-tablethd/numberLayer.png", 
+            "target": "Published-iOS/resources-tablethd/numberLayer.png"
         }, 
         {
             "asset": "Source/Resources/Published-iOS/resources-tablethd/numberPaper.png", 

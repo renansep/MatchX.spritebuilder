@@ -16,26 +16,24 @@
     NSDictionary *dictionary = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Levels" ofType:@"plist"]];
     NSDictionary *level = [dictionary objectForKey:@"Level1"];
     
-    remainingTime = [(NSNumber *) [level objectForKeyedSubscript:@"calculationTime"] intValue];
-    
-    paper = [CCSprite spriteWithImageNamed:@"numberPaper.png"];
-    [paper setPosition:ccp([[CCDirector sharedDirector] viewSize].width / 2, [[CCDirector sharedDirector] viewSize].height / 2)];
-    [paper setScale:0.9];
-    [self addChild:paper];
+    calculationTime = [(NSNumber *) [level objectForKeyedSubscript:@"calculationTime"] intValue];
+    remainingTime = calculationTime;
     
     numbersLayer = [[NumberLayer alloc] initWithLevel:level];
     [numbersLayer setAnchorPoint:CGPointMake(0.5, 0.5)];
-    [numbersLayer setPosition:ccp(paper.contentSize.width / 2, paper.contentSize.height / 2 - paper.contentSize.height / 20)];
+    [numbersLayer setPosition:ccp(paper.contentSize.width / 2, paper.contentSize.height / 2)];
     if (numbersLayer.contentSize.width > numbersLayer.contentSize.height)
     {
-        [numbersLayer setScale:paper.contentSize.width * 0.75 / numbersLayer.contentSize.width];
+        [numbersLayer setScale:paper.contentSize.width * 0.85 / numbersLayer.contentSize.width];
     }
     else
     {
-        [numbersLayer setScale:paper.contentSize.width * 0.75 / numbersLayer.contentSize.height];
+        [numbersLayer setScale:paper.contentSize.width * 0.85 / numbersLayer.contentSize.height];
     }
     
     [paper addChild:numbersLayer];
+    
+    [numbersLayer setScene:self];
     
     [self updateResult:[numbersLayer result]];
     [self updateOperation:[numbersLayer operation]];
@@ -47,11 +45,19 @@
     
     [self schedule:@selector(decreaseRemainingTime) interval:1];
     
+    [calculationLabel setString:@""];
+    
+    calculationLabelOriginalFontSize = calculationLabel.fontSize;
+    
     score = 0;
 }
 
 - (void)update:(CCTime)delta
 {
+    if (remainingTime == 0)
+    {
+        [self performSelector:@selector(back:) withObject:nil];
+    }
 }
 
 - (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event
@@ -99,6 +105,34 @@
     {
         [self unschedule:@selector(decreaseRemainingTime)];
     }
+}
+
+- (void)increaseRemainingTime
+{
+    remainingTime += calculationTime;
+    [clockLabel setString:[NSString stringWithFormat:@"%d", remainingTime]];
+}
+
+- (void)updateCalculationLabel:(NSString *)text
+{
+    if ([calculationLabel string] == nil)
+    {
+        calculationLabel.fontSize = calculationLabelOriginalFontSize;
+        [calculationLabel setString:text];
+    }
+    else
+    {
+        [calculationLabel setString:[NSString stringWithFormat:@"%@%@", calculationLabel.string, text]];
+    }
+    while (calculationLabel.contentSize.width > board.contentSize.width * 0.9 * board.scaleX)
+    {
+        calculationLabel.fontSize--;
+    }
+}
+
+- (void)clearCalculationLabel
+{
+    [calculationLabel setString:@""];
 }
 
 @end

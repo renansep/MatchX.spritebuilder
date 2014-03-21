@@ -24,6 +24,7 @@
     
     //the current operation (add, sub, mult, div)
     NSString *operation;
+    NSArray *operations; //array of operations
     
     //the max number of operands that the calculation can have
     int maxOperands;
@@ -38,6 +39,7 @@
 - (NumberLayer *)initWithLevel:(NSDictionary *)level;
 - (int)generateResult;
 - (void)generateOperation;
+- (void)setScene:(GameScene *)scene;
 
 @property NSString *operation;
 @property int result;

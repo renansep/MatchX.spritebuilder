@@ -4,6 +4,11 @@
 <dict>
 	<key>Level1</key>
 	<dict>
+		<key>operations</key>
+		<array>
+			<string>+</string>
+			<string>-</string>
+		</array>
 		<key>calculationTime</key>
 		<integer>15</integer>
 		<key>map</key>

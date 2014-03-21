@@ -14,14 +14,18 @@
     NumberLayer *numbersLayer;
     
     CCSprite *paper;
+    CCSprite *board;
     
     CCLabelTTF *clockLabel;
     int remainingTime;
+    int calculationTime;
     
     CCNodeColor *bottomNode;
     CCLabelTTF *resultLabel;
     CCLabelTTF *operationLabel;
     CCLabelTTF *scoreLabel;
+    CCLabelTTF *calculationLabel;
+    int calculationLabelOriginalFontSize;
     
     int score;
     
@@ -34,5 +38,9 @@
 - (void)increaseScore:(int)ammount;
 - (void)updateScore;
 
+- (void)increaseRemainingTime;
+
+- (void)updateCalculationLabel:(NSString *)text;
+- (void)clearCalculationLabel;
 
 @end
