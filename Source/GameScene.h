@@ -21,11 +21,18 @@
     CCNodeColor *bottomNode;
     CCLabelTTF *resultLabel;
     CCLabelTTF *operationLabel;
+    CCLabelTTF *scoreLabel;
+    
+    int score;
     
     CCSprite *background;
 }
 
 - (void)updateResult:(int)newResult;
 - (void)updateOperation:(NSString *)newOperation;
+
+- (void)increaseScore:(int)ammount;
+- (void)updateScore;
+
 
 @end

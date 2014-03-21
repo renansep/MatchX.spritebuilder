@@ -25,6 +25,10 @@
             "target": "iPhone-old@2x.png"
         }, 
         {
+            "asset": "Source/Resources/Published-iOS/.DS_Store", 
+            "target": "Published-iOS/.DS_Store"
+        }, 
+        {
             "asset": "Source/Resources/Published-iOS/configCocos2d.plist", 
             "target": "Published-iOS/configCocos2d.plist"
         }, 
@@ -225,8 +229,24 @@
             "target": "Published-iOS/ccbResources/resources-tablethd/ccbTextField.png"
         }, 
         {
+            "asset": "Source/Resources/Published-iOS/Fonts/.DS_Store", 
+            "target": "Published-iOS/Fonts/.DS_Store"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/Fonts/New Athletic M54.ttf", 
+            "target": "Published-iOS/Fonts/New Athletic M54.ttf"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/Fonts/NewAthleticM54.ttf", 
+            "target": "Published-iOS/Fonts/NewAthleticM54.ttf"
+        }, 
+        {
             "asset": "Source/Resources/Published-iOS/resources-phone/background.png", 
             "target": "Published-iOS/resources-phone/background.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/resources-phone/clock.png", 
+            "target": "Published-iOS/resources-phone/clock.png"
         }, 
         {
             "asset": "Source/Resources/Published-iOS/resources-phone/notePaper.png", 
@@ -277,8 +297,16 @@
             "target": "Published-iOS/resources-phone/numberPaper.png"
         }, 
         {
+            "asset": "Source/Resources/Published-iOS/resources-phone/scorePanel.png", 
+            "target": "Published-iOS/resources-phone/scorePanel.png"
+        }, 
+        {
             "asset": "Source/Resources/Published-iOS/resources-phonehd/background.png", 
             "target": "Published-iOS/resources-phonehd/background.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/resources-phonehd/clock.png", 
+            "target": "Published-iOS/resources-phonehd/clock.png"
         }, 
         {
             "asset": "Source/Resources/Published-iOS/resources-phonehd/notePaper.png", 
@@ -329,8 +357,16 @@
             "target": "Published-iOS/resources-phonehd/numberPaper.png"
         }, 
         {
+            "asset": "Source/Resources/Published-iOS/resources-phonehd/scorePanel.png", 
+            "target": "Published-iOS/resources-phonehd/scorePanel.png"
+        }, 
+        {
             "asset": "Source/Resources/Published-iOS/resources-tablet/background.png", 
             "target": "Published-iOS/resources-tablet/background.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/resources-tablet/clock.png", 
+            "target": "Published-iOS/resources-tablet/clock.png"
         }, 
         {
             "asset": "Source/Resources/Published-iOS/resources-tablet/notePaper.png", 
@@ -381,8 +417,16 @@
             "target": "Published-iOS/resources-tablet/numberPaper.png"
         }, 
         {
+            "asset": "Source/Resources/Published-iOS/resources-tablet/scorePanel.png", 
+            "target": "Published-iOS/resources-tablet/scorePanel.png"
+        }, 
+        {
             "asset": "Source/Resources/Published-iOS/resources-tablethd/background.png", 
             "target": "Published-iOS/resources-tablethd/background.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/resources-tablethd/clock.png", 
+            "target": "Published-iOS/resources-tablethd/clock.png"
         }, 
         {
             "asset": "Source/Resources/Published-iOS/resources-tablethd/notePaper.png", 
@@ -431,6 +475,10 @@
         {
             "asset": "Source/Resources/Published-iOS/resources-tablethd/numberPaper.png", 
             "target": "Published-iOS/resources-tablethd/numberPaper.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/resources-tablethd/scorePanel.png", 
+            "target": "Published-iOS/resources-tablethd/scorePanel.png"
         }, 
         {
             "asset": "Source/Resources/Icons/Settings@2x.png", 

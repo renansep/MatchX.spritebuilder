@@ -170,9 +170,12 @@
         [self tradeNumbers:trace];
         [self generateOperation];
         [self generateResult];
-        GameScene *scene = (GameScene *) self.parent.parent;
-        [scene updateResult:result];
-        [scene updateOperation:operation];
+        
+        gameScene = (GameScene *)[[self parent] parent];
+        [gameScene updateResult:result];
+        [gameScene updateOperation:operation];
+        [gameScene increaseScore:pontos];
+        [gameScene updateScore];
     }
     
     trace = [[NSMutableArray alloc] init];

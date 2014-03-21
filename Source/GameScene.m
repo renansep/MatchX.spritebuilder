@@ -27,9 +27,13 @@
     [numbersLayer setAnchorPoint:CGPointMake(0.5, 0.5)];
     [numbersLayer setPosition:ccp(paper.contentSize.width / 2, paper.contentSize.height / 2 - paper.contentSize.height / 20)];
     if (numbersLayer.contentSize.width > numbersLayer.contentSize.height)
+    {
         [numbersLayer setScale:paper.contentSize.width * 0.75 / numbersLayer.contentSize.width];
+    }
     else
+    {
         [numbersLayer setScale:paper.contentSize.width * 0.75 / numbersLayer.contentSize.height];
+    }
     
     [paper addChild:numbersLayer];
     
@@ -42,6 +46,8 @@
     self.userInteractionEnabled = YES;
     
     [self schedule:@selector(decreaseRemainingTime) interval:1];
+    
+    score = 0;
 }
 
 - (void)update:(CCTime)delta
@@ -72,6 +78,17 @@
 - (void)updateOperation:(NSString *)newOperation
 {
     [operationLabel setString:newOperation];
+}
+
+- (void)increaseScore:(int)ammount
+{
+    score += ammount;
+    [self updateScore];
+}
+
+- (void)updateScore
+{
+    [scoreLabel setString:[NSString stringWithFormat:@"%d", score]];
 }
 
 - (void)decreaseRemainingTime

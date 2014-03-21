@@ -7,10 +7,13 @@
 //
 
 #import "CCNodeColor.h"
-@class GameNumber;
+
+@class GameNumber, GameScene;
 
 @interface NumberLayer : CCNodeColor
 {
+    GameScene *gameScene;
+    
     NSMutableArray *numbers;
     NSMutableArray *numbersBackground;
     
