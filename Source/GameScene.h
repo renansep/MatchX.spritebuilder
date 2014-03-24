@@ -6,10 +6,10 @@
 //  Copyright (c) 2014 Apportable. All rights reserved.
 //
 
-#import "CCNode.h"
+#import "CCScene.h"
 @class NumberLayer;
 
-@interface GameScene : CCNode
+@interface GameScene : CCScene
 {
     NumberLayer *numbersLayer;
     
@@ -33,7 +33,7 @@
 }
 
 - (void)updateResult:(int)newResult;
-- (void)updateOperation:(NSString *)newOperation;
+- (void)updateOperation:(NSArray *)newOperation;
 
 - (void)increaseScore:(int)ammount;
 - (void)updateScore;
@@ -42,5 +42,9 @@
 
 - (void)updateCalculationLabel:(NSString *)text;
 - (void)clearCalculationLabel;
+
+- (void)loadNumbersLayerWithLevel:(int)levelNumber;
++ (void)setLevelSelected:(int)l;
++ (int)levelSelected;
 
 @end

@@ -1,25 +1,199 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict>
-	<key>Level1</key>
+<array>
 	<dict>
 		<key>operations</key>
 		<array>
 			<string>+</string>
+		</array>
+		<key>calculationTime</key>
+		<integer>15</integer>
+		<key>map</key>
+		<array>
+			<string>111</string>
+			<string>101</string>
+			<string>111</string>
+		</array>
+	</dict>
+	<dict>
+		<key>operations</key>
+		<array>
+			<string>+</string>
+		</array>
+		<key>calculationTime</key>
+		<integer>15</integer>
+		<key>map</key>
+		<array>
+			<string>111</string>
+			<string>111</string>
+			<string>111</string>
+		</array>
+	</dict>
+	<dict>
+		<key>operations</key>
+		<array>
+			<string>+</string>
+		</array>
+		<key>calculationTime</key>
+		<integer>15</integer>
+		<key>map</key>
+		<array>
+			<string>1111</string>
+			<string>1001</string>
+			<string>1001</string>
+			<string>1111</string>
+		</array>
+	</dict>
+	<dict>
+		<key>operations</key>
+		<array>
 			<string>-</string>
 		</array>
 		<key>calculationTime</key>
 		<integer>15</integer>
 		<key>map</key>
 		<array>
+			<string>1111</string>
+			<string>1111</string>
+			<string>1111</string>
+			<string>1111</string>
+		</array>
+	</dict>
+	<dict>
+		<key>operations</key>
+		<array>
+			<string>x</string>
+		</array>
+		<key>calculationTime</key>
+		<integer>15</integer>
+		<key>map</key>
+		<array>
+			<string>11111</string>
+			<string>10001</string>
+			<string>10001</string>
+			<string>10001</string>
+			<string>11111</string>
+		</array>
+	</dict>
+	<dict>
+		<key>operations</key>
+		<array>
+			<string>x</string>
+		</array>
+		<key>calculationTime</key>
+		<integer>15</integer>
+		<key>map</key>
+		<array>
+			<string>11111</string>
+			<string>11011</string>
+			<string>11011</string>
+			<string>11011</string>
+			<string>11111</string>
+		</array>
+	</dict>
+	<dict>
+		<key>operations</key>
+		<array>
+			<string>+</string>
+		</array>
+		<key>calculationTime</key>
+		<integer>15</integer>
+		<key>map</key>
+		<array>
+			<string>11011</string>
+			<string>11011</string>
+			<string>00000</string>
+			<string>11011</string>
+			<string>11011</string>
+		</array>
+	</dict>
+	<dict>
+		<key>operations</key>
+		<array>
+			<string>+</string>
+		</array>
+		<key>calculationTime</key>
+		<integer>15</integer>
+		<key>map</key>
+		<array>
 			<string>111111</string>
-			<string>111111</string>
-			<string>111111</string>
-			<string>111111</string>
-			<string>111111</string>
+			<string>100001</string>
+			<string>100001</string>
+			<string>100001</string>
+			<string>100001</string>
 			<string>111111</string>
 		</array>
 	</dict>
-</dict>
+	<dict>
+		<key>operations</key>
+		<array>
+			<string>+</string>
+		</array>
+		<key>calculationTime</key>
+		<integer>15</integer>
+		<key>map</key>
+		<array>
+			<string>111</string>
+			<string>101</string>
+			<string>111</string>
+		</array>
+	</dict>
+	<dict>
+		<key>operations</key>
+		<array>
+			<string>+</string>
+		</array>
+		<key>calculationTime</key>
+		<integer>15</integer>
+		<key>map</key>
+		<array>
+			<string>111</string>
+			<string>101</string>
+			<string>111</string>
+		</array>
+	</dict>
+	<dict>
+		<key>operations</key>
+		<array>
+			<string>+</string>
+		</array>
+		<key>calculationTime</key>
+		<integer>15</integer>
+		<key>map</key>
+		<array>
+			<string>111</string>
+			<string>101</string>
+			<string>111</string>
+		</array>
+	</dict>
+	<dict>
+		<key>operations</key>
+		<array>
+			<string>+</string>
+		</array>
+		<key>calculationTime</key>
+		<integer>15</integer>
+		<key>map</key>
+		<array>
+			<string>111</string>
+			<string>101</string>
+			<string>111</string>
+		</array>
+	</dict>
+	<dict>
+		<key>operations</key>
+		<array>
+			<string>+</string>
+		</array>
+		<key>calculationTime</key>
+		<integer>15</integer>
+		<key>map</key>
+		<array>
+			<string>111</string>
+			<string>101</string>
+			<string>111</string>
+		</array>
+	</dict>
+</array>
 </plist>

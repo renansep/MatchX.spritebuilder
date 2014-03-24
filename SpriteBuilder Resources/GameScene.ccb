@@ -1765,7 +1765,7 @@
 						<key>value</key>
 						<array>
 							<real>0.5</real>
-							<real>0.44999998807907104</real>
+							<real>0.45122259855270386</real>
 							<integer>0</integer>
 							<integer>2</integer>
 							<integer>2</integer>
@@ -1894,7 +1894,7 @@
 								<string>Text</string>
 								<key>value</key>
 								<array>
-									<string></string>
+									<string>123456789+-*/=x</string>
 									<false/>
 								</array>
 							</dict>
@@ -1904,7 +1904,7 @@
 								<key>type</key>
 								<string>FontTTF</string>
 								<key>value</key>
-								<string>Helvetica</string>
+								<string>Fonts/KGChasingPavements.ttf</string>
 							</dict>
 							<dict>
 								<key>name</key>
@@ -1913,7 +1913,7 @@
 								<string>FloatScale</string>
 								<key>value</key>
 								<array>
-									<real>18</real>
+									<real>20</real>
 									<integer>0</integer>
 								</array>
 							</dict>
@@ -2030,6 +2030,8 @@
 								</array>
 							</dict>
 						</array>
+						<key>selected</key>
+						<true/>
 					</dict>
 				</array>
 				<key>customClass</key>
@@ -2057,7 +2059,7 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>0.5</real>
+							<real>0.49687498807907104</real>
 							<real>0.79000002145767212</real>
 							<integer>0</integer>
 							<integer>2</integer>

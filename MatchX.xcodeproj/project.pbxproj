@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28AE8A2518DF4262002295D1 /* LevelIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 28AE8A2418DF4262002295D1 /* LevelIcon.m */; };
+		28AE8A2818DF5616002295D1 /* SavedData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28AE8A2718DF5616002295D1 /* SavedData.plist */; };
+		28AE8A2B18DF6384002295D1 /* LevelSelectScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 28AE8A2A18DF6384002295D1 /* LevelSelectScene.m */; };
 		28D209CA18D779C400D56D9C /* Levels.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28D209C918D779C400D56D9C /* Levels.plist */; };
 		7551DF0618C8BB3E000A2EBE /* MainMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 7551DF0518C8BB3E000A2EBE /* MainMenuScene.m */; };
 		75D37E9618D1DFDD008EEB88 /* GameNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D37E9518D1DFDD008EEB88 /* GameNumber.m */; };
@@ -59,6 +62,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		28AE8A2318DF4262002295D1 /* LevelIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LevelIcon.h; path = Source/LevelIcon.h; sourceTree = "<group>"; };
+		28AE8A2418DF4262002295D1 /* LevelIcon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LevelIcon.m; path = Source/LevelIcon.m; sourceTree = "<group>"; };
+		28AE8A2718DF5616002295D1 /* SavedData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SavedData.plist; sourceTree = "<group>"; };
+		28AE8A2918DF6384002295D1 /* LevelSelectScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LevelSelectScene.h; path = Source/LevelSelectScene.h; sourceTree = "<group>"; };
+		28AE8A2A18DF6384002295D1 /* LevelSelectScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LevelSelectScene.m; path = Source/LevelSelectScene.m; sourceTree = "<group>"; };
 		28D209C918D779C400D56D9C /* Levels.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Levels.plist; sourceTree = "<group>"; };
 		7551DF0418C8BB3E000A2EBE /* MainMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainMenuScene.h; path = Source/MainMenuScene.h; sourceTree = "<group>"; };
 		7551DF0518C8BB3E000A2EBE /* MainMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainMenuScene.m; path = Source/MainMenuScene.m; sourceTree = "<group>"; };
@@ -143,6 +151,10 @@
 				75D37E9F18D32098008EEB88 /* NumberLayer.m */,
 				B737893D1807617C0076A88C /* AppDelegate.h */,
 				B737893E1807617C0076A88C /* AppDelegate.m */,
+				28AE8A2318DF4262002295D1 /* LevelIcon.h */,
+				28AE8A2418DF4262002295D1 /* LevelIcon.m */,
+				28AE8A2918DF6384002295D1 /* LevelSelectScene.h */,
+				28AE8A2A18DF6384002295D1 /* LevelSelectScene.m */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -219,6 +231,7 @@
 				B73789911807667A0076A88C /* Icons */,
 				B737893A180761570076A88C /* Published-iOS */,
 				28D209C918D779C400D56D9C /* Levels.plist */,
+				28AE8A2718DF5616002295D1 /* SavedData.plist */,
 			);
 			name = Resources;
 			path = Source/Resources;
@@ -318,6 +331,7 @@
 				B71F5912188484E7003F4D28 /* iPad-old@2x.png in Resources */,
 				B71F5916188484E7003F4D28 /* iPhone-old@2x.png in Resources */,
 				B737893B180761570076A88C /* Published-iOS in Resources */,
+				28AE8A2818DF5616002295D1 /* SavedData.plist in Resources */,
 				B71F591A188484E7003F4D28 /* Settings@2x.png in Resources */,
 				B7378976180762440076A88C /* Default-Landscape~ipad.png in Resources */,
 				B71F5915188484E7003F4D28 /* iPhone-old.png in Resources */,
@@ -338,7 +352,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B737893F1807617C0076A88C /* AppDelegate.m in Sources */,
+				28AE8A2518DF4262002295D1 /* LevelIcon.m in Sources */,
 				75D37E9618D1DFDD008EEB88 /* GameNumber.m in Sources */,
+				28AE8A2B18DF6384002295D1 /* LevelSelectScene.m in Sources */,
 				75D37EA018D32098008EEB88 /* NumberLayer.m in Sources */,
 				75D37E9D18D1E3D9008EEB88 /* GameScene.m in Sources */,
 				7551DF0618C8BB3E000A2EBE /* MainMenuScene.m in Sources */,

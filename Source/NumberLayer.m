@@ -12,7 +12,7 @@
 
 @implementation NumberLayer
 
-@synthesize operation, result;
+@synthesize result, operations;
 
 - (NumberLayer *)initWithLevel:(NSDictionary *)level
 {
@@ -59,7 +59,6 @@
         
         operations = [level objectForKey:@"operations"];
         
-        [self generateOperation];
         [self generateResult];
     }
     return self;
@@ -86,6 +85,8 @@
                     numbersSelected++;
                     lastNumberSelected = n;
                     [trace addObject:n];
+                    [gameScene unschedule:@selector(clearCalculationLabel)];
+                    [gameScene clearCalculationLabel];
                     [gameScene updateCalculationLabel:[NSString stringWithFormat:@"%d", [n intValue]]];
                     operation = [operations objectAtIndex:0];
                 }
@@ -130,18 +131,12 @@
                     numbersSelected++;
                     [trace addObject:n];
                     [gameScene updateCalculationLabel:[NSString stringWithFormat:@"%@%d", operation, [n intValue]]];
-                    if ([operations count] - 1 != [operations indexOfObject:operation])
-                    {
-                        operation = [operations objectAtIndex:[operations indexOfObject:operation] + 1];
-                    }
-                    else
-                    {
-                        operation = [operations objectAtIndex:0];
-                    }
+                    operation = [self nextOperation];
                 }
                 else
                 {
-                    [self finishedTrace];
+                    if (trace.count > 0)
+                        [self finishedTrace];
                 }
                 return;
             }
@@ -169,11 +164,13 @@
         {
             traceResult = [n intValue];
             pontos = [n intValue];
+            operation = [operations objectAtIndex:0];
         }
         else
         {
             traceResult = [self calculateWithFirstNumber:traceResult andSecondNumber:[n intValue] andOperation:operation];
             pontos = pontos * 10 + [n intValue];
+            operation = [self nextOperation];
         }
         [n setSelected:NO];
     }
@@ -181,18 +178,16 @@
     if (traceResult == result)
     {
         [self tradeNumbers:trace];
-        [self generateOperation];
         [self generateResult];
         
         gameScene = (GameScene *)[[self parent] parent];
         [gameScene updateResult:result];
-        [gameScene updateOperation:operation];
         [gameScene increaseScore:pontos];
         [gameScene updateScore];
         [gameScene increaseRemainingTime];
     }
     [gameScene updateCalculationLabel:[NSString stringWithFormat:@"=%d", traceResult]];
-    [gameScene scheduleOnce:@selector(clearCalculationLabel) delay:0.5];
+    [gameScene scheduleOnce:@selector(clearCalculationLabel) delay:1];
     
     trace = [[NSMutableArray alloc] init];
     
@@ -225,6 +220,7 @@
     
     [operands addObject:randomNumber];
     GameNumber *lastOperand = [operands objectAtIndex:0];
+    operation = [operations objectAtIndex:0];
     
     int newResult = [lastOperand intValue];
     
@@ -242,6 +238,7 @@
             [operands addObject:lastOperand];
             newResult = [self calculateWithFirstNumber:newResult andSecondNumber:[lastOperand intValue] andOperation:operation];
         }
+        operation = [self nextOperation];
     }
     result = newResult;
     return result;
@@ -257,7 +254,7 @@
     {
         return n1 - n2;
     }
-    else if ([op isEqualToString:@"*"])
+    else if ([op isEqualToString:@"x"])
     {
         return n1 * n2;
     }
@@ -328,11 +325,6 @@
     return nil;
 }
 
-- (void)generateOperation
-{
-    operation = [operations objectAtIndex:arc4random() % [operations count]];
-}
-
 - (void)tradeNumbers:(NSArray *)tradeList
 {
     for (GameNumber *n in tradeList)
@@ -344,6 +336,18 @@
 - (void)setScene:(GameScene *)scene
 {
     gameScene = scene;
+}
+
+- (NSString *)nextOperation
+{
+    if (operations.count - 1 != [operations indexOfObject:operation])
+    {
+        return [operations objectAtIndex:[operations indexOfObject:operation] + 1];
+    }
+    else
+    {
+        return [operations objectAtIndex:0];
+    }
 }
 
 @end

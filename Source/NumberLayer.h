@@ -38,10 +38,9 @@
 
 - (NumberLayer *)initWithLevel:(NSDictionary *)level;
 - (int)generateResult;
-- (void)generateOperation;
 - (void)setScene:(GameScene *)scene;
 
-@property NSString *operation;
+@property NSArray *operations;
 @property int result;
 
 @end

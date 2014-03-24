@@ -8,13 +8,37 @@
 
 #import "GameScene.h"
 #import "NumberLayer.h"
+#import "LevelSelectScene.h"
 
 @implementation GameScene
 
+static int levelSelected;
+
 - (void)didLoadFromCCB
 {
-    NSDictionary *dictionary = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Levels" ofType:@"plist"]];
-    NSDictionary *level = [dictionary objectForKey:@"Level1"];
+    [background setScaleX:([[CCDirector sharedDirector] viewSize].width / background.contentSize.width)];
+    [background setScaleY:([[CCDirector sharedDirector] viewSize].height / background.contentSize.height)];
+    
+    self.userInteractionEnabled = YES;
+    
+    [self schedule:@selector(decreaseRemainingTime) interval:1];
+    
+    [calculationLabel setString:@""];
+    
+    calculationLabelOriginalFontSize = calculationLabel.fontSize;
+    
+    NSDictionary *gameInfo = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"GameInfo" ofType:@"plist"]];
+    int levelSelected = [[gameInfo objectForKey:@"LevelSelected"] intValue];
+    
+    [self loadNumbersLayerWithLevel:levelSelected];
+    
+    score = 0;
+}
+
+- (void)loadNumbersLayerWithLevel:(int)levelNumber
+{
+    NSArray *levelsArray = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Levels" ofType:@"plist"]];
+    NSDictionary *level = [levelsArray objectAtIndex:levelSelected];
     
     calculationTime = [(NSNumber *) [level objectForKeyedSubscript:@"calculationTime"] intValue];
     remainingTime = calculationTime;
@@ -36,20 +60,7 @@
     [numbersLayer setScene:self];
     
     [self updateResult:[numbersLayer result]];
-    [self updateOperation:[numbersLayer operation]];
-    
-    [background setScaleX:([[CCDirector sharedDirector] viewSize].width / background.contentSize.width)];
-    [background setScaleY:([[CCDirector sharedDirector] viewSize].height / background.contentSize.height)];
-    
-    self.userInteractionEnabled = YES;
-    
-    [self schedule:@selector(decreaseRemainingTime) interval:1];
-    
-    [calculationLabel setString:@""];
-    
-    calculationLabelOriginalFontSize = calculationLabel.fontSize;
-    
-    score = 0;
+    [self updateOperation:[numbersLayer operations]];
 }
 
 - (void)update:(CCTime)delta
@@ -72,8 +83,8 @@
 
 - (void)back:(id)sender
 {
-    CCScene *mainMenuScene = [CCBReader loadAsScene:@"MainMenuScene"];
-    [[CCDirector sharedDirector] replaceScene:mainMenuScene withTransition:[CCTransition transitionRevealWithDirection:CCTransitionDirectionDown duration:0.5f]];
+    LevelSelectScene *levelSelectScene = [LevelSelectScene new];
+    [[CCDirector sharedDirector] replaceScene:levelSelectScene withTransition:[CCTransition transitionRevealWithDirection:CCTransitionDirectionDown duration:0.5f]];
 }
 
 - (void)updateResult:(int)newResult
@@ -81,9 +92,20 @@
     [resultLabel setString:[NSString stringWithFormat:@"X = %d", newResult]];
 }
 
-- (void)updateOperation:(NSString *)newOperation
+- (void)updateOperation:(NSArray *)operations
 {
-    [operationLabel setString:newOperation];
+    for (NSString *op in operations)
+    {
+        
+        if (op == [operations firstObject])
+        {
+            [operationLabel setString:op];
+        }
+        else
+        {
+            [operationLabel setString:[NSString stringWithFormat:@"%@ %@", operationLabel.string, op]];
+        }
+    }
 }
 
 - (void)increaseScore:(int)ammount
@@ -133,6 +155,16 @@
 - (void)clearCalculationLabel
 {
     [calculationLabel setString:@""];
+}
+
++ (void)setLevelSelected:(int)l
+{
+    levelSelected = l;
+}
+
++ (int)levelSelected
+{
+    return levelSelected;
 }
 
 @end

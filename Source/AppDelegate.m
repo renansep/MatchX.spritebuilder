@@ -27,6 +27,7 @@
 
 #import "AppDelegate.h"
 #import "CCBuilderReader.h"
+#import "LevelSelectScene.h"
 
 @implementation AppController
 
@@ -59,7 +60,7 @@
 
 - (CCScene*) startScene
 {
-    return [CCBReader loadAsScene:@"MainMenuScene"];
+    return [LevelSelectScene new];
 }
 
 @end
