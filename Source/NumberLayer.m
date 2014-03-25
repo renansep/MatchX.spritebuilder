@@ -20,7 +20,7 @@
     int lines = map.count;
     int columns = [(NSString *) [map objectAtIndex:0] length];
     
-    GameNumber *n = [GameNumber new];
+    GameNumber *n = (GameNumber *)[CCBReader load:@"GameNumber"];
     self = [super initWithColor:[CCColor clearColor] width:columns*n.contentSize.height height:lines*n.contentSize.width];
     n = nil;
     
@@ -38,7 +38,7 @@
             {
                 if ([line characterAtIndex:j] == '1')
                 {
-                    GameNumber *number = [GameNumber new];
+                    GameNumber *number = (GameNumber *)[CCBReader load:@"GameNumber"];
                     [[numbers objectAtIndex:i] addObject:number];
                     [number setPosition:ccp(j * number.contentSize.width + number.contentSize.width / 2, i * number.contentSize.height + number.contentSize.height / 2)];
                     [self addChild:number];
@@ -50,7 +50,7 @@
                 }
                 else if ([line characterAtIndex:j] == '0')
                 {
-                    [[numbers objectAtIndex:i] addObject:[[GameNumber alloc] initEmpty]];
+                    //[[numbers objectAtIndex:i] addObject:[[GameNumber alloc] initEmpty]];
                 }
             }
         }

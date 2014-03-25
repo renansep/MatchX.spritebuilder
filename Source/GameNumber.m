@@ -12,34 +12,21 @@
 
 @synthesize intValue, isEmpty;
 
-- (GameNumber *)init
+- (void)didLoadFromCCB
 {
     int random = arc4random() % 9 + 1;
-    self = [super initWithImageNamed:[NSString stringWithFormat:@"number%d.png", random]];
-    if (self)
-    {
-        isEmpty = NO;
+    [numberLabel setString:[NSString stringWithFormat:@"%d", random]];
+    
+    isEmpty = NO;
         
-        intValue = random;
+    intValue = random;
         
-        background = [CCNodeColor nodeWithColor:[CCColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:0.5] width:self.contentSize.width height:self.contentSize.height];
-        [background setAnchorPoint:CGPointMake(0.5, 0.5)];
-        [background setPosition:CGPointMake(self.contentSize.width / 2, self.contentSize.height / 2)];
-        [background setScale:0.95];
-        [background setVisible:NO];
-        [self addChild:background];
-    }
-    return self;
-}
-
-- (GameNumber *)initEmpty
-{
-    self = [super init];
-    if (self)
-    {
-        isEmpty = YES;
-    }
-    return self;
+    background = [CCNodeColor nodeWithColor:[CCColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:0.5] width:self.contentSize.width height:self.contentSize.height];
+    [background setAnchorPoint:CGPointMake(0.5, 0.5)];
+    [background setPosition:CGPointMake(self.contentSize.width / 2, self.contentSize.height / 2)];
+    [background setScale:0.95];
+    [background setVisible:NO];
+    [self addChild:background];
 }
 
 - (BOOL)selected
@@ -65,7 +52,7 @@
     CCActionScaleTo *scaleToOne = [CCActionScaleTo actionWithDuration:0.5 scale:1];
     
     CCActionSpawn *actionDestroy = [CCActionSpawn actionOne:rotateBy two:scaleToZero];
-    CCActionCallFunc *changeTexture = [CCActionCallFunc actionWithTarget:self selector:@selector(changeNumberTexture)];
+    CCActionCallFunc *changeTexture = [CCActionCallFunc actionWithTarget:self selector:@selector(changeNumber)];
     CCActionSpawn *actionRegen = [CCActionSpawn actionOne:rotateBy two:scaleToOne];
     
     CCActionSequence *sequence = [CCActionSequence actions:actionDestroy, changeTexture, actionRegen, nil];
@@ -73,10 +60,9 @@
     [self runAction:sequence];
 }
                                   
-- (void)changeNumberTexture
+- (void)changeNumber
 {
-    CCTexture *texture = [CCTexture textureWithFile:[NSString stringWithFormat:@"number%d.png", [self intValue]]];
-    [self setTexture:texture];
+    [numberLabel setString:[NSString stringWithFormat:@"%d", intValue]];
 }
 
 @end

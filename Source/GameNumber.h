@@ -11,6 +11,7 @@
 @interface GameNumber : CCSprite
 {
     int intValue;
+    CCLabelTTF *numberLabel;
     
     CCNodeColor *background;
     
@@ -23,6 +24,5 @@
 - (BOOL)selected;
 - (void)setSelected:(BOOL)s;
 - (void)runDestroyAnimation;
-- (GameNumber *)initEmpty;
 
 @end
