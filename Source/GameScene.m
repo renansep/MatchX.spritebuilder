@@ -12,7 +12,7 @@
 
 @implementation GameScene
 
-static int levelSelected;
+static int currentLevel;
 
 - (void)didLoadFromCCB
 {
@@ -21,27 +21,18 @@ static int levelSelected;
     
     self.userInteractionEnabled = YES;
     
-    [self schedule:@selector(decreaseRemainingTime) interval:1];
-    
-    [calculationLabel setString:@""];
-    
-    calculationLabelOriginalFontSize = calculationLabel.fontSize;
-    
-    NSDictionary *gameInfo = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"GameInfo" ofType:@"plist"]];
-    int levelSelected = [[gameInfo objectForKey:@"LevelSelected"] intValue];
-    
-    [self loadNumbersLayerWithLevel:levelSelected];
-    
-    score = 0;
-}
-
-- (void)loadNumbersLayerWithLevel:(int)levelNumber
-{
     NSArray *levelsArray = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Levels" ofType:@"plist"]];
-    NSDictionary *level = [levelsArray objectAtIndex:levelSelected];
+    NSDictionary *level = [levelsArray objectAtIndex:currentLevel];
     
     calculationTime = [(NSNumber *) [level objectForKeyedSubscript:@"calculationTime"] intValue];
+    calculationNumber = [[level objectForKey:@"calculationNumber"] intValue];
+    calculationsCompleted = 0;
     remainingTime = calculationTime;
+    [clockLabel setString:[NSString stringWithFormat:@"%d", remainingTime]];
+    [calculationLabel setString:@""];
+    calculationLabelOriginalFontSize = calculationLabel.fontSize;
+    score = 0;
+    [self updateScore];
     
     numbersLayer = [[NumberLayer alloc] initWithLevel:level];
     [numbersLayer setAnchorPoint:CGPointMake(0.5, 0.5)];
@@ -54,13 +45,13 @@ static int levelSelected;
     {
         [numbersLayer setScale:paper.contentSize.width * 0.85 / numbersLayer.contentSize.height];
     }
-    
-    [paper addChild:numbersLayer];
-    
     [numbersLayer setScene:self];
+    [paper addChild:numbersLayer];
     
     [self updateResult:[numbersLayer result]];
     [self updateOperation:[numbersLayer operations]];
+    
+    [self schedule:@selector(decreaseRemainingTime) interval:1];
 }
 
 - (void)update:(CCTime)delta
@@ -108,9 +99,9 @@ static int levelSelected;
     }
 }
 
-- (void)increaseScore:(int)ammount
+- (void)increaseScore
 {
-    score += ammount;
+    score += remainingTime;
     [self updateScore];
 }
 
@@ -131,8 +122,23 @@ static int levelSelected;
 
 - (void)increaseRemainingTime
 {
-    remainingTime += calculationTime;
+    remainingTime = calculationTime;
     [clockLabel setString:[NSString stringWithFormat:@"%d", remainingTime]];
+}
+
+- (void)increaseCalculationsCompleted
+{
+    calculationsCompleted++;
+    [self checkLevelCleared];
+}
+
+- (void)checkLevelCleared
+{
+    if (calculationsCompleted == calculationNumber)
+    {
+        //saveScore
+        [self back:nil];
+    }
 }
 
 - (void)updateCalculationLabel:(NSString *)text
@@ -148,7 +154,7 @@ static int levelSelected;
     }
     while (calculationLabel.contentSize.width > board.contentSize.width * 0.9 * board.scaleX)
     {
-        calculationLabel.fontSize--;
+        calculationLabel.fontSize -= 0.1;
     }
 }
 
@@ -157,14 +163,14 @@ static int levelSelected;
     [calculationLabel setString:@""];
 }
 
-+ (void)setLevelSelected:(int)l
++ (void)setCurrentLevel:(int)l
 {
-    levelSelected = l;
+    currentLevel = l;
 }
 
-+ (int)levelSelected
++ (int)currentLevel
 {
-    return levelSelected;
+    return currentLevel;
 }
 
 @end

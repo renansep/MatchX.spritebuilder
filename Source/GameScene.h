@@ -18,7 +18,13 @@
     
     CCLabelTTF *clockLabel;
     int remainingTime;
+    
+    //Level calculation time for each operation
     int calculationTime;
+    
+    //Level number of calculations
+    int calculationNumber;
+    int calculationsCompleted;
     
     CCNodeColor *bottomNode;
     CCLabelTTF *resultLabel;
@@ -35,16 +41,16 @@
 - (void)updateResult:(int)newResult;
 - (void)updateOperation:(NSArray *)newOperation;
 
-- (void)increaseScore:(int)ammount;
+- (void)increaseScore;
 - (void)updateScore;
 
 - (void)increaseRemainingTime;
+- (void)increaseCalculationsCompleted;
 
 - (void)updateCalculationLabel:(NSString *)text;
 - (void)clearCalculationLabel;
 
-- (void)loadNumbersLayerWithLevel:(int)levelNumber;
-+ (void)setLevelSelected:(int)l;
-+ (int)levelSelected;
++ (void)setCurrentLevel:(int)l;
++ (int)currentLevel;
 
 @end

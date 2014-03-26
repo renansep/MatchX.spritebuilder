@@ -19,7 +19,6 @@
     
     //last number touched by the player
     GameNumber *lastNumberSelected;
-    
     int numbersSelected;
     
     //the current operation (add, sub, mult, div)

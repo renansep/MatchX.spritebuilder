@@ -11,7 +11,7 @@
 		28AE8A2818DF5616002295D1 /* SavedData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28AE8A2718DF5616002295D1 /* SavedData.plist */; };
 		28AE8A2B18DF6384002295D1 /* LevelSelectScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 28AE8A2A18DF6384002295D1 /* LevelSelectScene.m */; };
 		28D209CA18D779C400D56D9C /* Levels.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28D209C918D779C400D56D9C /* Levels.plist */; };
-		7551DF0618C8BB3E000A2EBE /* MainMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 7551DF0518C8BB3E000A2EBE /* MainMenuScene.m */; };
+		7551DF0618C8BB3E000A2EBE /* StartScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 7551DF0518C8BB3E000A2EBE /* StartScene.m */; };
 		75D37E9618D1DFDD008EEB88 /* GameNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D37E9518D1DFDD008EEB88 /* GameNumber.m */; };
 		75D37E9D18D1E3D9008EEB88 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D37E9C18D1E3D9008EEB88 /* GameScene.m */; };
 		75D37EA018D32098008EEB88 /* NumberLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D37E9F18D32098008EEB88 /* NumberLayer.m */; };
@@ -68,8 +68,8 @@
 		28AE8A2918DF6384002295D1 /* LevelSelectScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LevelSelectScene.h; path = Source/LevelSelectScene.h; sourceTree = "<group>"; };
 		28AE8A2A18DF6384002295D1 /* LevelSelectScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LevelSelectScene.m; path = Source/LevelSelectScene.m; sourceTree = "<group>"; };
 		28D209C918D779C400D56D9C /* Levels.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Levels.plist; sourceTree = "<group>"; };
-		7551DF0418C8BB3E000A2EBE /* MainMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainMenuScene.h; path = Source/MainMenuScene.h; sourceTree = "<group>"; };
-		7551DF0518C8BB3E000A2EBE /* MainMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainMenuScene.m; path = Source/MainMenuScene.m; sourceTree = "<group>"; };
+		7551DF0418C8BB3E000A2EBE /* StartScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StartScene.h; path = Source/StartScene.h; sourceTree = "<group>"; };
+		7551DF0518C8BB3E000A2EBE /* StartScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StartScene.m; path = Source/StartScene.m; sourceTree = "<group>"; };
 		75D37E9418D1DFDD008EEB88 /* GameNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameNumber.h; path = Source/GameNumber.h; sourceTree = "<group>"; };
 		75D37E9518D1DFDD008EEB88 /* GameNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameNumber.m; path = Source/GameNumber.m; sourceTree = "<group>"; };
 		75D37E9B18D1E3D9008EEB88 /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameScene.h; path = Source/GameScene.h; sourceTree = "<group>"; };
@@ -141,8 +141,8 @@
 		B737893C1807616C0076A88C /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				7551DF0418C8BB3E000A2EBE /* MainMenuScene.h */,
-				7551DF0518C8BB3E000A2EBE /* MainMenuScene.m */,
+				7551DF0418C8BB3E000A2EBE /* StartScene.h */,
+				7551DF0518C8BB3E000A2EBE /* StartScene.m */,
 				75D37E9B18D1E3D9008EEB88 /* GameScene.h */,
 				75D37E9C18D1E3D9008EEB88 /* GameScene.m */,
 				75D37E9418D1DFDD008EEB88 /* GameNumber.h */,
@@ -357,7 +357,7 @@
 				28AE8A2B18DF6384002295D1 /* LevelSelectScene.m in Sources */,
 				75D37EA018D32098008EEB88 /* NumberLayer.m in Sources */,
 				75D37E9D18D1E3D9008EEB88 /* GameScene.m in Sources */,
-				7551DF0618C8BB3E000A2EBE /* MainMenuScene.m in Sources */,
+				7551DF0618C8BB3E000A2EBE /* StartScene.m in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

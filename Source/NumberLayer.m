@@ -20,9 +20,6 @@
     int lines = map.count;
     int columns = [(NSString *) [map objectAtIndex:0] length];
     
-    [GameNumber setMinNumber:[[level objectForKey:@"minNumber"] intValue]];
-    [GameNumber setMaxNumber:[[level objectForKey:@"maxNumber"] intValue]];
-    
     CCSprite *border = [CCSprite spriteWithImageNamed:@"numberBorder.png"];
     self = [super initWithColor:[CCColor clearColor] width:columns*border.contentSize.height height:lines*border.contentSize.width];
     [GameNumber setSize:border.contentSize];
@@ -30,7 +27,11 @@
     
     if (self)
     {
-        self.userInteractionEnabled = YES;
+        [GameNumber setMinNumber:[[level objectForKey:@"minNumber"] intValue]];
+        [GameNumber setMaxNumber:[[level objectForKey:@"maxNumber"] intValue]];
+        maxOperands = [[level objectForKey:@"maxOperands"] intValue];
+        operations = [level objectForKey:@"operations"];
+        
         trace = [[NSMutableArray alloc] init];
         numbers = [[NSMutableArray alloc] init];
         
@@ -62,9 +63,10 @@
         numbersSelected = 0;
         lastNumberSelected = nil;
         
-        operations = [level objectForKey:@"operations"];
         
         [self generateResult];
+    
+        self.userInteractionEnabled = YES;
     }
     return self;
 }
@@ -161,20 +163,16 @@
 {
     int traceResult;
     
-    int pontos = 0;
-    
     for (GameNumber *n in trace)
     {
         if (n == [trace firstObject])
         {
             traceResult = [n intValue];
-            pontos = [n intValue];
             operation = [operations objectAtIndex:0];
         }
         else
         {
             traceResult = [self calculateWithFirstNumber:traceResult andSecondNumber:[n intValue] andOperation:operation];
-            pontos = pontos * 10 + [n intValue];
             operation = [self nextOperation];
         }
         [n setSelected:NO];
@@ -184,12 +182,12 @@
     {
         [self tradeNumbers:trace];
         [self generateResult];
-        
-        gameScene = (GameScene *)[[self parent] parent];
+    
         [gameScene updateResult:result];
-        [gameScene increaseScore:pontos];
+        [gameScene increaseScore];
         [gameScene updateScore];
         [gameScene increaseRemainingTime];
+        [gameScene increaseCalculationsCompleted];
     }
     [gameScene updateCalculationLabel:[NSString stringWithFormat:@"=%d", traceResult]];
     [gameScene scheduleOnce:@selector(clearCalculationLabel) delay:1];
@@ -197,9 +195,6 @@
     trace = [[NSMutableArray alloc] init];
     
     numbersSelected = 0;
-    
-    NSLog(@"Pontos: %d", pontos);
-    NSLog(@"Trace result: %d", traceResult);
 }
 
 - (int)generateResult
@@ -218,9 +213,6 @@
         randomNumber = line[randomColumn];
     } while ([randomNumber isEmpty]);
     
-    //defines the max numbers of operands thart the calculation will have
-    int operandsCount = /*arc4random() % 3 + */3;
-    
     NSMutableArray *operands = [[NSMutableArray alloc] init];
     
     [operands addObject:randomNumber];
@@ -229,7 +221,7 @@
     
     int newResult = [lastOperand intValue];
     
-    for (int i=1; i<operandsCount; i++)
+    for (int i=1; i<maxOperands; i++)
     {
         GameNumber *neighborOfLastOperand = [self getRandomNeighborOf:lastOperand Without:operands];
         if (neighborOfLastOperand == nil)

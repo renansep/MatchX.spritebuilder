@@ -24,6 +24,12 @@
         [background setScaleX:viewSize.width / background.contentSize.width];
         [background setScaleY:viewSize.height / background.contentSize.height];
         [self addChild:background];
+        
+        CCLabelTTF *titleLabel = [CCLabelTTF labelWithString:@"SELECT A LEVEL" fontName:@"NewAthleticM54" fontSize:32];
+        [titleLabel setOutlineColor:[CCColor blackColor]];
+        [titleLabel setOutlineWidth:3];
+        [titleLabel setPosition:ccp(viewSize.width * 0.5, viewSize.height - titleLabel.contentSize.height)];
+        [self addChild:titleLabel];
 
         savedData = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"SavedData" ofType:@"plist"]];
         NSArray *levels = [savedData objectForKey:@"Levels"];
@@ -63,7 +69,7 @@
                     break;
             }
             
-            [icon setPosition:ccp(positionX, viewSize.height * 0.85 - line * ([icon height] + viewSize.height * 0.05))];
+            [icon setPosition:ccp(positionX, titleLabel.position.y * 0.85 - line * ([icon height] + viewSize.height * 0.05))];
             [levelIcons addObject:icon];
             [self addChild:icon];
         }
@@ -84,7 +90,7 @@
         {
             if (![i locked])
             {
-                [GameScene setLevelSelected:[i levelNumber] - 1];
+                [GameScene setCurrentLevel:[i levelNumber] - 1];
                 CCScene *gameScene = [CCBReader loadAsScene:@"GameScene"];
                 [[CCDirector sharedDirector] replaceScene:gameScene withTransition:[CCTransition transitionRevealWithDirection:CCTransitionDirectionDown duration:0.5f]];
             }

@@ -1,5 +1,5 @@
 //
-//  MainMenuScene.h
+//  StartScene.h
 //  MatchX
 //
 //  Created by Renan Cargnin on 3/6/14.
@@ -7,13 +7,12 @@
 //
 
 #import "CCNode.h"
-@class GameLayer;
 
-@interface MainMenuScene : CCNode
+@interface StartScene : CCNode
 {
-    CCLabelTTF *highscoreLabel;
+    CCSprite *background;
+    
+    CCLabelTTF *tapAnywhereLabel;
 }
-
-- (void)startGame:(id)sender;
 
 @end
