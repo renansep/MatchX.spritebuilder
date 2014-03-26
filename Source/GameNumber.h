@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Apportable. All rights reserved.
 //
 
-#import "CCSprite.h"
+#import "CCNodeColor.h"
 
-@interface GameNumber : CCSprite
+@interface GameNumber : CCNodeColor
 {
     int intValue;
     CCLabelTTF *numberLabel;
@@ -21,8 +21,13 @@
 @property int intValue;
 @property BOOL isEmpty;
 
+- (GameNumber *)initEmpty;
 - (BOOL)selected;
 - (void)setSelected:(BOOL)s;
 - (void)runDestroyAnimation;
++ (void)setSize:(CGSize)s;
++ (CGSize)size;
++ (void)setMinNumber:(int)n;
++ (void)setMaxNumber:(int)n;
 
 @end

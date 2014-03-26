@@ -12,21 +12,43 @@
 
 @synthesize intValue, isEmpty;
 
-- (void)didLoadFromCCB
+static CGSize size;
+static int minNumber;
+static int maxNumber;
+
+- (GameNumber *)init
 {
-    int random = arc4random() % 9 + 1;
-    [numberLabel setString:[NSString stringWithFormat:@"%d", random]];
+    self = [super initWithColor:[CCColor clearColor] width:size.width height:size.height];
+    if (self)
+    {
+        [self setAnchorPoint:ccp(0.5, 0.5)];
+        
+        intValue = (arc4random() % (maxNumber - minNumber + 1)) + minNumber;
+        numberLabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%d", intValue] fontName:@"Helvetica" fontSize:18];
+        [numberLabel setFontColor:[CCColor blackColor]];
+        [numberLabel setPosition:ccp(size.width * 0.5, size.height * 0.5)];
+        [self addChild:numberLabel];
     
-    isEmpty = NO;
+        isEmpty = NO;
         
-    intValue = random;
-        
-    background = [CCNodeColor nodeWithColor:[CCColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:0.5] width:self.contentSize.width height:self.contentSize.height];
-    [background setAnchorPoint:CGPointMake(0.5, 0.5)];
-    [background setPosition:CGPointMake(self.contentSize.width / 2, self.contentSize.height / 2)];
-    [background setScale:0.95];
-    [background setVisible:NO];
-    [self addChild:background];
+        background = [CCNodeColor nodeWithColor:[CCColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:0.5] width:self.contentSize.width height:self.contentSize.height];
+        [background setAnchorPoint:CGPointMake(0.5, 0.5)];
+        [background setPosition:CGPointMake(self.contentSize.width / 2, self.contentSize.height / 2)];
+        [background setScale:0.95];
+        [background setVisible:NO];
+        [self addChild:background];
+    }
+    return self;
+}
+
+- (GameNumber *)initEmpty
+{
+    self = [super initWithColor:[CCColor clearColor] width:size.width height:size.height];
+    if (self)
+    {
+        isEmpty = YES;
+    }
+    return self;
 }
 
 - (BOOL)selected
@@ -43,9 +65,7 @@
 
 - (void)runDestroyAnimation
 {
-    int random = arc4random() % 9 + 1;
-    
-    [self setIntValue:random];
+    intValue = (arc4random() % (maxNumber - minNumber + 1)) + minNumber;
     
     CCActionRotateBy *rotateBy = [CCActionRotateBy actionWithDuration:0.5 angle:1440];
     CCActionScaleTo *scaleToZero = [CCActionScaleTo actionWithDuration:0.5 scale:0];
@@ -63,6 +83,26 @@
 - (void)changeNumber
 {
     [numberLabel setString:[NSString stringWithFormat:@"%d", intValue]];
+}
+
++ (void)setSize:(CGSize)s
+{
+    size = s;
+}
+
++ (CGSize)size
+{
+    return size;
+}
+
++ (void)setMinNumber:(int)n
+{
+    minNumber = n;
+}
+
++ (void)setMaxNumber:(int)n
+{
+    maxNumber = n;
 }
 
 @end

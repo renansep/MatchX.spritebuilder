@@ -20,9 +20,13 @@
     int lines = map.count;
     int columns = [(NSString *) [map objectAtIndex:0] length];
     
-    GameNumber *n = (GameNumber *)[CCBReader load:@"GameNumber"];
-    self = [super initWithColor:[CCColor clearColor] width:columns*n.contentSize.height height:lines*n.contentSize.width];
-    n = nil;
+    [GameNumber setMinNumber:[[level objectForKey:@"minNumber"] intValue]];
+    [GameNumber setMaxNumber:[[level objectForKey:@"maxNumber"] intValue]];
+    
+    CCSprite *border = [CCSprite spriteWithImageNamed:@"numberBorder.png"];
+    self = [super initWithColor:[CCColor clearColor] width:columns*border.contentSize.height height:lines*border.contentSize.width];
+    [GameNumber setSize:border.contentSize];
+    border = nil;
     
     if (self)
     {
@@ -36,22 +40,23 @@
             NSString *line = map[i];
             for (int j=0; j<[line length]; j++)
             {
+                CCSprite *border = [CCSprite spriteWithImageNamed:@"numberBorder.png"];
+                [border setPosition:ccp(j * border.contentSize.width + border.contentSize.width / 2, i * border.contentSize.height + border.contentSize.height / 2)];
+                [self addChild:border];
+                
+                GameNumber *number;
+                
                 if ([line characterAtIndex:j] == '1')
                 {
-                    GameNumber *number = (GameNumber *)[CCBReader load:@"GameNumber"];
-                    [[numbers objectAtIndex:i] addObject:number];
-                    [number setPosition:ccp(j * number.contentSize.width + number.contentSize.width / 2, i * number.contentSize.height + number.contentSize.height / 2)];
-                    [self addChild:number];
-                    /*
-                    CCSprite *border = [CCSprite spriteWithImageNamed:@"numberBorder.png"];
-                    [border setPosition:number.position];
-                    [self addChild:border];
-                     */
+                    number = [GameNumber new];
                 }
                 else if ([line characterAtIndex:j] == '0')
                 {
-                    //[[numbers objectAtIndex:i] addObject:[[GameNumber alloc] initEmpty]];
+                    number = [[GameNumber alloc] initEmpty];
                 }
+                [number setPosition:border.position];
+                [[numbers objectAtIndex:i] addObject:number];
+                [self addChild:number];
             }
         }
         numbersSelected = 0;
