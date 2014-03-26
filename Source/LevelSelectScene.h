@@ -11,7 +11,11 @@
 @interface LevelSelectScene : CCScene
 {
     CCSprite *background;
+    
     NSMutableArray *levelIcons;
+    CCNode *levelIconsNode;
+    
+    CCScrollView *scrollView;
     
     NSDictionary *savedData;
 }

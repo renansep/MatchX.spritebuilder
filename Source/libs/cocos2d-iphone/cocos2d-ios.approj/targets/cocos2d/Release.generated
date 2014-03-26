@@ -1,7 +1,7 @@
 {
     "assets": [
         {
-            "asset": "../../../../../../var/folders/bd/d9n4_nm15fj_vg5h2t323ynm0000gn/T/tmp7APnhd/TARGET_BUILD_DIR/libcocos2d.a", 
+            "asset": "../../../../../../var/folders/bd/d9n4_nm15fj_vg5h2t323ynm0000gn/T/tmpRYPUWx/TARGET_BUILD_DIR/libcocos2d.a", 
             "target": "../../../../../../../../Users/renan/Desktop/Xcode Projects/Games/MatchX.spritebuilder/normal"
         }
     ], 
@@ -3533,7 +3533,7 @@
             "type": "iquote"
         }, 
         {
-            "header_path": "/var/folders/bd/d9n4_nm15fj_vg5h2t323ynm0000gn/T/tmp7APnhd/BUILT_PRODUCTS_DIR/include", 
+            "header_path": "/var/folders/bd/d9n4_nm15fj_vg5h2t323ynm0000gn/T/tmpRYPUWx/BUILT_PRODUCTS_DIR/include", 
             "type": "I"
         }, 
         {
@@ -3705,11 +3705,11 @@
             "type": "I"
         }, 
         {
-            "header_path": "/var/folders/bd/d9n4_nm15fj_vg5h2t323ynm0000gn/T/tmp7APnhd/DERIVED_FILE_DIR/armv7", 
+            "header_path": "/var/folders/bd/d9n4_nm15fj_vg5h2t323ynm0000gn/T/tmpRYPUWx/DERIVED_FILE_DIR/armv7", 
             "type": "I"
         }, 
         {
-            "header_path": "/var/folders/bd/d9n4_nm15fj_vg5h2t323ynm0000gn/T/tmp7APnhd/DERIVED_FILE_DIR", 
+            "header_path": "/var/folders/bd/d9n4_nm15fj_vg5h2t323ynm0000gn/T/tmpRYPUWx/DERIVED_FILE_DIR", 
             "type": "I"
         }
     ], 

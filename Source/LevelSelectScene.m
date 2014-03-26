@@ -34,6 +34,11 @@
         savedData = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"SavedData" ofType:@"plist"]];
         NSArray *levels = [savedData objectForKey:@"Levels"];
         
+        levelIconsNode = [CCNode new];
+        [levelIconsNode setAnchorPoint:ccp(0, 1)];
+        
+        scrollView = [CCScrollView new];
+        
         levelIcons = [NSMutableArray new];
         
         for (int i=0; i<levels.count; i++)
@@ -69,10 +74,15 @@
                     break;
             }
             
-            [icon setPosition:ccp(positionX, titleLabel.position.y * 0.85 - line * ([icon height] + viewSize.height * 0.05))];
+            //[icon setPosition:ccp(positionX, titleLabel.position.y * 0.85 - line * ([icon height] + viewSize.height * 0.05))];
+            
+            [icon setPosition:ccp(positionX, -(line * [icon height]) * 1.5 - ([icon height] / 2))];
+            
             [levelIcons addObject:icon];
-            [self addChild:icon];
+            [levelIconsNode addChild:icon];
         }
+        [levelIconsNode setPosition:ccp(0, titleLabel.position.y - titleLabel.contentSize.height)];
+        [self addChild:levelIconsNode];
         self.userInteractionEnabled = YES;
     }
     return self;
@@ -80,7 +90,7 @@
 
 - (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
-    CGPoint location = [touch locationInNode:self];
+    CGPoint location = [touch locationInNode:levelIconsNode];
     for (LevelIcon *i in levelIcons)
     {
         if (location.x > i.position.x - [i width] / 2 &&
