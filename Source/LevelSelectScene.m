@@ -25,12 +25,14 @@
         [background setScaleY:viewSize.height / background.contentSize.height];
         [self addChild:background];
         
-        CCLabelTTF *titleLabel = [CCLabelTTF labelWithString:@"SELECT A LEVEL" fontName:@"NewAthleticM54" fontSize:32];
+        //Title label
+        CCLabelTTF *titleLabel = [CCLabelTTF labelWithString:@"Escolha uma Fase" fontName:@"NewAthleticM54" fontSize:32];
         [titleLabel setOutlineColor:[CCColor blackColor]];
         [titleLabel setOutlineWidth:3];
         [titleLabel setPosition:ccp(viewSize.width * 0.5, viewSize.height - titleLabel.contentSize.height)];
         [self addChild:titleLabel];
 
+        //Load user saved data, too check witch levels are locked
         savedData = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"SavedData" ofType:@"plist"]];
         NSArray *levels = [savedData objectForKey:@"Levels"];
         

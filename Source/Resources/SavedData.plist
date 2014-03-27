@@ -4,63 +4,48 @@
 <dict>
 	<key>Levels</key>
 	<array>
-        <!-- Level 1 -->
 		<dict>
 			<key>stars</key>
 			<integer>0</integer>
 			<key>locked</key>
 			<false/>
 		</dict>
-        
-        <!-- Level 2 -->
 		<dict>
 			<key>stars</key>
 			<integer>0</integer>
 			<key>locked</key>
 			<false/>
 		</dict>
-        
-        <!-- Level 3 -->
 		<dict>
 			<key>stars</key>
 			<integer>0</integer>
 			<key>locked</key>
 			<false/>
 		</dict>
-        
-        <!-- Level 4 -->
 		<dict>
 			<key>stars</key>
 			<integer>0</integer>
 			<key>locked</key>
 			<false/>
 		</dict>
-        
-        <!-- Level 5 -->
 		<dict>
 			<key>stars</key>
 			<integer>0</integer>
 			<key>locked</key>
 			<false/>
 		</dict>
-        
-        <!-- Level 6 -->
 		<dict>
 			<key>stars</key>
 			<integer>0</integer>
 			<key>locked</key>
 			<false/>
 		</dict>
-        
-        <!-- Level 7 -->
 		<dict>
 			<key>stars</key>
 			<integer>0</integer>
 			<key>locked</key>
 			<false/>
 		</dict>
-        
-        <!-- Level 8 -->
 		<dict>
 			<key>stars</key>
 			<integer>0</integer>

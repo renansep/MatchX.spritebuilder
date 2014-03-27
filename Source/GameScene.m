@@ -62,16 +62,6 @@ static int currentLevel;
     }
 }
 
-- (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event
-{
-    
-}
-
-- (void)touchMoved:(UITouch *)touch withEvent:(UIEvent *)event
-{
-    
-}
-
 - (void)back:(id)sender
 {
     LevelSelectScene *levelSelectScene = [LevelSelectScene new];
