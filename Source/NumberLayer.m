@@ -63,10 +63,11 @@
         numbersSelected = 0;
         lastNumberSelected = nil;
         
-        
         [self generateResult];
-    
-        self.userInteractionEnabled = YES;
+        if ([[level objectForKey:@"tutorial"] boolValue])
+            self.userInteractionEnabled = NO;
+        else
+            self.userInteractionEnabled = YES;
     }
     return self;
 }

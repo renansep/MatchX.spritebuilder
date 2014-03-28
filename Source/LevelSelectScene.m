@@ -25,27 +25,38 @@
         [background setScaleY:viewSize.height / background.contentSize.height];
         [self addChild:background];
         
+        
+        
+        //Load user saved data, too check witch levels are locked
+        savedData = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"SavedData" ofType:@"plist"]];
+        NSArray *levels = [savedData objectForKey:@"Levels"];
+        
+        //Loads the scroll view
+        scroll = [CCScrollView new];
+        [scroll setHorizontalScrollEnabled:NO];
+        [self addChild:scroll];
+        
         //Title label
         CCLabelTTF *titleLabel = [CCLabelTTF labelWithString:@"Escolha uma Fase" fontName:@"NewAthleticM54" fontSize:32];
         [titleLabel setOutlineColor:[CCColor blackColor]];
         [titleLabel setOutlineWidth:3];
         [titleLabel setPosition:ccp(viewSize.width * 0.5, viewSize.height - titleLabel.contentSize.height)];
+        
+        CCSprite *backgroundOverlay = [CCSprite spriteWithImageNamed:@"background.png"];
+        [backgroundOverlay setScaleX:viewSize.width / backgroundOverlay.contentSize.width];
+        [backgroundOverlay setAnchorPoint:ccp(0.5,0)];
+        [backgroundOverlay flipX];
+        [backgroundOverlay flipY];
+        [backgroundOverlay setPosition:ccp(viewSize.width * 0.5, titleLabel.position.y - titleLabel.contentSize.height)];
+        [self addChild:backgroundOverlay];
+        
         [self addChild:titleLabel];
-
-        //Load user saved data, too check witch levels are locked
-        savedData = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"SavedData" ofType:@"plist"]];
-        NSArray *levels = [savedData objectForKey:@"Levels"];
-        
-        levelIconsNode = [CCNode new];
-        [levelIconsNode setAnchorPoint:ccp(0, 1)];
-        
-        scrollView = [CCScrollView new];
         
         levelIcons = [NSMutableArray new];
         
-        for (int i=0; i<levels.count; i++)
+        for (int i=0; i<30; i++)
         {
-            NSDictionary *level = [levels objectAtIndex:i];
+            NSDictionary *level = [levels objectAtIndex:0];
             BOOL locked = [[level objectForKey:@"locked"] boolValue];
             int stars = [[level objectForKey:@"stars"] intValue];
             LevelIcon *icon;
@@ -57,6 +68,13 @@
             else
             {
                 icon = [[LevelIcon alloc] initUnlockedWithNumber:i+1 andStars:stars];
+            }
+            
+            if (i == 0)
+            {
+                levelIconsNode = [CCNodeColor nodeWithColor:[CCColor clearColor] width:viewSize.width height:(30/3+1) * [icon height] * 1.5];
+                [levelIconsNode setAnchorPoint:ccp(0,1)];
+                [levelIconsNode setPosition:ccp(0, viewSize.height * 0.9)];
             }
             
             int column = i % 3;
@@ -76,15 +94,12 @@
                     break;
             }
             
-            //[icon setPosition:ccp(positionX, titleLabel.position.y * 0.85 - line * ([icon height] + viewSize.height * 0.05))];
-            
-            [icon setPosition:ccp(positionX, -(line * [icon height]) * 1.5 - ([icon height] / 2))];
+            [icon setPosition:ccp(positionX, levelIconsNode.contentSize.height - [icon height] * 1.5 - (line * [icon height]) * 1.5 - ([icon height] / 2))];
             
             [levelIcons addObject:icon];
             [levelIconsNode addChild:icon];
         }
-        [levelIconsNode setPosition:ccp(0, titleLabel.position.y - titleLabel.contentSize.height)];
-        [self addChild:levelIconsNode];
+        [scroll setContentNode:levelIconsNode];
         self.userInteractionEnabled = YES;
     }
     return self;
@@ -92,6 +107,12 @@
 
 - (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
+    
+}
+
+- (void)touchEnded:(UITouch *)touch withEvent:(UIEvent *)event
+{
+    NSLog(@"teste");
     CGPoint location = [touch locationInNode:levelIconsNode];
     for (LevelIcon *i in levelIcons)
     {

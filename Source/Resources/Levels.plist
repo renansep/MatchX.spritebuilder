@@ -3,7 +3,7 @@
 <plist version="1.0">
 <array>
     <!-- Level 1 -->
-	<dict>
+	<dict>            
 		<key>operations</key>
 		<array>
 			<string>+</string>

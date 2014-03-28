@@ -15,7 +15,7 @@
     NSMutableArray *levelIcons;
     CCNode *levelIconsNode;
     
-    CCScrollView *scrollView;
+    CCScrollView *scroll;
     
     NSDictionary *savedData;
 }

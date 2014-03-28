@@ -28,6 +28,7 @@
     [tutorialLevel setObject:[NSArray arrayWithObjects:@"111", @"111", @"111", nil] forKey:@"map"];
     [tutorialLevel setObject:[NSNumber numberWithInt:1] forKey:@"minNumber"];
     [tutorialLevel setObject:[NSNumber numberWithInt:15] forKey:@"maxNumber"];
+    [tutorialLevel setObject:[NSNumber numberWithBool:YES] forKey:@"tutorial"];
     
     numberLayer = [[NumberLayer alloc] initWithLevel:tutorialLevel];
     [numberLayer setAnchorPoint:CGPointMake(0.5, 0.5)];
@@ -81,11 +82,7 @@
     [self runScaleAnimetionWithNode:operatorsLabel andDelay:2 andScaleMax:1.5 andScaleMin:0.5];
     [self runScaleAnimetionWithNode:resultLabel andDelay:8 andScaleMax:1.5 andScaleMin:0.5];
     [self runScaleAnimetionWithNode:clockNode andDelay:11 andScaleMax:1.2 andScaleMin:0.8];
-    [self runScaleAnimetionWithNode:scoreNode andDelay:14 andScaleMax:1.2 andScaleMin:0.8];/*
-    [operatorsLabel runAction:[CCActionSequence actions:[CCActionDelay actionWithDuration:2], scaleAnimation, nil]];
-    [resultLabel runAction:[CCActionSequence actions:[CCActionDelay actionWithDuration:8], scaleAnimation, nil]];
-    [clockNode runAction:[CCActionSequence actions:[CCActionDelay actionWithDuration:11], scaleAnimation, nil]];
-    [scoreNode runAction:[CCActionSequence actions:[CCActionDelay actionWithDuration:14], scaleAnimation, nil]];*/
+    [self runScaleAnimetionWithNode:scoreNode andDelay:14 andScaleMax:1.2 andScaleMin:0.8];
 }
 
 - (void)runScaleAnimetionWithNode:(CCNode *)node andDelay:(float)delay andScaleMax:(float)scaleMax andScaleMin:(float)scaleMin
