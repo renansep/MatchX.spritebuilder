@@ -55,6 +55,33 @@
     
     [self setupCocos2dWithOptions:cocos2dSetup];
     
+    
+    
+    //Load user saved data, too check witch levels are locked
+    // get paths from root direcory
+    NSArray *paths = NSSearchPathForDirectoriesInDomains (NSDocumentDirectory, NSUserDomainMask, YES);
+    // get documents path
+    NSString *documentsPath = [paths objectAtIndex:0];
+    // get the path to our Data/plist file
+    NSString *plistPath = [documentsPath stringByAppendingPathComponent:@"SavedData.plist"];
+    NSDictionary *savedData = [NSDictionary dictionaryWithContentsOfFile:plistPath];
+    
+    if (savedData == nil)
+    {
+        NSDictionary *initialSaveData = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"SavedData" ofType:@"plist"]];
+        
+        NSString *error = nil;
+        NSData *plistData = [NSPropertyListSerialization dataFromPropertyList:initialSaveData format:NSPropertyListXMLFormat_v1_0 errorDescription:&error];
+        
+        
+        // check is plistData exists
+        if(plistData)
+        {
+            // write plistData to our Data.plist file
+            [plistData writeToFile:plistPath atomically:YES];
+        }
+    }
+    
     return YES;
 }
 

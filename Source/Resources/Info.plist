@@ -5,13 +5,14 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleDisplayName</key>
-	<string>${PRODUCT_NAME}</string>
+	<string>Encontre o X</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFile</key>
 	<string></string>
 	<key>CFBundleIconFiles</key>
 	<array>
+		<string>Spotlight80</string>
 		<string>Settings</string>
 		<string>iPhone</string>
 		<string>iPhone-old</string>
@@ -24,6 +25,10 @@
 	</array>
 	<key>CFBundleIconFiles~ipad</key>
 	<array>
+		<string>Spotlight80</string>
+		<string>Spotlight40</string>
+		<string>Spotlight100</string>
+		<string>Spotlight50</string>
 		<string>Settings</string>
 		<string>iPad</string>
 		<string>iPad-old</string>

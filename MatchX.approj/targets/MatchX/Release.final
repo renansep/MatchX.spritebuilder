@@ -1,28 +1,32 @@
 {
     "assets": [
         {
-            "asset": "Source/Resources/Icons/Settings.png", 
-            "target": "Settings.png"
+            "asset": "Source/Resources/iPhone-old@2x.png", 
+            "target": "iPhone-old@2x.png"
+        }, 
+        {
+            "asset": "Source/Resources/Spotlight50.png", 
+            "target": "Spotlight50.png"
         }, 
         {
             "asset": "Source/Resources/Default@2x.png", 
             "target": "Default@2x.png"
         }, 
         {
-            "asset": "Source/Resources/Icons/iPad@2x.png", 
-            "target": "iPad@2x.png"
-        }, 
-        {
-            "asset": "Source/Resources/Icons/iPad.png", 
+            "asset": "Source/Resources/iPad.png", 
             "target": "iPad.png"
         }, 
         {
-            "asset": "Source/Resources/Icons/iPad-old@2x.png", 
-            "target": "iPad-old@2x.png"
+            "asset": "Source/Resources/iPad-old.png", 
+            "target": "iPad-old.png"
         }, 
         {
-            "asset": "Source/Resources/Icons/iPhone-old@2x.png", 
-            "target": "iPhone-old@2x.png"
+            "asset": "Source/Resources/Spotlight58.png", 
+            "target": "Spotlight58.png"
+        }, 
+        {
+            "asset": "Source/Resources/Spotlight100.png", 
+            "target": "Spotlight100.png"
         }, 
         {
             "asset": "Source/Resources/Published-iOS/configCocos2d.plist", 
@@ -33,16 +37,8 @@
             "target": "Published-iOS/fileLookup.plist"
         }, 
         {
-            "asset": "Source/Resources/Published-iOS/GameNumber.ccbi", 
-            "target": "Published-iOS/GameNumber.ccbi"
-        }, 
-        {
             "asset": "Source/Resources/Published-iOS/GameScene.ccbi", 
             "target": "Published-iOS/GameScene.ccbi"
-        }, 
-        {
-            "asset": "Source/Resources/Published-iOS/MainMenuScene.ccbi", 
-            "target": "Published-iOS/MainMenuScene.ccbi"
         }, 
         {
             "asset": "Source/Resources/Published-iOS/spriteFrameFileList.plist", 
@@ -237,10 +233,6 @@
             "target": "Published-iOS/Fonts/KGChasingPavements.ttf"
         }, 
         {
-            "asset": "Source/Resources/Published-iOS/Fonts/New Athletic M54.ttf", 
-            "target": "Published-iOS/Fonts/New Athletic M54.ttf"
-        }, 
-        {
             "asset": "Source/Resources/Published-iOS/Fonts/NewAthleticM54.ttf", 
             "target": "Published-iOS/Fonts/NewAthleticM54.ttf"
         }, 
@@ -269,42 +261,6 @@
             "target": "Published-iOS/resources-phone/notePaper.png"
         }, 
         {
-            "asset": "Source/Resources/Published-iOS/resources-phone/number1.png", 
-            "target": "Published-iOS/resources-phone/number1.png"
-        }, 
-        {
-            "asset": "Source/Resources/Published-iOS/resources-phone/number2.png", 
-            "target": "Published-iOS/resources-phone/number2.png"
-        }, 
-        {
-            "asset": "Source/Resources/Published-iOS/resources-phone/number3.png", 
-            "target": "Published-iOS/resources-phone/number3.png"
-        }, 
-        {
-            "asset": "Source/Resources/Published-iOS/resources-phone/number4.png", 
-            "target": "Published-iOS/resources-phone/number4.png"
-        }, 
-        {
-            "asset": "Source/Resources/Published-iOS/resources-phone/number5.png", 
-            "target": "Published-iOS/resources-phone/number5.png"
-        }, 
-        {
-            "asset": "Source/Resources/Published-iOS/resources-phone/number6.png", 
-            "target": "Published-iOS/resources-phone/number6.png"
-        }, 
-        {
-            "asset": "Source/Resources/Published-iOS/resources-phone/number7.png", 
-            "target": "Published-iOS/resources-phone/number7.png"
-        }, 
-        {
-            "asset": "Source/Resources/Published-iOS/resources-phone/number8.png", 
-            "target": "Published-iOS/resources-phone/number8.png"
-        }, 
-        {
-            "asset": "Source/Resources/Published-iOS/resources-phone/number9.png", 
-            "target": "Published-iOS/resources-phone/number9.png"
-        }, 
-        {
             "asset": "Source/Resources/Published-iOS/resources-phone/numberBorder.png", 
             "target": "Published-iOS/resources-phone/numberBorder.png"
         }, 
@@ -313,16 +269,16 @@
             "target": "Published-iOS/resources-phone/numberLayer.png"
         }, 
         {
-            "asset": "Source/Resources/Published-iOS/resources-phone/numberPaper.png", 
-            "target": "Published-iOS/resources-phone/numberPaper.png"
-        }, 
-        {
             "asset": "Source/Resources/Published-iOS/resources-phone/scorePanel.png", 
             "target": "Published-iOS/resources-phone/scorePanel.png"
         }, 
         {
             "asset": "Source/Resources/Published-iOS/resources-phone/star.png", 
             "target": "Published-iOS/resources-phone/star.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/resources-phone/touchIcon.png", 
+            "target": "Published-iOS/resources-phone/touchIcon.png"
         }, 
         {
             "asset": "Source/Resources/Published-iOS/resources-phonehd/background.png", 
@@ -349,42 +305,6 @@
             "target": "Published-iOS/resources-phonehd/notePaper.png"
         }, 
         {
-            "asset": "Source/Resources/Published-iOS/resources-phonehd/number1.png", 
-            "target": "Published-iOS/resources-phonehd/number1.png"
-        }, 
-        {
-            "asset": "Source/Resources/Published-iOS/resources-phonehd/number2.png", 
-            "target": "Published-iOS/resources-phonehd/number2.png"
-        }, 
-        {
-            "asset": "Source/Resources/Published-iOS/resources-phonehd/number3.png", 
-            "target": "Published-iOS/resources-phonehd/number3.png"
-        }, 
-        {
-            "asset": "Source/Resources/Published-iOS/resources-phonehd/number4.png", 
-            "target": "Published-iOS/resources-phonehd/number4.png"
-        }, 
-        {
-            "asset": "Source/Resources/Published-iOS/resources-phonehd/number5.png", 
-            "target": "Published-iOS/resources-phonehd/number5.png"
-        }, 
-        {
-            "asset": "Source/Resources/Published-iOS/resources-phonehd/number6.png", 
-            "target": "Published-iOS/resources-phonehd/number6.png"
-        }, 
-        {
-            "asset": "Source/Resources/Published-iOS/resources-phonehd/number7.png", 
-            "target": "Published-iOS/resources-phonehd/number7.png"
-        }, 
-        {
-            "asset": "Source/Resources/Published-iOS/resources-phonehd/number8.png", 
-            "target": "Published-iOS/resources-phonehd/number8.png"
-        }, 
-        {
-            "asset": "Source/Resources/Published-iOS/resources-phonehd/number9.png", 
-            "target": "Published-iOS/resources-phonehd/number9.png"
-        }, 
-        {
             "asset": "Source/Resources/Published-iOS/resources-phonehd/numberBorder.png", 
             "target": "Published-iOS/resources-phonehd/numberBorder.png"
         }, 
@@ -393,16 +313,16 @@
             "target": "Published-iOS/resources-phonehd/numberLayer.png"
         }, 
         {
-            "asset": "Source/Resources/Published-iOS/resources-phonehd/numberPaper.png", 
-            "target": "Published-iOS/resources-phonehd/numberPaper.png"
-        }, 
-        {
             "asset": "Source/Resources/Published-iOS/resources-phonehd/scorePanel.png", 
             "target": "Published-iOS/resources-phonehd/scorePanel.png"
         }, 
         {
             "asset": "Source/Resources/Published-iOS/resources-phonehd/star.png", 
             "target": "Published-iOS/resources-phonehd/star.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/resources-phonehd/touchIcon.png", 
+            "target": "Published-iOS/resources-phonehd/touchIcon.png"
         }, 
         {
             "asset": "Source/Resources/Published-iOS/resources-tablet/background.png", 
@@ -429,42 +349,6 @@
             "target": "Published-iOS/resources-tablet/notePaper.png"
         }, 
         {
-            "asset": "Source/Resources/Published-iOS/resources-tablet/number1.png", 
-            "target": "Published-iOS/resources-tablet/number1.png"
-        }, 
-        {
-            "asset": "Source/Resources/Published-iOS/resources-tablet/number2.png", 
-            "target": "Published-iOS/resources-tablet/number2.png"
-        }, 
-        {
-            "asset": "Source/Resources/Published-iOS/resources-tablet/number3.png", 
-            "target": "Published-iOS/resources-tablet/number3.png"
-        }, 
-        {
-            "asset": "Source/Resources/Published-iOS/resources-tablet/number4.png", 
-            "target": "Published-iOS/resources-tablet/number4.png"
-        }, 
-        {
-            "asset": "Source/Resources/Published-iOS/resources-tablet/number5.png", 
-            "target": "Published-iOS/resources-tablet/number5.png"
-        }, 
-        {
-            "asset": "Source/Resources/Published-iOS/resources-tablet/number6.png", 
-            "target": "Published-iOS/resources-tablet/number6.png"
-        }, 
-        {
-            "asset": "Source/Resources/Published-iOS/resources-tablet/number7.png", 
-            "target": "Published-iOS/resources-tablet/number7.png"
-        }, 
-        {
-            "asset": "Source/Resources/Published-iOS/resources-tablet/number8.png", 
-            "target": "Published-iOS/resources-tablet/number8.png"
-        }, 
-        {
-            "asset": "Source/Resources/Published-iOS/resources-tablet/number9.png", 
-            "target": "Published-iOS/resources-tablet/number9.png"
-        }, 
-        {
             "asset": "Source/Resources/Published-iOS/resources-tablet/numberBorder.png", 
             "target": "Published-iOS/resources-tablet/numberBorder.png"
         }, 
@@ -473,16 +357,16 @@
             "target": "Published-iOS/resources-tablet/numberLayer.png"
         }, 
         {
-            "asset": "Source/Resources/Published-iOS/resources-tablet/numberPaper.png", 
-            "target": "Published-iOS/resources-tablet/numberPaper.png"
-        }, 
-        {
             "asset": "Source/Resources/Published-iOS/resources-tablet/scorePanel.png", 
             "target": "Published-iOS/resources-tablet/scorePanel.png"
         }, 
         {
             "asset": "Source/Resources/Published-iOS/resources-tablet/star.png", 
             "target": "Published-iOS/resources-tablet/star.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/resources-tablet/touchIcon.png", 
+            "target": "Published-iOS/resources-tablet/touchIcon.png"
         }, 
         {
             "asset": "Source/Resources/Published-iOS/resources-tablethd/background.png", 
@@ -509,52 +393,12 @@
             "target": "Published-iOS/resources-tablethd/notePaper.png"
         }, 
         {
-            "asset": "Source/Resources/Published-iOS/resources-tablethd/number1.png", 
-            "target": "Published-iOS/resources-tablethd/number1.png"
-        }, 
-        {
-            "asset": "Source/Resources/Published-iOS/resources-tablethd/number2.png", 
-            "target": "Published-iOS/resources-tablethd/number2.png"
-        }, 
-        {
-            "asset": "Source/Resources/Published-iOS/resources-tablethd/number3.png", 
-            "target": "Published-iOS/resources-tablethd/number3.png"
-        }, 
-        {
-            "asset": "Source/Resources/Published-iOS/resources-tablethd/number4.png", 
-            "target": "Published-iOS/resources-tablethd/number4.png"
-        }, 
-        {
-            "asset": "Source/Resources/Published-iOS/resources-tablethd/number5.png", 
-            "target": "Published-iOS/resources-tablethd/number5.png"
-        }, 
-        {
-            "asset": "Source/Resources/Published-iOS/resources-tablethd/number6.png", 
-            "target": "Published-iOS/resources-tablethd/number6.png"
-        }, 
-        {
-            "asset": "Source/Resources/Published-iOS/resources-tablethd/number7.png", 
-            "target": "Published-iOS/resources-tablethd/number7.png"
-        }, 
-        {
-            "asset": "Source/Resources/Published-iOS/resources-tablethd/number8.png", 
-            "target": "Published-iOS/resources-tablethd/number8.png"
-        }, 
-        {
-            "asset": "Source/Resources/Published-iOS/resources-tablethd/number9.png", 
-            "target": "Published-iOS/resources-tablethd/number9.png"
-        }, 
-        {
             "asset": "Source/Resources/Published-iOS/resources-tablethd/numberBorder.png", 
             "target": "Published-iOS/resources-tablethd/numberBorder.png"
         }, 
         {
             "asset": "Source/Resources/Published-iOS/resources-tablethd/numberLayer.png", 
             "target": "Published-iOS/resources-tablethd/numberLayer.png"
-        }, 
-        {
-            "asset": "Source/Resources/Published-iOS/resources-tablethd/numberPaper.png", 
-            "target": "Published-iOS/resources-tablethd/numberPaper.png"
         }, 
         {
             "asset": "Source/Resources/Published-iOS/resources-tablethd/scorePanel.png", 
@@ -565,32 +409,56 @@
             "target": "Published-iOS/resources-tablethd/star.png"
         }, 
         {
-            "asset": "Source/Resources/SavedData.plist", 
-            "target": "SavedData.plist"
+            "asset": "Source/Resources/Published-iOS/resources-tablethd/touchIcon.png", 
+            "target": "Published-iOS/resources-tablethd/touchIcon.png"
         }, 
         {
-            "asset": "Source/Resources/Icons/Settings@2x.png", 
-            "target": "Settings@2x.png"
+            "asset": "Source/Resources/Settings.png", 
+            "target": "Settings.png"
+        }, 
+        {
+            "asset": "Source/Resources/Spotlight40.png", 
+            "target": "Spotlight40.png"
+        }, 
+        {
+            "asset": "Source/Resources/iPhone@2x.png", 
+            "target": "iPhone@2x.png"
+        }, 
+        {
+            "asset": "Source/Resources/SavedData.plist", 
+            "target": "SavedData.plist"
         }, 
         {
             "asset": "Source/Resources/Default-Landscape~ipad.png", 
             "target": "Default-Landscape~ipad.png"
         }, 
         {
-            "asset": "Source/Resources/Icons/iPhone-old.png", 
-            "target": "iPhone-old.png"
-        }, 
-        {
-            "asset": "Source/Resources/Icons/iPhone.png", 
-            "target": "iPhone.png"
-        }, 
-        {
             "asset": "Source/Resources/Default-568h@2x.png", 
             "target": "Default-568h@2x.png"
         }, 
         {
-            "asset": "Source/Resources/Icons/iPhone@2x.png", 
-            "target": "iPhone@2x.png"
+            "asset": "Source/Resources/iPad@2x.png", 
+            "target": "iPad@2x.png"
+        }, 
+        {
+            "asset": "Source/Resources/iPhone-old.png", 
+            "target": "iPhone-old.png"
+        }, 
+        {
+            "asset": "Source/Resources/iPad-old@2x.png", 
+            "target": "iPad-old@2x.png"
+        }, 
+        {
+            "asset": "Source/Resources/Spotlight29.png", 
+            "target": "Spotlight29.png"
+        }, 
+        {
+            "asset": "Source/Resources/Settings@2x.png", 
+            "target": "Settings@2x.png"
+        }, 
+        {
+            "asset": "Source/Resources/Spotlight80.png", 
+            "target": "Spotlight80.png"
         }, 
         {
             "asset": "Source/Resources/Default.png", 
@@ -599,10 +467,6 @@
         {
             "asset": "Source/Resources/Levels.plist", 
             "target": "Levels.plist"
-        }, 
-        {
-            "asset": "Source/Resources/Icons/iPad-old.png", 
-            "target": "iPad-old.png"
         }
     ], 
     "config": {
@@ -737,7 +601,7 @@
             "type": "iquote"
         }, 
         {
-            "header_path": "/var/folders/bd/d9n4_nm15fj_vg5h2t323ynm0000gn/T/tmpRYPUWx/BUILT_PRODUCTS_DIR/include", 
+            "header_path": "/var/folders/bd/d9n4_nm15fj_vg5h2t323ynm0000gn/T/tmpjFIkaV/BUILT_PRODUCTS_DIR/include", 
             "type": "I"
         }, 
         {
@@ -813,11 +677,11 @@
             "type": "I"
         }, 
         {
-            "header_path": "/var/folders/bd/d9n4_nm15fj_vg5h2t323ynm0000gn/T/tmpRYPUWx/DERIVED_FILE_DIR/armv7", 
+            "header_path": "/var/folders/bd/d9n4_nm15fj_vg5h2t323ynm0000gn/T/tmpjFIkaV/DERIVED_FILE_DIR/armv7", 
             "type": "I"
         }, 
         {
-            "header_path": "/var/folders/bd/d9n4_nm15fj_vg5h2t323ynm0000gn/T/tmpRYPUWx/DERIVED_FILE_DIR", 
+            "header_path": "/var/folders/bd/d9n4_nm15fj_vg5h2t323ynm0000gn/T/tmpjFIkaV/DERIVED_FILE_DIR", 
             "type": "I"
         }
     ], 

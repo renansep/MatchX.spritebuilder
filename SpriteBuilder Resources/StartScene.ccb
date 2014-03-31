@@ -5,7 +5,7 @@
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
-	<integer>2</integer>
+	<integer>0</integer>
 	<key>currentSequenceId</key>
 	<integer>0</integer>
 	<key>docDimensionsType</key>
@@ -147,7 +147,7 @@
 								<key>value</key>
 								<array>
 									<real>0.64999997615814209</real>
-									<real>0.30000001192092896</real>
+									<real>0.34999999403953552</real>
 									<integer>0</integer>
 									<integer>2</integer>
 									<integer>2</integer>
@@ -203,7 +203,7 @@
 								<string>FloatScale</string>
 								<key>value</key>
 								<array>
-									<real>24</real>
+									<real>32</real>
 									<integer>0</integer>
 								</array>
 							</dict>
@@ -224,7 +224,7 @@
 								<array>
 									<real>0.0</real>
 									<real>0.0</real>
-									<real>0.0</real>
+									<real>1</real>
 									<real>1</real>
 								</array>
 							</dict>
@@ -364,7 +364,7 @@
 								<string>Position</string>
 								<key>value</key>
 								<array>
-									<real>0.25</real>
+									<real>0.25312501192092896</real>
 									<real>0.30000001192092896</real>
 									<integer>0</integer>
 									<integer>2</integer>
@@ -442,7 +442,7 @@
 								<array>
 									<real>0.0</real>
 									<real>0.0</real>
-									<real>0.0</real>
+									<real>1</real>
 									<real>1</real>
 								</array>
 							</dict>
@@ -558,9 +558,9 @@
 				<key>displayName</key>
 				<string>notePaper</string>
 				<key>memberVarAssignmentName</key>
-				<string></string>
+				<string>notePaper</string>
 				<key>memberVarAssignmentType</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>properties</key>
 				<array>
 					<dict>
@@ -795,7 +795,7 @@
 								<string>Text</string>
 								<key>value</key>
 								<array>
-									<string>Pontos</string>
+									<string>PONTOS</string>
 									<false/>
 								</array>
 							</dict>
@@ -1293,7 +1293,7 @@
 								<string>Text</string>
 								<key>value</key>
 								<array>
-									<string>Tempo</string>
+									<string>TEMPO</string>
 									<false/>
 								</array>
 							</dict>
@@ -1922,6 +1922,8 @@
 						</array>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>

@@ -33,6 +33,10 @@
     
     //stores the player path along the numbers
     NSMutableArray *trace;
+    
+    NSMutableArray *resultTrace;
+
+    CCSprite *touchIcon;
 }
 
 - (NumberLayer *)initWithLevel:(NSDictionary *)level;

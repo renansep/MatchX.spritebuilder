@@ -65,9 +65,17 @@
         
         [self generateResult];
         if ([[level objectForKey:@"tutorial"] boolValue])
+        {
             self.userInteractionEnabled = NO;
+            touchIcon = [CCSprite spriteWithImageNamed:@"touchIcon.png"];
+            [touchIcon setPosition:ccp(self.contentSize.width * 0.5, self.contentSize.height * 0.9)];
+            [self addChild:touchIcon];
+            [self startPlaying];
+        }
         else
+        {
             self.userInteractionEnabled = YES;
+        }
     }
     return self;
 }
@@ -81,7 +89,7 @@
         for (int j=0; j<line.count; j++)
         {
             GameNumber *n = numbers[i][j];
-            if (![n selected] &&
+            if (![n selected] && [n numberOfRunningActions] == 0 &&
                 location.x > n.position.x - n.contentSize.width / 2 * n.scale &&
                 location.x < n.position.x + n.contentSize.width / 2 * n.scale &&
                 location.y > n.position.y - n.contentSize.height / 2 * n.scale &&
@@ -112,7 +120,7 @@
         for (int j=0; j<line.count; j++)
         {
             GameNumber *n = numbers[i][j];
-            if (![n selected] &&
+            if (![n selected] && [n numberOfRunningActions] == 0 &&
                 location.x > n.position.x - n.contentSize.width / 3 * n.scale &&
                 location.x < n.position.x + n.contentSize.width / 3 * n.scale &&
                 location.y > n.position.y - n.contentSize.height / 3 * n.scale &&
@@ -185,7 +193,7 @@
         [self generateResult];
     
         [gameScene updateResult:result];
-        [gameScene increaseScore];
+        [gameScene increaseScoreWithMultiplier:trace.count];
         [gameScene updateScore];
         [gameScene increaseRemainingTime];
         [gameScene increaseCalculationsCompleted];
@@ -228,6 +236,7 @@
         if (neighborOfLastOperand == nil)
         {
             result = newResult;
+            resultTrace = operands;
             return result;
         }
         else
@@ -239,6 +248,7 @@
         operation = [self nextOperation];
     }
     result = newResult;
+    resultTrace = operands;
     return result;
 }
 
@@ -346,6 +356,34 @@
     {
         return [operations objectAtIndex:0];
     }
+}
+
+- (void)startPlaying
+{
+    NSMutableArray *actions = [NSMutableArray new];
+    for (GameNumber *g in resultTrace)
+    {
+        CCActionMoveTo *moveToNumber = [CCActionMoveTo actionWithDuration:1 position:ccp(g.position.x, g.position.y - g.contentSize.height / 2)];
+        CCActionCallBlock *selectNumber = [CCActionCallBlock actionWithBlock:^{
+            [g setSelected:YES];
+        }];
+        CCActionSequence *moveToAndSelectNumber = [CCActionSequence actions:moveToNumber, selectNumber, nil];
+        [actions addObject:moveToAndSelectNumber];
+    }
+    
+    [actions addObject:[CCActionCallBlock actionWithBlock:^{
+        for (GameNumber *g in resultTrace)
+        {
+            [g setSelected:NO];
+        }
+        [self tradeNumbers:resultTrace];
+    }]];
+    
+    [actions addObject:[CCActionCallFunc actionWithTarget:self selector:@selector(generateResult)]];
+    [actions addObject:[CCActionCallFunc actionWithTarget:self selector:@selector(startPlaying)]];
+    
+    CCActionSequence *allActions = [CCActionSequence actionWithArray:actions];
+    [touchIcon runAction:allActions];
 }
 
 @end

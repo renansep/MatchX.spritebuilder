@@ -184,7 +184,7 @@
 								<string>Text</string>
 								<key>value</key>
 								<array>
-									<string>Number</string>
+									<string>X</string>
 									<false/>
 								</array>
 							</dict>
@@ -224,7 +224,7 @@
 								<array>
 									<real>0.0</real>
 									<real>0.0</real>
-									<real>0.0</real>
+									<real>1</real>
 									<real>1</real>
 								</array>
 							</dict>
@@ -365,7 +365,7 @@
 								<key>value</key>
 								<array>
 									<real>0.64999997615814209</real>
-									<real>0.30000001192092896</real>
+									<real>0.34999999403953552</real>
 									<integer>0</integer>
 									<integer>2</integer>
 									<integer>2</integer>
@@ -421,7 +421,7 @@
 								<string>FloatScale</string>
 								<key>value</key>
 								<array>
-									<real>24</real>
+									<real>32</real>
 									<integer>0</integer>
 								</array>
 							</dict>
@@ -442,7 +442,7 @@
 								<array>
 									<real>0.0</real>
 									<real>0.0</real>
-									<real>0.0</real>
+									<real>1</real>
 									<real>1</real>
 								</array>
 							</dict>
@@ -551,8 +551,6 @@
 								</array>
 							</dict>
 						</array>
-						<key>selected</key>
-						<true/>
 					</dict>
 				</array>
 				<key>customClass</key>
@@ -710,7 +708,7 @@
 								<string>Text</string>
 								<key>value</key>
 								<array>
-									<string>Clock</string>
+									<string>Tempo</string>
 									<false/>
 								</array>
 							</dict>
@@ -1003,7 +1001,7 @@
 								<string>Text</string>
 								<key>value</key>
 								<array>
-									<string>Score</string>
+									<string>PONTOS</string>
 									<false/>
 								</array>
 							</dict>
@@ -1598,7 +1596,7 @@
 								<key>type</key>
 								<string>FontTTF</string>
 								<key>value</key>
-								<string>Fonts/KGChasingPavements.ttf</string>
+								<string>Helvetica</string>
 							</dict>
 							<dict>
 								<key>name</key>

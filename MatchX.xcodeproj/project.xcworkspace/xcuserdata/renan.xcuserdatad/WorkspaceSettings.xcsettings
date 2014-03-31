@@ -2,14 +2,9 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Levels</key>
-	<array>
-		<dict>
-			<key>stars</key>
-			<integer>0</integer>
-			<key>score</key>
-			<integer>0</integer>
-		</dict>
-	</array>
+	<key>HasAskedToTakeAutomaticSnapshotBeforeSignificantChanges</key>
+	<true/>
+	<key>SnapshotAutomaticallyBeforeSignificantChanges</key>
+	<true/>
 </dict>
 </plist>

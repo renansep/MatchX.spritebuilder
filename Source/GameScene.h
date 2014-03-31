@@ -26,6 +26,8 @@
     int calculationNumber;
     int calculationsCompleted;
     
+    int maxOperands;
+    
     CCNodeColor *bottomNode;
     CCLabelTTF *resultLabel;
     CCLabelTTF *operationLabel;
@@ -41,7 +43,7 @@
 - (void)updateResult:(int)newResult;
 - (void)updateOperation:(NSArray *)newOperation;
 
-- (void)increaseScore;
+- (void)increaseScoreWithMultiplier:(int)multiplier;
 - (void)updateScore;
 
 - (void)increaseRemainingTime;

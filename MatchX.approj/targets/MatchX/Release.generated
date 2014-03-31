@@ -1,60 +1,84 @@
 {
     "assets": [
         {
-            "asset": "Source/Resources/Icons/Settings.png", 
-            "target": "Settings.png"
+            "asset": "Source/Resources/iPhone-old@2x.png", 
+            "target": "iPhone-old@2x.png"
+        }, 
+        {
+            "asset": "Source/Resources/Spotlight50.png", 
+            "target": "Spotlight50.png"
         }, 
         {
             "asset": "Source/Resources/Default@2x.png", 
             "target": "Default@2x.png"
         }, 
         {
-            "asset": "Source/Resources/Icons/iPad@2x.png", 
-            "target": "iPad@2x.png"
-        }, 
-        {
-            "asset": "Source/Resources/Icons/iPad.png", 
+            "asset": "Source/Resources/iPad.png", 
             "target": "iPad.png"
         }, 
         {
-            "asset": "Source/Resources/Icons/iPad-old@2x.png", 
-            "target": "iPad-old@2x.png"
+            "asset": "Source/Resources/iPad-old.png", 
+            "target": "iPad-old.png"
         }, 
         {
-            "asset": "Source/Resources/Icons/iPhone-old@2x.png", 
-            "target": "iPhone-old@2x.png"
+            "asset": "Source/Resources/Spotlight58.png", 
+            "target": "Spotlight58.png"
+        }, 
+        {
+            "asset": "Source/Resources/Spotlight100.png", 
+            "target": "Spotlight100.png"
         }, 
         {
             "asset": "Source/Resources/Published-iOS", 
             "target": "Published-iOS"
         }, 
         {
-            "asset": "Source/Resources/SavedData.plist", 
-            "target": "SavedData.plist"
+            "asset": "Source/Resources/Settings.png", 
+            "target": "Settings.png"
         }, 
         {
-            "asset": "Source/Resources/Icons/Settings@2x.png", 
-            "target": "Settings@2x.png"
+            "asset": "Source/Resources/Spotlight40.png", 
+            "target": "Spotlight40.png"
+        }, 
+        {
+            "asset": "Source/Resources/iPhone@2x.png", 
+            "target": "iPhone@2x.png"
+        }, 
+        {
+            "asset": "Source/Resources/SavedData.plist", 
+            "target": "SavedData.plist"
         }, 
         {
             "asset": "Source/Resources/Default-Landscape~ipad.png", 
             "target": "Default-Landscape~ipad.png"
         }, 
         {
-            "asset": "Source/Resources/Icons/iPhone-old.png", 
-            "target": "iPhone-old.png"
-        }, 
-        {
-            "asset": "Source/Resources/Icons/iPhone.png", 
-            "target": "iPhone.png"
-        }, 
-        {
             "asset": "Source/Resources/Default-568h@2x.png", 
             "target": "Default-568h@2x.png"
         }, 
         {
-            "asset": "Source/Resources/Icons/iPhone@2x.png", 
-            "target": "iPhone@2x.png"
+            "asset": "Source/Resources/iPad@2x.png", 
+            "target": "iPad@2x.png"
+        }, 
+        {
+            "asset": "Source/Resources/iPhone-old.png", 
+            "target": "iPhone-old.png"
+        }, 
+        {
+            "asset": "Source/Resources/iPad-old@2x.png", 
+            "target": "iPad-old@2x.png"
+        }, 
+        {
+            "asset": "Source/Resources/Spotlight29.png", 
+            "target": "Spotlight29.png"
+        }, 
+        {
+            "asset": "Source/Resources/Settings@2x.png", 
+            "target": "Settings@2x.png"
+        }, 
+        {
+            "asset": "Source/Resources/Spotlight80.png", 
+            "target": "Spotlight80.png"
         }, 
         {
             "asset": "Source/Resources/Default.png", 
@@ -63,10 +87,6 @@
         {
             "asset": "Source/Resources/Levels.plist", 
             "target": "Levels.plist"
-        }, 
-        {
-            "asset": "Source/Resources/Icons/iPad-old.png", 
-            "target": "iPad-old.png"
         }
     ], 
     "config": {
@@ -196,7 +216,7 @@
             "type": "iquote"
         }, 
         {
-            "header_path": "/var/folders/bd/d9n4_nm15fj_vg5h2t323ynm0000gn/T/tmpRYPUWx/BUILT_PRODUCTS_DIR/include", 
+            "header_path": "/var/folders/bd/d9n4_nm15fj_vg5h2t323ynm0000gn/T/tmpjFIkaV/BUILT_PRODUCTS_DIR/include", 
             "type": "I"
         }, 
         {
@@ -272,11 +292,11 @@
             "type": "I"
         }, 
         {
-            "header_path": "/var/folders/bd/d9n4_nm15fj_vg5h2t323ynm0000gn/T/tmpRYPUWx/DERIVED_FILE_DIR/armv7", 
+            "header_path": "/var/folders/bd/d9n4_nm15fj_vg5h2t323ynm0000gn/T/tmpjFIkaV/DERIVED_FILE_DIR/armv7", 
             "type": "I"
         }, 
         {
-            "header_path": "/var/folders/bd/d9n4_nm15fj_vg5h2t323ynm0000gn/T/tmpRYPUWx/DERIVED_FILE_DIR", 
+            "header_path": "/var/folders/bd/d9n4_nm15fj_vg5h2t323ynm0000gn/T/tmpjFIkaV/DERIVED_FILE_DIR", 
             "type": "I"
         }
     ], 

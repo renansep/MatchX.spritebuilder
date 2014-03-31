@@ -26,6 +26,7 @@ static int currentLevel;
     
     calculationTime = [(NSNumber *) [level objectForKeyedSubscript:@"calculationTime"] intValue];
     calculationNumber = [[level objectForKey:@"calculationNumber"] intValue];
+    maxOperands = [[level objectForKey:@"maxOperands"] intValue];
     calculationsCompleted = 0;
     remainingTime = calculationTime;
     [clockLabel setString:[NSString stringWithFormat:@"%d", remainingTime]];
@@ -56,10 +57,6 @@ static int currentLevel;
 
 - (void)update:(CCTime)delta
 {
-    if (remainingTime == 0)
-    {
-        [self performSelector:@selector(back:) withObject:nil];
-    }
 }
 
 - (void)back:(id)sender
@@ -89,9 +86,9 @@ static int currentLevel;
     }
 }
 
-- (void)increaseScore
+- (void)increaseScoreWithMultiplier:(int)multiplier
 {
-    score += remainingTime;
+    score += remainingTime * multiplier;
     [self updateScore];
 }
 
@@ -107,6 +104,7 @@ static int currentLevel;
     if (remainingTime == 0)
     {
         [self unschedule:@selector(decreaseRemainingTime)];
+        [self back:nil];
     }
 }
 
@@ -126,8 +124,53 @@ static int currentLevel;
 {
     if (calculationsCompleted == calculationNumber)
     {
-        //saveScore
-        [self back:nil];
+        [self saveScore];
+        [self unschedule:@selector(decreaseRemainingTime)];
+        [numbersLayer removeFromParent];
+        [self showScore];
+        [self performSelector:@selector(back:) withObject:nil afterDelay:3];
+    }
+}
+
+- (void)saveScore
+{
+    {
+        // get paths from root direcory
+        NSArray *paths = NSSearchPathForDirectoriesInDomains (NSDocumentDirectory, NSUserDomainMask, YES);
+        // get documents path
+        NSString *documentsPath = [paths objectAtIndex:0];
+        // get the path to our Data/plist file
+        NSString *plistPath = [documentsPath stringByAppendingPathComponent:@"SavedData.plist"];
+        
+        NSMutableDictionary *savedData = [NSMutableDictionary dictionaryWithContentsOfFile:plistPath];
+        NSMutableArray *levelsSavedData = [savedData objectForKey:@"Levels"];
+        
+        NSMutableDictionary *savedDataOfThisLevel = [levelsSavedData objectAtIndex:currentLevel];
+        
+        if (score > [[savedDataOfThisLevel objectForKey:@"score"] intValue])
+        {
+            int stars = [self calculateStars];
+            
+            [savedDataOfThisLevel setObject:[NSNumber numberWithInt:score] forKey:@"score"];
+            [savedDataOfThisLevel setObject:[NSNumber numberWithInt:stars] forKey:@"stars"];
+        }
+        
+        if (savedDataOfThisLevel == [levelsSavedData lastObject])
+        {
+            NSDictionary *newLevelUnlocked = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:0], @"stars",   [NSNumber numberWithInt:0], @"score", nil];
+            [levelsSavedData addObject:newLevelUnlocked];
+        }
+        
+        NSString *error = nil;
+        NSData *plistData = [NSPropertyListSerialization dataFromPropertyList:savedData format:NSPropertyListXMLFormat_v1_0 errorDescription:&error];
+        
+        
+        // check is plistData exists
+        if(plistData)
+        {
+            // write plistData to our Data.plist file
+            [plistData writeToFile:plistPath atomically:YES];
+        }
     }
 }
 
@@ -151,6 +194,34 @@ static int currentLevel;
 - (void)clearCalculationLabel
 {
     [calculationLabel setString:@""];
+}
+
+- (void)showScore
+{
+    CCLabelTTF *finalScore = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Pontos: %d", score] fontName:@"Helvetica" fontSize:32];
+    finalScore.fontColor = [CCColor blackColor];
+    [finalScore setPosition:ccp(paper.contentSize.width * 0.5, paper.contentSize.height * 0.75)];
+    [paper addChild:finalScore];
+    
+    int stars = [self calculateStars];
+    
+    for (int i=0; i<stars; i++)
+    {
+        CCSprite *star = [CCSprite spriteWithImageNamed:@"star.png"];
+        [star setPosition:ccp(paper.contentSize.width * (0.25*(i+1)), paper.contentSize.height * 0.5)];
+        [paper addChild:star];
+    }
+}
+
+- (int)calculateStars
+{
+    int maxScore = calculationTime * calculationNumber * maxOperands;
+    if (score > maxScore * 0.66)
+        return 3;
+    else if (score > maxScore * 0.33)
+        return 2;
+    else
+        return 1;
 }
 
 + (void)setCurrentLevel:(int)l

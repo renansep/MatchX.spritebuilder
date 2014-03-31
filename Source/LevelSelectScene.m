@@ -28,8 +28,16 @@
         
         
         //Load user saved data, too check witch levels are locked
-        savedData = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"SavedData" ofType:@"plist"]];
-        NSArray *levels = [savedData objectForKey:@"Levels"];
+        // get paths from root direcory
+        NSArray *paths = NSSearchPathForDirectoriesInDomains (NSDocumentDirectory, NSUserDomainMask, YES);
+        // get documents path
+        NSString *documentsPath = [paths objectAtIndex:0];
+        // get the path to our Data/plist file
+        NSString *plistPath = [documentsPath stringByAppendingPathComponent:@"SavedData.plist"];
+        savedData = [NSDictionary dictionaryWithContentsOfFile:plistPath];
+        NSArray *levelsSavedData = [savedData objectForKey:@"Levels"];
+        
+        NSArray *levels = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Levels" ofType:@"plist"]];
         
         //Loads the scroll view
         scroll = [CCScrollView new];
@@ -54,25 +62,23 @@
         
         levelIcons = [NSMutableArray new];
         
-        for (int i=0; i<30; i++)
+        for (int i=0; i<levels.count; i++)
         {
-            NSDictionary *level = [levels objectAtIndex:0];
-            BOOL locked = [[level objectForKey:@"locked"] boolValue];
-            int stars = [[level objectForKey:@"stars"] intValue];
             LevelIcon *icon;
-            
-            if (locked)
+            if (i < levelsSavedData.count)
             {
-                icon = [[LevelIcon alloc] initLockedWithNumber:i+1];
+                NSDictionary *level = [levelsSavedData objectAtIndex:i];
+                int stars = [[level objectForKey:@"stars"] intValue];
+                icon = [[LevelIcon alloc] initUnlockedWithNumber:i+1 andStars:stars];
             }
             else
             {
-                icon = [[LevelIcon alloc] initUnlockedWithNumber:i+1 andStars:stars];
+                icon = [[LevelIcon alloc] initLockedWithNumber:i+1];
             }
             
             if (i == 0)
             {
-                levelIconsNode = [CCNodeColor nodeWithColor:[CCColor clearColor] width:viewSize.width height:(30/3+1) * [icon height] * 1.5];
+                levelIconsNode = [CCNodeColor nodeWithColor:[CCColor clearColor] width:viewSize.width height:(levels.count/3+1) * [icon height] * 1.5];
                 [levelIconsNode setAnchorPoint:ccp(0,1)];
                 [levelIconsNode setPosition:ccp(0, viewSize.height * 0.9)];
             }
@@ -112,7 +118,6 @@
 
 - (void)touchEnded:(UITouch *)touch withEvent:(UIEvent *)event
 {
-    NSLog(@"teste");
     CGPoint location = [touch locationInNode:levelIconsNode];
     for (LevelIcon *i in levelIcons)
     {

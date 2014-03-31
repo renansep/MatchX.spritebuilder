@@ -13,6 +13,7 @@
 {
     CCSprite *background;
     CCSprite *paper;
+    CCSprite *notePaper;
     
     CCLabelTTF *scoreLabel;
     CCLabelTTF *clockLabel;
@@ -21,6 +22,7 @@
     
     CCLabelTTF *operatorsLabel;
     CCLabelTTF *resultLabel;
+    int result;
 
     CCLabelTTF *tapAnywhereLabel;
     CCLabelTTF *tutorialLabel;
@@ -28,6 +30,8 @@
     NSMutableDictionary *tutorialLevel;
     
     NumberLayer *numberLayer;
+    
+    CCNodeColor *overlay;
 }
 
 @end
