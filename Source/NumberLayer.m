@@ -103,7 +103,10 @@
                     [trace addObject:n];
                     [gameScene unschedule:@selector(clearCalculationLabel)];
                     [gameScene clearCalculationLabel];
-                    [gameScene updateCalculationLabel:[NSString stringWithFormat:@"%d", [n intValue]]];
+                    if ([n intValue] >= 0)
+                        [gameScene updateCalculationLabel:[NSString stringWithFormat:@"%d", [n intValue]]];
+                    else
+                        [gameScene updateCalculationLabel:[NSString stringWithFormat:@"(%d)", [n intValue]]];
                     operation = [operations objectAtIndex:0];
                 }
             }
@@ -146,7 +149,10 @@
                     [n setSelected:YES];
                     numbersSelected++;
                     [trace addObject:n];
-                    [gameScene updateCalculationLabel:[NSString stringWithFormat:@"%@%d", operation, [n intValue]]];
+                    if ([n intValue] >= 0)
+                        [gameScene updateCalculationLabel:[NSString stringWithFormat:@"%@%d", operation, [n intValue]]];
+                    else
+                        [gameScene updateCalculationLabel:[NSString stringWithFormat:@"%@(%d)", operation, [n intValue]]];
                     operation = [self nextOperation];
                 }
                 else

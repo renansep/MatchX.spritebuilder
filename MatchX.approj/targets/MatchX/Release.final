@@ -9,10 +9,6 @@
             "target": "Spotlight50.png"
         }, 
         {
-            "asset": "Source/Resources/Default@2x.png", 
-            "target": "Default@2x.png"
-        }, 
-        {
             "asset": "Source/Resources/iPad.png", 
             "target": "iPad.png"
         }, 
@@ -429,16 +425,16 @@
             "target": "SavedData.plist"
         }, 
         {
-            "asset": "Source/Resources/Default-Landscape~ipad.png", 
-            "target": "Default-Landscape~ipad.png"
+            "asset": "Source/Resources/iPad@2x.png", 
+            "target": "iPad@2x.png"
+        }, 
+        {
+            "asset": "Source/Resources/Default@2x.png", 
+            "target": "Default@2x.png"
         }, 
         {
             "asset": "Source/Resources/Default-568h@2x.png", 
             "target": "Default-568h@2x.png"
-        }, 
-        {
-            "asset": "Source/Resources/iPad@2x.png", 
-            "target": "iPad@2x.png"
         }, 
         {
             "asset": "Source/Resources/iPhone-old.png", 
@@ -461,12 +457,12 @@
             "target": "Spotlight80.png"
         }, 
         {
-            "asset": "Source/Resources/Default.png", 
-            "target": "Default.png"
-        }, 
-        {
             "asset": "Source/Resources/Levels.plist", 
             "target": "Levels.plist"
+        }, 
+        {
+            "asset": "Source/Resources/Default.png", 
+            "target": "Default.png"
         }
     ], 
     "config": {
@@ -601,7 +597,7 @@
             "type": "iquote"
         }, 
         {
-            "header_path": "/var/folders/bd/d9n4_nm15fj_vg5h2t323ynm0000gn/T/tmpjFIkaV/BUILT_PRODUCTS_DIR/include", 
+            "header_path": "/var/folders/bd/d9n4_nm15fj_vg5h2t323ynm0000gn/T/tmpPliBJE/BUILT_PRODUCTS_DIR/include", 
             "type": "I"
         }, 
         {
@@ -677,11 +673,11 @@
             "type": "I"
         }, 
         {
-            "header_path": "/var/folders/bd/d9n4_nm15fj_vg5h2t323ynm0000gn/T/tmpjFIkaV/DERIVED_FILE_DIR/armv7", 
+            "header_path": "/var/folders/bd/d9n4_nm15fj_vg5h2t323ynm0000gn/T/tmpPliBJE/DERIVED_FILE_DIR/armv7", 
             "type": "I"
         }, 
         {
-            "header_path": "/var/folders/bd/d9n4_nm15fj_vg5h2t323ynm0000gn/T/tmpjFIkaV/DERIVED_FILE_DIR", 
+            "header_path": "/var/folders/bd/d9n4_nm15fj_vg5h2t323ynm0000gn/T/tmpPliBJE/DERIVED_FILE_DIR", 
             "type": "I"
         }
     ], 

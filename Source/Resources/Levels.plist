@@ -8,9 +8,9 @@
 			<string>+</string>
 		</array>
 		<key>calculationTime</key>
-		<integer>20</integer>
+		<integer>15</integer>
 		<key>calculationNumber</key>
-		<integer>5</integer>
+		<integer>10</integer>
 		<key>maxOperands</key>
 		<integer>2</integer>
 		<key>map</key>
@@ -30,9 +30,9 @@
 			<string>+</string>
 		</array>
 		<key>calculationTime</key>
-		<integer>20</integer>
-		<key>calculationNumber</key>
 		<integer>15</integer>
+		<key>calculationNumber</key>
+		<integer>5</integer>
 		<key>maxOperands</key>
 		<integer>2</integer>
 		<key>map</key>
@@ -52,9 +52,9 @@
 			<string>+</string>
 		</array>
 		<key>calculationTime</key>
-		<integer>20</integer>
-		<key>calculationNumber</key>
 		<integer>15</integer>
+		<key>calculationNumber</key>
+		<integer>5</integer>
 		<key>maxOperands</key>
 		<integer>2</integer>
 		<key>map</key>
@@ -73,9 +73,9 @@
 			<string>+</string>
 		</array>
 		<key>calculationTime</key>
-		<integer>20</integer>
+		<integer>10</integer>
 		<key>calculationNumber</key>
-		<integer>15</integer>
+		<integer>5</integer>
 		<key>maxOperands</key>
 		<integer>2</integer>
 		<key>map</key>
@@ -88,7 +88,7 @@
 		<key>minNumber</key>
 		<integer>1</integer>
 		<key>maxNumber</key>
-		<integer>10</integer>
+		<integer>15</integer>
 	</dict>
 	<dict>
 		<key>operations</key>
@@ -96,9 +96,9 @@
 			<string>+</string>
 		</array>
 		<key>calculationTime</key>
-		<integer>20</integer>
-		<key>calculationNumber</key>
 		<integer>15</integer>
+		<key>calculationNumber</key>
+		<integer>10</integer>
 		<key>maxOperands</key>
 		<integer>2</integer>
 		<key>map</key>
@@ -111,7 +111,7 @@
 		<key>minNumber</key>
 		<integer>1</integer>
 		<key>maxNumber</key>
-		<integer>10</integer>
+		<integer>15</integer>
 	</dict>
 	<dict>
 		<key>operations</key>
@@ -119,9 +119,9 @@
 			<string>+</string>
 		</array>
 		<key>calculationTime</key>
-		<integer>20</integer>
+		<integer>10</integer>
 		<key>calculationNumber</key>
-		<integer>15</integer>
+		<integer>10</integer>
 		<key>maxOperands</key>
 		<integer>2</integer>
 		<key>map</key>
@@ -134,7 +134,7 @@
 		<key>minNumber</key>
 		<integer>1</integer>
 		<key>maxNumber</key>
-		<integer>10</integer>
+		<integer>15</integer>
 	</dict>
 	<dict>
 		<key>operations</key>
@@ -142,9 +142,9 @@
 			<string>+</string>
 		</array>
 		<key>calculationTime</key>
-		<integer>20</integer>
+		<integer>10</integer>
 		<key>calculationNumber</key>
-		<integer>15</integer>
+		<integer>10</integer>
 		<key>maxOperands</key>
 		<integer>2</integer>
 		<key>map</key>
@@ -157,7 +157,7 @@
 		<key>minNumber</key>
 		<integer>1</integer>
 		<key>maxNumber</key>
-		<integer>10</integer>
+		<integer>15</integer>
 	</dict>
 	<dict>
 		<key>operations</key>
@@ -165,9 +165,9 @@
 			<string>+</string>
 		</array>
 		<key>calculationTime</key>
-		<integer>20</integer>
-		<key>calculationNumber</key>
 		<integer>15</integer>
+		<key>calculationNumber</key>
+		<integer>5</integer>
 		<key>maxOperands</key>
 		<integer>2</integer>
 		<key>map</key>
@@ -180,7 +180,198 @@
 		<key>minNumber</key>
 		<integer>1</integer>
 		<key>maxNumber</key>
+		<integer>15</integer>
+	</dict>
+    <dict>
+		<key>operations</key>
+		<array>
+			<string>+</string>
+		</array>
+		<key>calculationTime</key>
+		<integer>15</integer>
+		<key>calculationNumber</key>
+		<integer>5</integer>
+		<key>maxOperands</key>
+		<integer>2</integer>
+		<key>map</key>
+		<array>
+			<string>0110</string>
+			<string>1111</string>
+			<string>1111</string>
+			<string>0110</string>
+		</array>
+		<key>minNumber</key>
+		<integer>1</integer>
+		<key>maxNumber</key>
+		<integer>15</integer>
+	</dict>
+    <dict>
+		<key>operations</key>
+		<array>
+			<string>+</string>
+		</array>
+		<key>calculationTime</key>
 		<integer>10</integer>
+		<key>calculationNumber</key>
+		<integer>10</integer>
+		<key>maxOperands</key>
+		<integer>2</integer>
+		<key>map</key>
+		<array>
+			<string>11111</string>
+			<string>10001</string>
+			<string>10001</string>
+			<string>10001</string>
+            <string>11111</string>
+		</array>
+		<key>minNumber</key>
+		<integer>1</integer>
+		<key>maxNumber</key>
+		<integer>15</integer>
+	</dict>
+    <dict>
+		<key>operations</key>
+		<array>
+			<string>+</string>
+		</array>
+		<key>calculationTime</key>
+		<integer>10</integer>
+		<key>calculationNumber</key>
+		<integer>10</integer>
+		<key>maxOperands</key>
+		<integer>2</integer>
+		<key>map</key>
+		<array>
+			<string>00100</string>
+			<string>00100</string>
+			<string>11111</string>
+			<string>00100</string>
+            <string>00100</string>
+		</array>
+		<key>minNumber</key>
+		<integer>1</integer>
+		<key>maxNumber</key>
+		<integer>15</integer>
+	</dict>
+    <dict>
+		<key>operations</key>
+		<array>
+			<string>+</string>
+		</array>
+		<key>calculationTime</key>
+		<integer>15</integer>
+		<key>calculationNumber</key>
+		<integer>10</integer>
+		<key>maxOperands</key>
+		<integer>2</integer>
+		<key>map</key>
+		<array>
+			<string>11100</string>
+			<string>11100</string>
+			<string>11111</string>
+			<string>00111</string>
+            <string>00111</string>
+		</array>
+		<key>minNumber</key>
+		<integer>1</integer>
+		<key>maxNumber</key>
+		<integer>15</integer>
+	</dict>
+    <dict>
+		<key>operations</key>
+		<array>
+			<string>+</string>
+		</array>
+		<key>calculationTime</key>
+		<integer>15</integer>
+		<key>calculationNumber</key>
+		<integer>10</integer>
+		<key>maxOperands</key>
+		<integer>2</integer>
+		<key>map</key>
+		<array>
+			<string>01110</string>
+			<string>11111</string>
+			<string>11111</string>
+			<string>11111</string>
+            <string>01110</string>
+		</array>
+		<key>minNumber</key>
+		<integer>1</integer>
+		<key>maxNumber</key>
+		<integer>15</integer>
+	</dict>
+    <dict>
+		<key>operations</key>
+		<array>
+			<string>+</string>
+		</array>
+		<key>calculationTime</key>
+		<integer>10</integer>
+		<key>calculationNumber</key>
+		<integer>10</integer>
+		<key>maxOperands</key>
+		<integer>2</integer>
+		<key>map</key>
+		<array>
+			<string>10001</string>
+			<string>10001</string>
+			<string>11111</string>
+			<string>10001</string>
+            <string>10001</string>
+		</array>
+		<key>minNumber</key>
+		<integer>1</integer>
+		<key>maxNumber</key>
+		<integer>15</integer>
+	</dict>
+    <dict>
+		<key>operations</key>
+		<array>
+			<string>+</string>
+		</array>
+		<key>calculationTime</key>
+		<integer>15</integer>
+		<key>calculationNumber</key>
+		<integer>15</integer>
+		<key>maxOperands</key>
+		<integer>2</integer>
+		<key>map</key>
+		<array>
+			<string>11111</string>
+			<string>11111</string>
+			<string>11111</string>
+			<string>11111</string>
+            <string>11111</string>
+		</array>
+		<key>minNumber</key>
+		<integer>1</integer>
+		<key>maxNumber</key>
+		<integer>15</integer>
+	</dict>
+    <dict>
+		<key>operations</key>
+		<array>
+			<string>+</string>
+		</array>
+		<key>calculationTime</key>
+		<integer>10</integer>
+		<key>calculationNumber</key>
+		<integer>15</integer>
+		<key>maxOperands</key>
+		<integer>2</integer>
+		<key>map</key>
+		<array>
+			<string>11111</string>
+			<string>10001</string>
+			<string>10001</string>
+			<string>10001</string>
+            <string>11111</string>
+		</array>
+		<key>minNumber</key>
+		<integer>1</integer>
+		<key>maxNumber</key>
+		<integer>15</integer>
 	</dict>
 </array>
 </plist>

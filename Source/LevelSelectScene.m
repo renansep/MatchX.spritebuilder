@@ -42,6 +42,7 @@
         //Loads the scroll view
         scroll = [CCScrollView new];
         [scroll setHorizontalScrollEnabled:NO];
+        [scroll setBounces:NO];
         [self addChild:scroll];
         
         //Title label
@@ -78,7 +79,16 @@
             
             if (i == 0)
             {
-                levelIconsNode = [CCNodeColor nodeWithColor:[CCColor clearColor] width:viewSize.width height:(levels.count/3+1) * [icon height] * 1.5];
+                int extraline;
+                if (levels.count % 3 == 0)
+                {
+                    extraline = 1;
+                }
+                else
+                {
+                    extraline = 2;
+                }
+                levelIconsNode = [CCNodeColor nodeWithColor:[CCColor clearColor] width:viewSize.width height:(levels.count / 3 + extraline) * [icon height] * 1.5];
                 [levelIconsNode setAnchorPoint:ccp(0,1)];
                 [levelIconsNode setPosition:ccp(0, viewSize.height * 0.9)];
             }
