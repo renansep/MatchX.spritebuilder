@@ -86,7 +86,7 @@ static int currentLevel;
     }
 }
 
-- (void)increaseScoreWithMultiplier:(int)multiplier
+- (void)increaseScoreWithMultiplier:(NSUInteger)multiplier
 {
     score += remainingTime * multiplier;
     [self updateScore];

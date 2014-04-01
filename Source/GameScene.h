@@ -43,7 +43,7 @@
 - (void)updateResult:(int)newResult;
 - (void)updateOperation:(NSArray *)newOperation;
 
-- (void)increaseScoreWithMultiplier:(int)multiplier;
+- (void)increaseScoreWithMultiplier:(NSUInteger)multiplier;
 - (void)updateScore;
 
 - (void)increaseRemainingTime;

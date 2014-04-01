@@ -27,9 +27,6 @@
 		751C4D3918E891BA00144D48 /* Spotlight80.png in Resources */ = {isa = PBXBuildFile; fileRef = 751C4D2A18E891BA00144D48 /* Spotlight80.png */; };
 		751C4D3A18E891BA00144D48 /* Spotlight100.png in Resources */ = {isa = PBXBuildFile; fileRef = 751C4D2B18E891BA00144D48 /* Spotlight100.png */; };
 		7551DF0618C8BB3E000A2EBE /* StartScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 7551DF0518C8BB3E000A2EBE /* StartScene.m */; };
-		759E0F4F18E8EDF400ED275F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 759E0F4C18E8EDF400ED275F /* Default-568h@2x.png */; };
-		759E0F5018E8EDF400ED275F /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 759E0F4D18E8EDF400ED275F /* Default.png */; };
-		759E0F5118E8EDF400ED275F /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 759E0F4E18E8EDF400ED275F /* Default@2x.png */; };
 		75D37E9618D1DFDD008EEB88 /* GameNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D37E9518D1DFDD008EEB88 /* GameNumber.m */; };
 		75D37E9D18D1E3D9008EEB88 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D37E9C18D1E3D9008EEB88 /* GameScene.m */; };
 		75D37EA018D32098008EEB88 /* NumberLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D37E9F18D32098008EEB88 /* NumberLayer.m */; };
@@ -89,9 +86,6 @@
 		751C4D2B18E891BA00144D48 /* Spotlight100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spotlight100.png; sourceTree = "<group>"; };
 		7551DF0418C8BB3E000A2EBE /* StartScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StartScene.h; path = Source/StartScene.h; sourceTree = "<group>"; };
 		7551DF0518C8BB3E000A2EBE /* StartScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StartScene.m; path = Source/StartScene.m; sourceTree = "<group>"; };
-		759E0F4C18E8EDF400ED275F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		759E0F4D18E8EDF400ED275F /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		759E0F4E18E8EDF400ED275F /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		75D37E9418D1DFDD008EEB88 /* GameNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameNumber.h; path = Source/GameNumber.h; sourceTree = "<group>"; };
 		75D37E9518D1DFDD008EEB88 /* GameNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameNumber.m; path = Source/GameNumber.m; sourceTree = "<group>"; };
 		75D37E9B18D1E3D9008EEB88 /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameScene.h; path = Source/GameScene.h; sourceTree = "<group>"; };
@@ -193,9 +187,6 @@
 				751C4D2918E891BA00144D48 /* Spotlight58.png */,
 				751C4D2A18E891BA00144D48 /* Spotlight80.png */,
 				751C4D2B18E891BA00144D48 /* Spotlight100.png */,
-				759E0F4C18E8EDF400ED275F /* Default-568h@2x.png */,
-				759E0F4D18E8EDF400ED275F /* Default.png */,
-				759E0F4E18E8EDF400ED275F /* Default@2x.png */,
 			);
 			name = Icons;
 			sourceTree = "<group>";
@@ -348,15 +339,12 @@
 				751C4D3218E891BA00144D48 /* iPhone@2x.png in Resources */,
 				28AE8A2818DF5616002295D1 /* SavedData.plist in Resources */,
 				751C4D2F18E891BA00144D48 /* iPad@2x.png in Resources */,
-				759E0F5118E8EDF400ED275F /* Default@2x.png in Resources */,
-				759E0F4F18E8EDF400ED275F /* Default-568h@2x.png in Resources */,
 				751C4D3018E891BA00144D48 /* iPhone-old.png in Resources */,
 				751C4D2D18E891BA00144D48 /* iPad-old@2x.png in Resources */,
 				751C4D3518E891BA00144D48 /* Spotlight29.png in Resources */,
 				751C4D3418E891BA00144D48 /* Settings@2x.png in Resources */,
 				751C4D3918E891BA00144D48 /* Spotlight80.png in Resources */,
 				28D209CA18D779C400D56D9C /* Levels.plist in Resources */,
-				759E0F5018E8EDF400ED275F /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

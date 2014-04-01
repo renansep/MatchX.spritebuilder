@@ -17,8 +17,8 @@
 - (NumberLayer *)initWithLevel:(NSDictionary *)level
 {
     NSArray *map = [level objectForKey:@"map"];
-    int lines = map.count;
-    int columns = [(NSString *) [map objectAtIndex:0] length];
+    NSUInteger lines = map.count;
+    NSUInteger columns = [(NSString *) [map objectAtIndex:0] length];
     
     CCSprite *border = [CCSprite spriteWithImageNamed:@"numberBorder.png"];
     self = [super initWithColor:[CCColor clearColor] width:columns*border.contentSize.height height:lines*border.contentSize.width];
