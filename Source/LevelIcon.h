@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Apportable. All rights reserved.
 //
 
-#import "CCButton.h"
+#import "CCSprite.h"
 
-@interface LevelIcon : CCButton
+@interface LevelIcon : CCSprite
 {
     CCSprite *box;
     CCSprite *star1;

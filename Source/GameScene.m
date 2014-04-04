@@ -216,9 +216,9 @@ static int currentLevel;
 - (int)calculateStars
 {
     int maxScore = calculationTime * calculationNumber * maxOperands;
-    if (score > maxScore * 0.66)
+    if (score > maxScore * 0.75)
         return 3;
-    else if (score > maxScore * 0.33)
+    else if (score > maxScore * 0.5)
         return 2;
     else
         return 1;
