@@ -3531,143 +3531,139 @@
             "type": "iquote"
         }, 
         {
-            "header_path": "/var/folders/bd/d9n4_nm15fj_vg5h2t323ynm0000gn/T/tmpPliBJE/BUILT_PRODUCTS_DIR/include", 
-            "type": "I"
-        }, 
-        {
             "header_path": "external/kazmath/include", 
             "type": "I"
         }, 
         {
-            "header_path": "cocos2d", 
+            "header_path": "../../../cocos2d", 
             "type": "I"
         }, 
         {
-            "header_path": "cocos2d/Platforms", 
+            "header_path": "../../../cocos2d/Platforms", 
             "type": "I"
         }, 
         {
-            "header_path": "cocos2d/Support", 
+            "header_path": "../../../cocos2d/Support", 
             "type": "I"
         }, 
         {
-            "header_path": "cocos2d/Platforms/iOS", 
+            "header_path": "../../../cocos2d/Platforms/iOS", 
             "type": "I"
         }, 
         {
-            "header_path": "cocos2d/Platforms/Mac", 
+            "header_path": "../../../cocos2d/Platforms/Mac", 
             "type": "I"
         }, 
         {
-            "header_path": "cocos2d-ui", 
+            "header_path": "../../../cocos2d-ui", 
             "type": "I"
         }, 
         {
-            "header_path": "cocos2d-ui/CCBReader", 
+            "header_path": "../../../cocos2d-ui/CCBReader", 
             "type": "I"
         }, 
         {
-            "header_path": "cocos2d-ui-tests", 
+            "header_path": "../../../cocos2d-ui-tests", 
             "type": "I"
         }, 
         {
-            "header_path": "cocos2d-ui-tests/ios", 
+            "header_path": "../../../cocos2d-ui-tests/ios", 
             "type": "I"
         }, 
         {
-            "header_path": "cocos2d-ui-tests/osx", 
+            "header_path": "../../../cocos2d-ui-tests/osx", 
             "type": "I"
         }, 
         {
-            "header_path": "cocos2d-ui-tests/Resources-shared", 
+            "header_path": "../../../cocos2d-ui-tests/Resources-shared", 
             "type": "I"
         }, 
         {
-            "header_path": "cocos2d-ui-tests/SpriteBuilder", 
+            "header_path": "../../../cocos2d-ui-tests/SpriteBuilder", 
             "type": "I"
         }, 
         {
-            "header_path": "cocos2d-ui-tests/tests", 
+            "header_path": "../../../cocos2d-ui-tests/tests", 
             "type": "I"
         }, 
         {
-            "header_path": "cocos2d-ui-tests/ios/Resources", 
+            "header_path": "../../../cocos2d-ui-tests/ios/Resources", 
             "type": "I"
         }, 
         {
-            "header_path": "cocos2d-ui-tests/osx/Resources", 
+            "header_path": "../../../cocos2d-ui-tests/osx/Resources", 
             "type": "I"
         }, 
         {
-            "header_path": "cocos2d-ui-tests/Resources-shared/resources-phone", 
+            "header_path": "../../../cocos2d-ui-tests/Resources-shared/resources-phone", 
             "type": "I"
         }, 
         {
-            "header_path": "cocos2d-ui-tests/Resources-shared/resources-phonehd", 
+            "header_path": "../../../cocos2d-ui-tests/Resources-shared/resources-phonehd", 
             "type": "I"
         }, 
         {
-            "header_path": "cocos2d-ui-tests/Resources-shared/resources-tablet", 
+            "header_path": "../../../cocos2d-ui-tests/Resources-shared/resources-tablet", 
             "type": "I"
         }, 
         {
-            "header_path": "cocos2d-ui-tests/Resources-shared/resources-tablethd", 
+            "header_path": "../../../cocos2d-ui-tests/Resources-shared/resources-tablethd", 
             "type": "I"
         }, 
         {
-            "header_path": "cocos2d-ui-tests/Resources-shared/Sounds", 
+            "header_path": "../../../cocos2d-ui-tests/Resources-shared/Sounds", 
             "type": "I"
         }, 
         {
-            "header_path": "cocos2d-ui-tests/Resources-shared/Tests", 
+            "header_path": "../../../cocos2d-ui-tests/Resources-shared/Tests", 
             "type": "I"
         }, 
         {
-            "header_path": "cocos2d-ui-tests/SpriteBuilder/Resources", 
+            "header_path": "../../../cocos2d-ui-tests/SpriteBuilder/Resources", 
             "type": "I"
         }, 
         {
-            "header_path": "cocos2d-ui-tests/Resources-shared/Tests/resources-phone", 
+            "header_path": "../../../cocos2d-ui-tests/Resources-shared/Tests/resources-phone", 
             "type": "I"
         }, 
         {
-            "header_path": "cocos2d-ui-tests/Resources-shared/Tests/resources-phonehd", 
+            "header_path": "../../../cocos2d-ui-tests/Resources-shared/Tests/resources-phonehd", 
             "type": "I"
         }, 
         {
-            "header_path": "cocos2d-ui-tests/Resources-shared/Tests/resources-tablet", 
+            "header_path": "../../../cocos2d-ui-tests/Resources-shared/Tests/resources-tablet", 
             "type": "I"
         }, 
         {
-            "header_path": "cocos2d-ui-tests/Resources-shared/Tests/resources-tablethd", 
+            "header_path": "../../../cocos2d-ui-tests/Resources-shared/Tests/resources-tablethd", 
             "type": "I"
         }, 
         {
-            "header_path": "cocos2d-ui-tests/SpriteBuilder/Resources/Interface", 
+            "header_path": "../../../cocos2d-ui-tests/SpriteBuilder/Resources/Interface", 
             "type": "I"
         }, 
         {
-            "header_path": "cocos2d-ui-tests/SpriteBuilder/Resources/Sounds", 
+            "header_path": "../../../cocos2d-ui-tests/SpriteBuilder/Resources/Sounds", 
             "type": "I"
         }, 
         {
-            "header_path": "cocos2d-ui-tests/SpriteBuilder/Resources/Sprites", 
+            "header_path": "../../../cocos2d-ui-tests/SpriteBuilder/Resources/Sprites", 
             "type": "I"
         }, 
         {
-            "header_path": "cocos2d-ui-tests/SpriteBuilder/Resources/Tests", 
+            "header_path": "../../../cocos2d-ui-tests/SpriteBuilder/Resources/Tests", 
             "type": "I"
         }, 
         {
-            "header_path": "cocos2d-ui-tests/SpriteBuilder/Resources/Interface/resources-auto", 
+            "header_path": "../../../cocos2d-ui-tests/SpriteBuilder/Resources/Interface/resources-auto", 
             "type": "I"
         }, 
         {
-            "header_path": "cocos2d-ui-tests/SpriteBuilder/Resources/Sprites/resources-auto", 
+            "header_path": "../../../cocos2d-ui-tests/SpriteBuilder/Resources/Sprites/resources-auto", 
             "type": "I"
         }, 
         {
-            "header_path": "cocos2d-ui-tests/SpriteBuilder/Resources/Tests/resources-auto", 
+            "header_path": "../../../cocos2d-ui-tests/SpriteBuilder/Resources/Tests/resources-auto", 
             "type": "I"
         }, 
         {
@@ -3679,35 +3675,27 @@
             "type": "I"
         }, 
         {
-            "header_path": "external/ObjectAL", 
+            "header_path": "../../../external/ObjectAL", 
             "type": "I"
         }, 
         {
-            "header_path": "external/ObjectAL/Actions", 
+            "header_path": "../../../external/ObjectAL/Actions", 
             "type": "I"
         }, 
         {
-            "header_path": "external/ObjectAL/AudioTrack", 
+            "header_path": "../../../external/ObjectAL/AudioTrack", 
             "type": "I"
         }, 
         {
-            "header_path": "external/ObjectAL/OpenAL", 
+            "header_path": "../../../external/ObjectAL/OpenAL", 
             "type": "I"
         }, 
         {
-            "header_path": "external/ObjectAL/Session", 
+            "header_path": "../../../external/ObjectAL/Session", 
             "type": "I"
         }, 
         {
-            "header_path": "external/ObjectAL/Support", 
-            "type": "I"
-        }, 
-        {
-            "header_path": "/var/folders/bd/d9n4_nm15fj_vg5h2t323ynm0000gn/T/tmpPliBJE/DERIVED_FILE_DIR/armv7", 
-            "type": "I"
-        }, 
-        {
-            "header_path": "/var/folders/bd/d9n4_nm15fj_vg5h2t323ynm0000gn/T/tmpPliBJE/DERIVED_FILE_DIR", 
+            "header_path": "../../../external/ObjectAL/Support", 
             "type": "I"
         }, 
         "external/kazmath/include", 
@@ -4651,9 +4639,7 @@
             "source": "external/kazmath/src/vec4.c"
         }
     ], 
-    "storyboards": [], 
     "type": "static-lib", 
-    "version": "3", 
-    "xcode_project": "cocos2d-ios.xcodeproj", 
-    "xibs": []
+    "version": "1", 
+    "xcode_project": "cocos2d-ios.xcodeproj"
 }

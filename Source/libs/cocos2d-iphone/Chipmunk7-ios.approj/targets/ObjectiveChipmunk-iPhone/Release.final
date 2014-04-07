@@ -14,14 +14,6 @@
     "flags": [
         "-DNDEBUG", 
         "-ffast-math", 
-        {
-            "flag": "-DNDEBUG", 
-            "type": "c++"
-        }, 
-        {
-            "flag": "-ffast-math", 
-            "type": "c++"
-        }, 
         "-fno-objc-arc", 
         "-fasm-blocks", 
         {
@@ -236,19 +228,7 @@
             "type": "iquote"
         }, 
         {
-            "header_path": "/var/folders/bd/d9n4_nm15fj_vg5h2t323ynm0000gn/T/tmpPliBJE/BUILT_PRODUCTS_DIR/include", 
-            "type": "I"
-        }, 
-        {
             "header_path": "external/Chipmunk/include", 
-            "type": "I"
-        }, 
-        {
-            "header_path": "/var/folders/bd/d9n4_nm15fj_vg5h2t323ynm0000gn/T/tmpPliBJE/DERIVED_FILE_DIR/armv7", 
-            "type": "I"
-        }, 
-        {
-            "header_path": "/var/folders/bd/d9n4_nm15fj_vg5h2t323ynm0000gn/T/tmpPliBJE/DERIVED_FILE_DIR", 
             "type": "I"
         }
     ], 
@@ -495,9 +475,7 @@
             "source": "external/Chipmunk/src/cpSweep1D.c"
         }
     ], 
-    "storyboards": [], 
     "type": "static-lib", 
-    "version": "3", 
-    "xcode_project": "Chipmunk7-ios.xcodeproj", 
-    "xibs": []
+    "version": "1", 
+    "xcode_project": "Chipmunk7-ios.xcodeproj"
 }

@@ -1,28 +1,24 @@
 {
     "assets": [
         {
-            "asset": "Source/Resources/iPhone-old@2x.png", 
-            "target": "iPhone-old@2x.png"
+            "asset": "Source/Resources/Icon~iphone.png", 
+            "target": "Icon~iphone.png"
         }, 
         {
             "asset": "Source/Resources/Spotlight50.png", 
             "target": "Spotlight50.png"
         }, 
         {
-            "asset": "Source/Resources/iPad.png", 
-            "target": "iPad.png"
-        }, 
-        {
-            "asset": "Source/Resources/iPad-old.png", 
-            "target": "iPad-old.png"
-        }, 
-        {
-            "asset": "Source/Resources/Spotlight58.png", 
-            "target": "Spotlight58.png"
+            "asset": "Source/Resources/Icon~ipad.png", 
+            "target": "Icon~ipad.png"
         }, 
         {
             "asset": "Source/Resources/Spotlight100.png", 
             "target": "Spotlight100.png"
+        }, 
+        {
+            "asset": "Source/Resources/Published-iOS/.DS_Store", 
+            "target": "Published-iOS/.DS_Store"
         }, 
         {
             "asset": "Source/Resources/Published-iOS/configCocos2d.plist", 
@@ -225,6 +221,10 @@
             "target": "Published-iOS/ccbResources/resources-tablethd/ccbTextField.png"
         }, 
         {
+            "asset": "Source/Resources/Published-iOS/Fonts/.DS_Store", 
+            "target": "Published-iOS/Fonts/.DS_Store"
+        }, 
+        {
             "asset": "Source/Resources/Published-iOS/Fonts/KGChasingPavements.ttf", 
             "target": "Published-iOS/Fonts/KGChasingPavements.ttf"
         }, 
@@ -417,52 +417,32 @@
             "target": "Spotlight40.png"
         }, 
         {
-            "asset": "Source/Resources/iPhone@2x.png", 
-            "target": "iPhone@2x.png"
+            "asset": "Source/Resources/Icon@2x.png", 
+            "target": "Icon@2x.png"
         }, 
         {
             "asset": "Source/Resources/SavedData.plist", 
             "target": "SavedData.plist"
         }, 
         {
-            "asset": "Source/Resources/iPad@2x.png", 
-            "target": "iPad@2x.png"
+            "asset": "Source/Resources/Icon@2x~ipad.png", 
+            "target": "Icon@2x~ipad.png"
         }, 
         {
-            "asset": "Source/Resources/Default@2x.png", 
-            "target": "Default@2x.png"
-        }, 
-        {
-            "asset": "Source/Resources/Default-568h@2x.png", 
-            "target": "Default-568h@2x.png"
-        }, 
-        {
-            "asset": "Source/Resources/iPhone-old.png", 
-            "target": "iPhone-old.png"
-        }, 
-        {
-            "asset": "Source/Resources/iPad-old@2x.png", 
-            "target": "iPad-old@2x.png"
-        }, 
-        {
-            "asset": "Source/Resources/Spotlight29.png", 
-            "target": "Spotlight29.png"
+            "asset": "Source/Resources/Icon.png", 
+            "target": "Icon.png"
         }, 
         {
             "asset": "Source/Resources/Settings@2x.png", 
             "target": "Settings@2x.png"
         }, 
         {
-            "asset": "Source/Resources/Spotlight80.png", 
-            "target": "Spotlight80.png"
+            "asset": "Source/Resources/Icon@2x~iphone.png", 
+            "target": "Icon@2x~iphone.png"
         }, 
         {
             "asset": "Source/Resources/Levels.plist", 
             "target": "Levels.plist"
-        }, 
-        {
-            "asset": "Source/Resources/Default.png", 
-            "target": "Default.png"
         }
     ], 
     "config": {
@@ -597,10 +577,6 @@
             "type": "iquote"
         }, 
         {
-            "header_path": "/var/folders/bd/d9n4_nm15fj_vg5h2t323ynm0000gn/T/tmpPliBJE/BUILT_PRODUCTS_DIR/include", 
-            "type": "I"
-        }, 
-        {
             "header_path": "Source/libs/cocos2d-iphone/external/kazmath/include", 
             "type": "I"
         }, 
@@ -670,14 +646,6 @@
         }, 
         {
             "header_path": "Source/libs/cocos2d-iphone/external/ObjectAL/Support", 
-            "type": "I"
-        }, 
-        {
-            "header_path": "/var/folders/bd/d9n4_nm15fj_vg5h2t323ynm0000gn/T/tmpPliBJE/DERIVED_FILE_DIR/armv7", 
-            "type": "I"
-        }, 
-        {
-            "header_path": "/var/folders/bd/d9n4_nm15fj_vg5h2t323ynm0000gn/T/tmpPliBJE/DERIVED_FILE_DIR", 
             "type": "I"
         }
     ], 
@@ -768,9 +736,7 @@
             "source": "Source/main.m"
         }
     ], 
-    "storyboards": [], 
     "type": "app", 
-    "version": "3", 
-    "xcode_project": "MatchX.xcodeproj", 
-    "xibs": []
+    "version": "1", 
+    "xcode_project": "MatchX.xcodeproj"
 }
