@@ -95,8 +95,7 @@
 
 - (BOOL)locked
 {
-    //return lock != nil;
-    return NO;
+    return lock != nil;
 }
 
 @end

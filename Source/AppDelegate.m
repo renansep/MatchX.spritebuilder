@@ -27,9 +27,14 @@
 
 #import "AppDelegate.h"
 #import "CCBuilderReader.h"
-#import "LevelSelectScene.h"
+#import "Game.h"
 
 @implementation AppController
+
++ (void)sessionStateChanged:(FBSession *)session state:(int)state error:(NSError *)error
+{
+    
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -55,31 +60,41 @@
     
     [self setupCocos2dWithOptions:cocos2dSetup];
     
+    // register to observe notifications from the store
+    [[NSNotificationCenter defaultCenter]
+     addObserver: self
+     selector: @selector (storeDidChange:)
+     name: NSUbiquitousKeyValueStoreDidChangeExternallyNotification
+     object: [NSUbiquitousKeyValueStore defaultStore]];
     
+    // iCloud setup
+    id currentiCloudToken = [[NSFileManager defaultManager] ubiquityIdentityToken];
+    if (currentiCloudToken) {
+        NSData *newTokenData =
+        [NSKeyedArchiver archivedDataWithRootObject: currentiCloudToken];
+        [[NSUserDefaults standardUserDefaults]
+         setObject: newTokenData
+         forKey: @"com.apportable.MatchX.UbiquityIdentityToken"];
+    } else {
+        [[NSUserDefaults standardUserDefaults]
+         removeObjectForKey: @"com.apportable.MatchX.UbiquityIdentityToken"];
+    }
     
-    //Load user saved data, too check witch levels are locked
-    // get paths from root direcory
-    NSArray *paths = NSSearchPathForDirectoriesInDomains (NSDocumentDirectory, NSUserDomainMask, YES);
-    // get documents path
-    NSString *documentsPath = [paths objectAtIndex:0];
-    // get the path to our Data/plist file
-    NSString *plistPath = [documentsPath stringByAppendingPathComponent:@"SavedData.plist"];
-    NSDictionary *savedData = [NSDictionary dictionaryWithContentsOfFile:plistPath];
+    [[NSNotificationCenter defaultCenter]
+     addObserver: self
+     selector: @selector (iCloudAccountAvailabilityChanged:)
+     name: NSUbiquityIdentityDidChangeNotification
+     object: nil];
     
-    if (savedData == nil)
-    {
-        NSDictionary *initialSaveData = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"SavedData" ofType:@"plist"]];
-        
-        NSString *error = nil;
-        NSData *plistData = [NSPropertyListSerialization dataFromPropertyList:initialSaveData format:NSPropertyListXMLFormat_v1_0 errorDescription:&error];
-        
-        
-        // check is plistData exists
-        if(plistData)
-        {
-            // write plistData to our Data.plist file
-            [plistData writeToFile:plistPath atomically:YES];
-        }
+    if (currentiCloudToken && [[[NSUserDefaults standardUserDefaults] objectForKey:@"promptedToUseiCloud"] boolValue] == NO) {
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle: @"Choose Storage Option"
+                              message: @"Should documents be stored in iCloud and available on all your devices?"
+                              delegate: self
+                              cancelButtonTitle: @"Local Only"
+                              otherButtonTitles: @"Use iCloud", nil];
+        [alert show];
+        [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:YES] forKey:@"promptedToUseiCloud"];
     }
     
     return YES;
@@ -88,6 +103,57 @@
 - (CCScene*) startScene
 {
     return [CCBReader loadAsScene:@"StartScene"];
+}
+
+- (void)iCloudAccountAvailabilityChanged:(id)sender
+{
+    NSLog(@"User logged in or out from iCloud");
+}
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    NSArray *savedData = [Game getArrayFromPlistFileInDocumentsFolderWithFileName:@"LevelsSavedData"];
+    if (buttonIndex == 0)
+    {
+        [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:NO] forKey:@"useiCloud"];
+        if (savedData == nil)
+        {
+            savedData = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"LevelsSavedData" ofType:@"plist"]];
+            [Game saveArray:savedData ToDocumentsFolderInPlistFile:@"LevelsSavedData"];
+        }
+    }
+    else
+    {
+        [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:YES] forKey:@"useiCloud"];
+        if (savedData != nil)
+        {
+            NSArray *iCloudSavedData = [[NSUbiquitousKeyValueStore defaultStore] objectForKey:@"LevelsSavedData"];
+            
+            if (savedData.count == 0 && iCloudSavedData.count == 0)
+            {
+                [[NSUbiquitousKeyValueStore defaultStore] setObject:[NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"LevelsSavedData" ofType:@"plist"]] forKey:@"LevelsSavedData"];
+            }
+            else if (savedData.count > iCloudSavedData.count)
+            {
+                [[NSUbiquitousKeyValueStore defaultStore] setObject:savedData forKey:@"LevelsSavedData"];
+            }
+            else
+            {
+                [[NSUbiquitousKeyValueStore defaultStore] setObject:iCloudSavedData forKey:@"LevelsSavedData"];
+            }
+        }
+        else
+        {
+            [[NSUbiquitousKeyValueStore defaultStore] setObject:[NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"LevelsSavedData" ofType:@"plist"]] forKey:@"LevelsSavedData"];
+            NSArray *test = [[NSUbiquitousKeyValueStore defaultStore] objectForKey:@"LevelsSavedData"];
+        }
+    }
+}
+
+- (void)storeDidChange:(NSNotification *)notification
+{
+    NSUbiquitousKeyValueStore *ubiquitousKeyValueStore = notification.object;
+    [ubiquitousKeyValueStore synchronize];
 }
 
 @end

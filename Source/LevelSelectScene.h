@@ -17,7 +17,7 @@
     
     CCScrollView *scroll;
     
-    NSDictionary *savedData;
+    NSArray *savedData;
 }
 
 - (LevelSelectScene *)init;

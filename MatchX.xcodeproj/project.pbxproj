@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		28AE8A2518DF4262002295D1 /* LevelIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 28AE8A2418DF4262002295D1 /* LevelIcon.m */; };
-		28AE8A2818DF5616002295D1 /* SavedData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28AE8A2718DF5616002295D1 /* SavedData.plist */; };
+		28AE8A2818DF5616002295D1 /* LevelsSavedData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28AE8A2718DF5616002295D1 /* LevelsSavedData.plist */; };
 		28AE8A2B18DF6384002295D1 /* LevelSelectScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 28AE8A2A18DF6384002295D1 /* LevelSelectScene.m */; };
 		28D209CA18D779C400D56D9C /* Levels.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28D209C918D779C400D56D9C /* Levels.plist */; };
 		751C4D2E18E891BA00144D48 /* Icon~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 751C4D1F18E891BA00144D48 /* Icon~ipad.png */; };
@@ -24,9 +24,15 @@
 		751C4D3A18E891BA00144D48 /* Spotlight100.png in Resources */ = {isa = PBXBuildFile; fileRef = 751C4D2B18E891BA00144D48 /* Spotlight100.png */; };
 		75506D7518EEF05B00A8B508 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75506D7418EEF05B00A8B508 /* Images.xcassets */; };
 		7551DF0618C8BB3E000A2EBE /* StartScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 7551DF0518C8BB3E000A2EBE /* StartScene.m */; };
+		75ACCA0118F5B08900C7179A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75ACCA0018F5B08900C7179A /* Default@2x.png */; };
+		75ACCA0618F6B56A00C7179A /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75ACCA0518F6B56A00C7179A /* GameKit.framework */; };
+		75ACCA0D18F6D1CB00C7179A /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 75ACCA0C18F6D1CB00C7179A /* Info.plist */; };
+		75ACCB5218F6D8F200C7179A /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75ACCB5118F6D8F200C7179A /* FacebookSDK.framework */; };
+		75ACCB5418F6DEF800C7179A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75ACCB5318F6DEF800C7179A /* Default-568h@2x.png */; };
 		75D37E9618D1DFDD008EEB88 /* GameNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D37E9518D1DFDD008EEB88 /* GameNumber.m */; };
 		75D37E9D18D1E3D9008EEB88 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D37E9C18D1E3D9008EEB88 /* GameScene.m */; };
 		75D37EA018D32098008EEB88 /* NumberLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D37E9F18D32098008EEB88 /* NumberLayer.m */; };
+		75F0E17718F2C33400D6A63D /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F0E17618F2C33400D6A63D /* Game.m */; };
 		B737893B180761570076A88C /* Published-iOS in Resources */ = {isa = PBXBuildFile; fileRef = B737893A180761570076A88C /* Published-iOS */; };
 		B737893F1807617C0076A88C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B737893E1807617C0076A88C /* AppDelegate.m */; };
 		B73789871807631A0076A88C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B73789851807631A0076A88C /* main.m */; };
@@ -62,7 +68,7 @@
 /* Begin PBXFileReference section */
 		28AE8A2318DF4262002295D1 /* LevelIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LevelIcon.h; path = Source/LevelIcon.h; sourceTree = "<group>"; };
 		28AE8A2418DF4262002295D1 /* LevelIcon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LevelIcon.m; path = Source/LevelIcon.m; sourceTree = "<group>"; };
-		28AE8A2718DF5616002295D1 /* SavedData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SavedData.plist; sourceTree = "<group>"; };
+		28AE8A2718DF5616002295D1 /* LevelsSavedData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = LevelsSavedData.plist; sourceTree = "<group>"; };
 		28AE8A2918DF6384002295D1 /* LevelSelectScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LevelSelectScene.h; path = Source/LevelSelectScene.h; sourceTree = "<group>"; };
 		28AE8A2A18DF6384002295D1 /* LevelSelectScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LevelSelectScene.m; path = Source/LevelSelectScene.m; sourceTree = "<group>"; };
 		28D209C918D779C400D56D9C /* Levels.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Levels.plist; sourceTree = "<group>"; };
@@ -80,12 +86,20 @@
 		75506D7418EEF05B00A8B508 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = MatchX/Images.xcassets; sourceTree = SOURCE_ROOT; };
 		7551DF0418C8BB3E000A2EBE /* StartScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StartScene.h; path = Source/StartScene.h; sourceTree = "<group>"; };
 		7551DF0518C8BB3E000A2EBE /* StartScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StartScene.m; path = Source/StartScene.m; sourceTree = "<group>"; };
+		75ACCA0018F5B08900C7179A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		75ACCA0518F6B56A00C7179A /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		75ACCA0C18F6D1CB00C7179A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Source/Resources/Info.plist; sourceTree = "<group>"; };
+		75ACCB5118F6D8F200C7179A /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../../../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
+		75ACCB5318F6DEF800C7179A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../../Default-568h@2x.png"; sourceTree = "<group>"; };
 		75D37E9418D1DFDD008EEB88 /* GameNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameNumber.h; path = Source/GameNumber.h; sourceTree = "<group>"; };
 		75D37E9518D1DFDD008EEB88 /* GameNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameNumber.m; path = Source/GameNumber.m; sourceTree = "<group>"; };
 		75D37E9B18D1E3D9008EEB88 /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameScene.h; path = Source/GameScene.h; sourceTree = "<group>"; };
 		75D37E9C18D1E3D9008EEB88 /* GameScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameScene.m; path = Source/GameScene.m; sourceTree = "<group>"; };
 		75D37E9E18D32098008EEB88 /* NumberLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NumberLayer.h; path = Source/NumberLayer.h; sourceTree = "<group>"; };
 		75D37E9F18D32098008EEB88 /* NumberLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NumberLayer.m; path = Source/NumberLayer.m; sourceTree = "<group>"; };
+		75E9674B18F82582002F74E2 /* MatchX.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = MatchX.entitlements; path = MatchX/MatchX.entitlements; sourceTree = "<group>"; };
+		75F0E17518F2C33400D6A63D /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Game.h; path = Source/Game.h; sourceTree = "<group>"; };
+		75F0E17618F2C33400D6A63D /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Game.m; path = Source/Game.m; sourceTree = "<group>"; };
 		B737893A180761570076A88C /* Published-iOS */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "Published-iOS"; path = "Source/Resources/Published-iOS"; sourceTree = SOURCE_ROOT; };
 		B737893D1807617C0076A88C /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Source/AppDelegate.h; sourceTree = "<group>"; };
 		B737893E1807617C0076A88C /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = Source/AppDelegate.m; sourceTree = "<group>"; };
@@ -110,10 +124,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75ACCA0618F6B56A00C7179A /* GameKit.framework in Frameworks */,
 				B737898A1807642B0076A88C /* libcocos2d.a in Frameworks */,
 				B77F1B3217B978D7009739AE /* QuartzCore.framework in Frameworks */,
 				B77F1B3417B978D7009739AE /* OpenGLES.framework in Frameworks */,
 				B77F1B3617B978D7009739AE /* OpenAL.framework in Frameworks */,
+				75ACCB5218F6D8F200C7179A /* FacebookSDK.framework in Frameworks */,
 				B77F1B3817B978D7009739AE /* AudioToolbox.framework in Frameworks */,
 				B77F1B3A17B978D7009739AE /* AVFoundation.framework in Frameworks */,
 				B77F1B3C17B978D7009739AE /* UIKit.framework in Frameworks */,
@@ -151,6 +167,8 @@
 				28AE8A2418DF4262002295D1 /* LevelIcon.m */,
 				28AE8A2918DF6384002295D1 /* LevelSelectScene.h */,
 				28AE8A2A18DF6384002295D1 /* LevelSelectScene.m */,
+				75F0E17518F2C33400D6A63D /* Game.h */,
+				75F0E17618F2C33400D6A63D /* Game.m */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -168,6 +186,8 @@
 			children = (
 				751C4D1F18E891BA00144D48 /* Icon~ipad.png */,
 				751C4D2018E891BA00144D48 /* Icon@2x~ipad.png */,
+				75ACCB5318F6DEF800C7179A /* Default-568h@2x.png */,
+				75ACCA0018F5B08900C7179A /* Default@2x.png */,
 				751C4D2118E891BA00144D48 /* Icon.png */,
 				751C4D2218E891BA00144D48 /* Icon~iphone.png */,
 				751C4D2318E891BA00144D48 /* Icon@2x.png */,
@@ -184,6 +204,7 @@
 		B77F1B2517B978D7009739AE = {
 			isa = PBXGroup;
 			children = (
+				75E9674B18F82582002F74E2 /* MatchX.entitlements */,
 				B737893C1807616C0076A88C /* Source */,
 				B77F1B4617B978D7009739AE /* Resources */,
 				9222E2B918734FF800A246C7 /* libs */,
@@ -204,6 +225,8 @@
 		B77F1B3017B978D7009739AE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				75ACCB5118F6D8F200C7179A /* FacebookSDK.framework */,
+				75ACCA0518F6B56A00C7179A /* GameKit.framework */,
 				B7B3713D180358F1007369CC /* libObjectiveChipmunk.a */,
 				B77F1B3117B978D7009739AE /* QuartzCore.framework */,
 				B77F1B3317B978D7009739AE /* OpenGLES.framework */,
@@ -225,7 +248,7 @@
 				B73789911807667A0076A88C /* Icons */,
 				B737893A180761570076A88C /* Published-iOS */,
 				28D209C918D779C400D56D9C /* Levels.plist */,
-				28AE8A2718DF5616002295D1 /* SavedData.plist */,
+				28AE8A2718DF5616002295D1 /* LevelsSavedData.plist */,
 			);
 			name = Resources;
 			path = Source/Resources;
@@ -234,6 +257,7 @@
 		B77F1CCF17B978D8009739AE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				75ACCA0C18F6D1CB00C7179A /* Info.plist */,
 				B73789851807631A0076A88C /* main.m */,
 				B73789861807631A0076A88C /* Prefix.pch */,
 			);
@@ -274,7 +298,10 @@
 						DevelopmentTeam = Z6ADG6ANQU;
 						SystemCapabilities = {
 							com.apple.GameCenter = {
-								enabled = 0;
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
 							};
 						};
 					};
@@ -286,6 +313,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				he,
 			);
 			mainGroup = B77F1B2517B978D7009739AE;
 			productRefGroup = B77F1B2F17B978D7009739AE /* Products */;
@@ -318,6 +346,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75ACCA0118F5B08900C7179A /* Default@2x.png in Resources */,
 				751C4D3118E891BA00144D48 /* Icon~iphone.png in Resources */,
 				751C4D3718E891BA00144D48 /* Spotlight50.png in Resources */,
 				751C4D2E18E891BA00144D48 /* Icon~ipad.png in Resources */,
@@ -326,7 +355,9 @@
 				751C4D3318E891BA00144D48 /* Settings.png in Resources */,
 				751C4D3618E891BA00144D48 /* Spotlight40.png in Resources */,
 				751C4D3218E891BA00144D48 /* Icon@2x.png in Resources */,
-				28AE8A2818DF5616002295D1 /* SavedData.plist in Resources */,
+				28AE8A2818DF5616002295D1 /* LevelsSavedData.plist in Resources */,
+				75ACCA0D18F6D1CB00C7179A /* Info.plist in Resources */,
+				75ACCB5418F6DEF800C7179A /* Default-568h@2x.png in Resources */,
 				751C4D2F18E891BA00144D48 /* Icon@2x~ipad.png in Resources */,
 				751C4D3018E891BA00144D48 /* Icon.png in Resources */,
 				75506D7518EEF05B00A8B508 /* Images.xcassets in Resources */,
@@ -343,6 +374,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75F0E17718F2C33400D6A63D /* Game.m in Sources */,
 				B737893F1807617C0076A88C /* AppDelegate.m in Sources */,
 				28AE8A2518DF4262002295D1 /* LevelIcon.m in Sources */,
 				75D37E9618D1DFDD008EEB88 /* GameNumber.m in Sources */,
@@ -430,9 +462,15 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = MatchX/MatchX.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					/Documents/FacebookSDK,
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Source/Prefix.pch;
@@ -445,7 +483,7 @@
 					"\"Source/libs/cocos2d-iphone/external/ObjectAL\"/**",
 				);
 				INFOPLIST_FILE = Source/Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-lz",
@@ -464,9 +502,15 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = MatchX/MatchX.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					/Documents/FacebookSDK,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Source/Prefix.pch;
 				HEADER_SEARCH_PATHS = (
@@ -478,7 +522,7 @@
 					"\"Source/libs/cocos2d-iphone/external/ObjectAL\"/**",
 				);
 				INFOPLIST_FILE = Source/Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-lz",

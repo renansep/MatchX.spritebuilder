@@ -35,9 +35,11 @@
     CCLabelTTF *calculationLabel;
     int calculationLabelOriginalFontSize;
     
-    int score;
+    int64_t score;
     
     CCSprite *background;
+    
+    NSURL *urlForiCloudDoc;
 }
 
 - (void)updateResult:(int)newResult;

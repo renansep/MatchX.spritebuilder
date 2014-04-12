@@ -25,9 +25,12 @@
 
 #import <UIKit/UIKit.h>
 #import "cocos2d.h"
+#import <FacebookSDK/FacebookSDK.h>
 
-@interface AppController : CCAppDelegate
+@interface AppController : CCAppDelegate <UIAlertViewDelegate>
 {
 }
+
++ (void)sessionStateChanged:(FBSession *)session state:(int)state error:(NSError *)error;
 
 @end

@@ -9,8 +9,11 @@
 #import "LevelSelectScene.h"
 #import "LevelIcon.h"
 #import "GameScene.h"
+#import "Game.h"
 
 @implementation LevelSelectScene
+
+static CGPoint scrollLastPosition;
 
 - (LevelSelectScene *)init
 {
@@ -25,17 +28,14 @@
         [background setScaleY:viewSize.height / background.contentSize.height];
         [self addChild:background];
         
-        
-        
-        //Load user saved data, too check witch levels are locked
-        // get paths from root direcory
-        NSArray *paths = NSSearchPathForDirectoriesInDomains (NSDocumentDirectory, NSUserDomainMask, YES);
-        // get documents path
-        NSString *documentsPath = [paths objectAtIndex:0];
-        // get the path to our Data/plist file
-        NSString *plistPath = [documentsPath stringByAppendingPathComponent:@"SavedData.plist"];
-        savedData = [NSDictionary dictionaryWithContentsOfFile:plistPath];
-        NSArray *levelsSavedData = [savedData objectForKey:@"Levels"];
+        if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"useiCloud"] boolValue] == NO)
+        {
+            savedData = [Game getArrayFromPlistFileInDocumentsFolderWithFileName:@"LevelsSavedData"];
+        }
+        else
+        {
+            savedData = [[NSUbiquitousKeyValueStore defaultStore] objectForKey:@"LevelsSavedData"];
+        }
         
         NSArray *levels = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Levels" ofType:@"plist"]];
         
@@ -66,9 +66,9 @@
         for (int i=0; i<levels.count; i++)
         {
             LevelIcon *icon;
-            if (i < levelsSavedData.count)
+            if (i < savedData.count)
             {
-                NSDictionary *level = [levelsSavedData objectAtIndex:i];
+                NSDictionary *level = [savedData objectAtIndex:i];
                 int stars = [[level objectForKey:@"stars"] intValue];
                 icon = [[LevelIcon alloc] initUnlockedWithNumber:i+1 andStars:stars];
             }
@@ -116,6 +116,7 @@
             [levelIconsNode addChild:icon];
         }
         [scroll setContentNode:levelIconsNode];
+        [scroll setScrollPosition:scrollLastPosition];
         self.userInteractionEnabled = YES;
     }
     return self;
@@ -138,6 +139,7 @@
         {
             if (![i locked])
             {
+                scrollLastPosition = scroll.scrollPosition;
                 [GameScene setCurrentLevel:[i levelNumber] - 1];
                 CCScene *gameScene = [CCBReader loadAsScene:@"GameScene"];
                 [[CCDirector sharedDirector] replaceScene:gameScene withTransition:[CCTransition transitionRevealWithDirection:CCTransitionDirectionDown duration:0.5f]];

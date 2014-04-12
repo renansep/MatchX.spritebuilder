@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Apportable. All rights reserved.
 //
 
+#import "Game.h"
 #import "GameScene.h"
 #import "NumberLayer.h"
 #import "LevelSelectScene.h"
@@ -15,7 +16,7 @@
 static int currentLevel;
 
 - (void)didLoadFromCCB
-{
+{    
     [background setScaleX:([[CCDirector sharedDirector] viewSize].width / background.contentSize.width)];
     [background setScaleY:([[CCDirector sharedDirector] viewSize].height / background.contentSize.height)];
     
@@ -25,11 +26,13 @@ static int currentLevel;
     NSDictionary *level = [levelsArray objectAtIndex:currentLevel];
     
     calculationTime = [(NSNumber *) [level objectForKeyedSubscript:@"calculationTime"] intValue];
+    remainingTime = calculationTime;
     calculationNumber = [[level objectForKey:@"calculationNumber"] intValue];
     maxOperands = [[level objectForKey:@"maxOperands"] intValue];
     calculationsCompleted = 0;
-    remainingTime = calculationTime;
+    
     [clockLabel setString:[NSString stringWithFormat:@"%d", remainingTime]];
+    
     [calculationLabel setString:@""];
     calculationLabelOriginalFontSize = calculationLabel.fontSize;
     score = 0;
@@ -53,10 +56,6 @@ static int currentLevel;
     [self updateOperation:[numbersLayer operations]];
     
     [self schedule:@selector(decreaseRemainingTime) interval:1];
-}
-
-- (void)update:(CCTime)delta
-{
 }
 
 - (void)back:(id)sender
@@ -94,7 +93,7 @@ static int currentLevel;
 
 - (void)updateScore
 {
-    [scoreLabel setString:[NSString stringWithFormat:@"%d", score]];
+    [scoreLabel setString:[NSString stringWithFormat:@"%lld", score]];
 }
 
 - (void)decreaseRemainingTime
@@ -134,43 +133,41 @@ static int currentLevel;
 
 - (void)saveScore
 {
+    NSMutableArray *savedData;
+    if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"useiCloud"] boolValue] == NO)
     {
-        // get paths from root direcory
-        NSArray *paths = NSSearchPathForDirectoriesInDomains (NSDocumentDirectory, NSUserDomainMask, YES);
-        // get documents path
-        NSString *documentsPath = [paths objectAtIndex:0];
-        // get the path to our Data/plist file
-        NSString *plistPath = [documentsPath stringByAppendingPathComponent:@"SavedData.plist"];
-        
-        NSMutableDictionary *savedData = [NSMutableDictionary dictionaryWithContentsOfFile:plistPath];
-        NSMutableArray *levelsSavedData = [savedData objectForKey:@"Levels"];
-        
-        NSMutableDictionary *savedDataOfThisLevel = [levelsSavedData objectAtIndex:currentLevel];
-        
-        if (score > [[savedDataOfThisLevel objectForKey:@"score"] intValue])
-        {
-            int stars = [self calculateStars];
-            
-            [savedDataOfThisLevel setObject:[NSNumber numberWithInt:score] forKey:@"score"];
-            [savedDataOfThisLevel setObject:[NSNumber numberWithInt:stars] forKey:@"stars"];
-        }
-        
-        if (savedDataOfThisLevel == [levelsSavedData lastObject])
-        {
-            NSDictionary *newLevelUnlocked = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:0], @"stars",   [NSNumber numberWithInt:0], @"score", nil];
-            [levelsSavedData addObject:newLevelUnlocked];
-        }
-        
-        NSString *error = nil;
-        NSData *plistData = [NSPropertyListSerialization dataFromPropertyList:savedData format:NSPropertyListXMLFormat_v1_0 errorDescription:&error];
-        
-        
-        // check is plistData exists
-        if(plistData)
-        {
-            // write plistData to our Data.plist file
-            [plistData writeToFile:plistPath atomically:YES];
-        }
+        savedData = [NSMutableArray arrayWithArray:[Game getArrayFromPlistFileInDocumentsFolderWithFileName:@"LevelsSavedData"]];
+    }
+    else
+    {
+        savedData = [NSMutableArray arrayWithArray:[[NSUbiquitousKeyValueStore defaultStore] objectForKey:@"LevelsSavedData"]];
+    }
+    
+    NSMutableDictionary *savedDataOfThisLevel;
+    
+    savedDataOfThisLevel = [NSMutableDictionary dictionaryWithDictionary:[savedData objectAtIndex:currentLevel]];
+    
+    if (score > [[savedDataOfThisLevel objectForKey:@"score"] intValue])
+    {
+        int stars = [self calculateStars];
+        [savedDataOfThisLevel setObject:[NSNumber numberWithInt:score] forKey:@"score"];
+        [savedDataOfThisLevel setObject:[NSNumber numberWithInt:stars] forKey:@"stars"];
+        [savedData setObject:savedDataOfThisLevel atIndexedSubscript:currentLevel];
+    }
+    
+    if ([savedData objectAtIndex:currentLevel] == [savedData lastObject])
+    {
+        NSDictionary *newLevelUnlocked = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInt:0], @"stars", [NSNumber numberWithInt:0], @"score", nil];
+        [savedData addObject:newLevelUnlocked];
+    }
+    
+    if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"useiCloud"] boolValue] == NO)
+    {
+        [Game saveArray:savedData ToDocumentsFolderInPlistFile:@"LevelsSavedData"];
+    }
+    else
+    {
+        [[NSUbiquitousKeyValueStore defaultStore] setObject:savedData forKey:@"LevelsSavedData"];
     }
 }
 
@@ -198,7 +195,7 @@ static int currentLevel;
 
 - (void)showScore
 {
-    CCLabelTTF *finalScore = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Pontos: %d", score] fontName:@"Helvetica" fontSize:32];
+    CCLabelTTF *finalScore = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Pontos: %lld", score] fontName:@"Helvetica" fontSize:32];
     finalScore.fontColor = [CCColor blackColor];
     [finalScore setPosition:ccp(paper.contentSize.width * 0.5, paper.contentSize.height * 0.75)];
     [paper addChild:finalScore];
