@@ -121,7 +121,7 @@
 }
 
 - (void)onEnter
-{/*
+{
     bannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeBanner];
     bannerView.adUnitID = @"ca-app-pub-7716664418684772/3781724048";
     UIViewController *rootViewController = [UIApplication sharedApplication].keyWindow.rootViewController;
@@ -129,21 +129,21 @@
     
     bannerView.rootViewController = rootViewController;
     
-    [bannerView setFrame:CGRectMake(0, bannerView.rootViewController.view.bounds.size.height - bannerView.bounds.size.height, bannerView.bounds.size.width, bannerView.bounds.size.height)];
+    [bannerView setFrame:CGRectMake(bannerView.rootViewController.view.bounds.size.width / 2 - bannerView.bounds.size.width / 2, bannerView.rootViewController.view.bounds.size.height - bannerView.bounds.size.height, bannerView.bounds.size.width, bannerView.bounds.size.height)];
     
     [rootViewController.view addSubview:bannerView];
     
     GADRequest *request = [GADRequest request];
-    [bannerView loadRequest: request];*/
+    [bannerView loadRequest: request];
 }
 
 - (void)onExit
-{/*
+{
     if (bannerView != nil)
     {
         [bannerView removeFromSuperview];
         bannerView = nil;
-    }*/
+    }
 }
 
 
