@@ -7,6 +7,7 @@
 //
 
 #import "CCScene.h"
+//#import "GADBannerView.h"
 
 @interface LevelSelectScene : CCScene
 {
@@ -18,6 +19,8 @@
     CCScrollView *scroll;
     
     NSArray *savedData;
+    
+    //GADBannerView *bannerView;
 }
 
 - (LevelSelectScene *)init;

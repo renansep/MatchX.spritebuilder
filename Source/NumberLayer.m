@@ -195,6 +195,8 @@
     
     if (traceResult == result)
     {
+        [[OALSimpleAudio sharedInstance] playEffect:@"Sounds/score.caf"];
+        
         [self tradeNumbers:trace];
         [self generateResult];
     
@@ -204,6 +206,11 @@
         [gameScene increaseRemainingTime];
         [gameScene increaseCalculationsCompleted];
     }
+    else
+    {
+        [[OALSimpleAudio sharedInstance] playEffect:@"Sounds/miss.caf"];
+    }
+    
     [gameScene updateCalculationLabel:[NSString stringWithFormat:@"=%d", traceResult]];
     [gameScene scheduleOnce:@selector(clearCalculationLabel) delay:1];
     

@@ -13,8 +13,6 @@
 
 @implementation LevelSelectScene
 
-static CGPoint scrollLastPosition;
-
 - (LevelSelectScene *)init
 {
     self  = [super init];
@@ -116,11 +114,38 @@ static CGPoint scrollLastPosition;
             [levelIconsNode addChild:icon];
         }
         [scroll setContentNode:levelIconsNode];
-        [scroll setScrollPosition:scrollLastPosition];
+        [scroll setScrollPosition:ccp(0, [[[NSUserDefaults standardUserDefaults] objectForKey:@"scrollLastPosition"] floatValue])];
         self.userInteractionEnabled = YES;
     }
     return self;
 }
+
+- (void)onEnter
+{/*
+    bannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeBanner];
+    bannerView.adUnitID = @"ca-app-pub-7716664418684772/3781724048";
+    UIViewController *rootViewController = [UIApplication sharedApplication].keyWindow.rootViewController;
+    
+    
+    bannerView.rootViewController = rootViewController;
+    
+    [bannerView setFrame:CGRectMake(0, bannerView.rootViewController.view.bounds.size.height - bannerView.bounds.size.height, bannerView.bounds.size.width, bannerView.bounds.size.height)];
+    
+    [rootViewController.view addSubview:bannerView];
+    
+    GADRequest *request = [GADRequest request];
+    [bannerView loadRequest: request];*/
+}
+
+- (void)onExit
+{/*
+    if (bannerView != nil)
+    {
+        [bannerView removeFromSuperview];
+        bannerView = nil;
+    }*/
+}
+
 
 - (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
@@ -139,7 +164,7 @@ static CGPoint scrollLastPosition;
         {
             if (![i locked])
             {
-                scrollLastPosition = scroll.scrollPosition;
+                [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithFloat:scroll.scrollPosition.y] forKey:@"scrollLastPosition"];
                 [GameScene setCurrentLevel:[i levelNumber] - 1];
                 CCScene *gameScene = [CCBReader loadAsScene:@"GameScene"];
                 [[CCDirector sharedDirector] replaceScene:gameScene withTransition:[CCTransition transitionRevealWithDirection:CCTransitionDirectionDown duration:0.5f]];

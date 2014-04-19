@@ -28,13 +28,9 @@
 #import "AppDelegate.h"
 #import "CCBuilderReader.h"
 #import "Game.h"
+#import "GCHelper.h"
 
 @implementation AppController
-
-+ (void)sessionStateChanged:(FBSession *)session state:(int)state error:(NSError *)error
-{
-    
-}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -60,6 +56,10 @@
     
     [self setupCocos2dWithOptions:cocos2dSetup];
     
+    GCHelper *gcHelper = [GCHelper sharedInstance];
+    [gcHelper authenticateLocalUser];
+    
+    // iCloud setup
     // register to observe notifications from the store
     [[NSNotificationCenter defaultCenter]
      addObserver: self
@@ -67,7 +67,6 @@
      name: NSUbiquitousKeyValueStoreDidChangeExternallyNotification
      object: [NSUbiquitousKeyValueStore defaultStore]];
     
-    // iCloud setup
     id currentiCloudToken = [[NSFileManager defaultManager] ubiquityIdentityToken];
     if (currentiCloudToken) {
         NSData *newTokenData =
@@ -78,6 +77,7 @@
     } else {
         [[NSUserDefaults standardUserDefaults]
          removeObjectForKey: @"com.apportable.MatchX.UbiquityIdentityToken"];
+        [self setInitialLocalSavedData];
     }
     
     [[NSNotificationCenter defaultCenter]
@@ -96,6 +96,7 @@
         [alert show];
         [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:YES] forKey:@"promptedToUseiCloud"];
     }
+    // iCloud setup finished
     
     return YES;
 }
@@ -110,17 +111,23 @@
     NSLog(@"User logged in or out from iCloud");
 }
 
+- (void)setInitialLocalSavedData
+{
+    NSArray *savedData = [Game getArrayFromPlistFileInDocumentsFolderWithFileName:@"LevelsSavedData"];
+    [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:NO] forKey:@"useiCloud"];
+    if (savedData == nil)
+    {
+        savedData = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"LevelsSavedData" ofType:@"plist"]];
+        [Game saveArray:savedData ToDocumentsFolderInPlistFile:@"LevelsSavedData"];
+    }
+}
+
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
     NSArray *savedData = [Game getArrayFromPlistFileInDocumentsFolderWithFileName:@"LevelsSavedData"];
     if (buttonIndex == 0)
     {
-        [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:NO] forKey:@"useiCloud"];
-        if (savedData == nil)
-        {
-            savedData = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"LevelsSavedData" ofType:@"plist"]];
-            [Game saveArray:savedData ToDocumentsFolderInPlistFile:@"LevelsSavedData"];
-        }
+        [self setInitialLocalSavedData];
     }
     else
     {
@@ -145,7 +152,6 @@
         else
         {
             [[NSUbiquitousKeyValueStore defaultStore] setObject:[NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"LevelsSavedData" ofType:@"plist"]] forKey:@"LevelsSavedData"];
-            NSArray *test = [[NSUbiquitousKeyValueStore defaultStore] objectForKey:@"LevelsSavedData"];
         }
     }
 }

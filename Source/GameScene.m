@@ -10,6 +10,7 @@
 #import "GameScene.h"
 #import "NumberLayer.h"
 #import "LevelSelectScene.h"
+#import "GCHelper.h"
 
 @implementation GameScene
 
@@ -150,7 +151,7 @@ static int currentLevel;
     if (score > [[savedDataOfThisLevel objectForKey:@"score"] intValue])
     {
         int stars = [self calculateStars];
-        [savedDataOfThisLevel setObject:[NSNumber numberWithInt:score] forKey:@"score"];
+        [savedDataOfThisLevel setObject:[NSNumber numberWithInt:(int)score] forKey:@"score"];
         [savedDataOfThisLevel setObject:[NSNumber numberWithInt:stars] forKey:@"stars"];
         [savedData setObject:savedDataOfThisLevel atIndexedSubscript:currentLevel];
     }
@@ -169,6 +170,13 @@ static int currentLevel;
     {
         [[NSUbiquitousKeyValueStore defaultStore] setObject:savedData forKey:@"LevelsSavedData"];
     }
+    
+    int64_t totalStars = 0;
+    for (NSDictionary *d in savedData)
+    {
+        totalStars += [[d objectForKey:@"stars"] intValue];
+    }
+    [[GCHelper sharedInstance] submitScore:totalStars forCategory:@"Stars"];
 }
 
 - (void)updateCalculationLabel:(NSString *)text
@@ -213,9 +221,9 @@ static int currentLevel;
 - (int)calculateStars
 {
     int maxScore = calculationTime * calculationNumber * maxOperands;
-    if (score > maxScore * 0.75)
+    if (score > maxScore * 0.66)
         return 3;
-    else if (score > maxScore * 0.5)
+    else if (score > maxScore * 0.33)
         return 2;
     else
         return 1;
