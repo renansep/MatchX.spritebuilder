@@ -1,6 +1,14 @@
 {
     "assets": [
         {
+            "asset": "Source/Resources/Info.plist", 
+            "target": "Info.plist"
+        }, 
+        {
+            "asset": "Source/Resources/Default@2x.png", 
+            "target": "Default@2x.png"
+        }, 
+        {
             "asset": "Source/Resources/Icon~iphone.png", 
             "target": "Icon~iphone.png"
         }, 
@@ -33,8 +41,16 @@
             "target": "Icon@2x.png"
         }, 
         {
-            "asset": "Source/Resources/SavedData.plist", 
-            "target": "SavedData.plist"
+            "asset": "Source/Resources/LevelsSavedData.plist", 
+            "target": "LevelsSavedData.plist"
+        }, 
+        {
+            "asset": "MatchX/Images.xcassets", 
+            "target": null
+        }, 
+        {
+            "asset": "Default-568h@2x.png", 
+            "target": "Default-568h@2x.png"
         }, 
         {
             "asset": "Source/Resources/Icon@2x~ipad.png", 
@@ -65,23 +81,33 @@
         "TEMPLATE_VALUES": {
             "EXECUTABLE_NAME": "MatchX", 
             "PRODUCT_NAME": "MatchX"
-        }
+        }, 
+        "URL_SCHEME": [
+            "fb226775827529109", 
+            "fb226775827529109"
+        ]
     }, 
     "defines": {
         "NDEBUG": 1, 
         "NS_BLOCK_ASSERTIONS": 1, 
-        "__IPHONE_OS_VERSION_MIN_REQUIRED": 50000
+        "__IPHONE_OS_VERSION_MIN_REQUIRED": 60100
     }, 
     "deps": [
         "UIKit", 
+        "CoreTelephony", 
+        "MessageUI", 
+        "StoreKit", 
+        "SystemConfiguration", 
+        "AdSupport", 
+        "CoreGraphics", 
+        "AVFoundation", 
+        "AudioToolbox", 
+        "GameKit", 
         "QuartzCore", 
         "OpenGLES", 
         "OpenAL", 
-        "AudioToolbox", 
-        "AVFoundation", 
         "UIKit", 
         "Foundation", 
-        "CoreGraphics", 
         "CoreText"
     ], 
     "flags": [
@@ -145,6 +171,61 @@
                     "prefix": "Source/", 
                     "suffix": "AppDelegate.h"
                 }, 
+                "GADAdMobExtras.h": {
+                    "key": "GADAdMobExtras.h", 
+                    "prefix": "./", 
+                    "suffix": "GADAdMobExtras.h"
+                }, 
+                "GADAdNetworkExtras.h": {
+                    "key": "GADAdNetworkExtras.h", 
+                    "prefix": "./", 
+                    "suffix": "GADAdNetworkExtras.h"
+                }, 
+                "GADAdSize.h": {
+                    "key": "GADAdSize.h", 
+                    "prefix": "./", 
+                    "suffix": "GADAdSize.h"
+                }, 
+                "GADBannerView.h": {
+                    "key": "GADBannerView.h", 
+                    "prefix": "./", 
+                    "suffix": "GADBannerView.h"
+                }, 
+                "GADBannerViewDelegate.h": {
+                    "key": "GADBannerViewDelegate.h", 
+                    "prefix": "./", 
+                    "suffix": "GADBannerViewDelegate.h"
+                }, 
+                "GADInterstitial.h": {
+                    "key": "GADInterstitial.h", 
+                    "prefix": "./", 
+                    "suffix": "GADInterstitial.h"
+                }, 
+                "GADInterstitialDelegate.h": {
+                    "key": "GADInterstitialDelegate.h", 
+                    "prefix": "./", 
+                    "suffix": "GADInterstitialDelegate.h"
+                }, 
+                "GADRequest.h": {
+                    "key": "GADRequest.h", 
+                    "prefix": "./", 
+                    "suffix": "GADRequest.h"
+                }, 
+                "GADRequestError.h": {
+                    "key": "GADRequestError.h", 
+                    "prefix": "./", 
+                    "suffix": "GADRequestError.h"
+                }, 
+                "GCHelper.h": {
+                    "key": "GCHelper.h", 
+                    "prefix": "Source/", 
+                    "suffix": "GCHelper.h"
+                }, 
+                "Game.h": {
+                    "key": "Game.h", 
+                    "prefix": "Source/", 
+                    "suffix": "Game.h"
+                }, 
                 "GameNumber.h": {
                     "key": "GameNumber.h", 
                     "prefix": "Source/", 
@@ -182,6 +263,10 @@
                 }
             }, 
             "type": "iquote"
+        }, 
+        {
+            "header_path": "/var/folders/bd/d9n4_nm15fj_vg5h2t323ynm0000gn/T/tmpNsjxiO/BUILT_PRODUCTS_DIR/include", 
+            "type": "I"
         }, 
         {
             "header_path": "Source/libs/cocos2d-iphone/external/kazmath/include", 
@@ -254,6 +339,14 @@
         {
             "header_path": "Source/libs/cocos2d-iphone/external/ObjectAL/Support", 
             "type": "I"
+        }, 
+        {
+            "header_path": "/var/folders/bd/d9n4_nm15fj_vg5h2t323ynm0000gn/T/tmpNsjxiO/DERIVED_FILE_DIR/armv7", 
+            "type": "I"
+        }, 
+        {
+            "header_path": "/var/folders/bd/d9n4_nm15fj_vg5h2t323ynm0000gn/T/tmpNsjxiO/DERIVED_FILE_DIR", 
+            "type": "I"
         }
     ], 
     "infoplists": [
@@ -261,7 +354,8 @@
     ], 
     "libs": [
         "z", 
-        "sqlite3"
+        "sqlite3", 
+        "GoogleAdMobAds"
     ], 
     "modules": [
         {
@@ -287,6 +381,20 @@
             "header_paths": [], 
             "language": "objc", 
             "source": "Source/AppDelegate.m"
+        }, 
+        {
+            "defines": {}, 
+            "flags": [], 
+            "header_paths": [], 
+            "language": "objc", 
+            "source": "Source/GCHelper.m"
+        }, 
+        {
+            "defines": {}, 
+            "flags": [], 
+            "header_paths": [], 
+            "language": "objc", 
+            "source": "Source/Game.m"
         }, 
         {
             "defines": {}, 
@@ -338,7 +446,9 @@
             "source": "Source/main.m"
         }
     ], 
+    "storyboards": [], 
     "type": "app", 
-    "version": "1", 
-    "xcode_project": "MatchX.xcodeproj"
+    "version": "3", 
+    "xcode_project": "MatchX.xcodeproj", 
+    "xibs": []
 }

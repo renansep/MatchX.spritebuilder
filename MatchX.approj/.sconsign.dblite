@@ -1,1 +1,42 @@
-{"/Users/renan/Desktop/Xcode Projects/Games/MatchX.spritebuilder/MatchX.approj/configuration.json":{"hash":"caa30b01183fd36e5bb2fd80f745a16a","mod":1395053957.0},"/Users/renan/Desktop/Xcode Projects/Games/MatchX.spritebuilder/MatchX.approj/targets/MatchX/Release.generated":{"hash":"600ab027c683fd7c9ab57cdd0ae6bde4","mod":1395230754.0},"/Users/renan/Desktop/Xcode Projects/Games/MatchX.spritebuilder/MatchX.xcodeproj/project.pbxproj":{"hash":"bb341fea9330290d66b6da77021506ea","mod":1396225652.0},"/Users/renan/Desktop/Xcode Projects/Games/MatchX.spritebuilder/Source/libs/cocos2d-iphone/Chipmunk7-ios.approj/configuration.json":{"hash":"fffca53229b597618e8b24a6c884cd4e","mod":1395053957.0},"/Users/renan/Desktop/Xcode Projects/Games/MatchX.spritebuilder/Source/libs/cocos2d-iphone/cocos2d-ios.approj/configuration.json":{"hash":"2e12d7904c991ef301c67a724be239e9","mod":1395053957.0},"/Users/renansep/Desktop/XcodeProjects/Games/MatchX.spritebuilder/MatchX.approj/configuration.json":{"hash":"caa30b01183fd36e5bb2fd80f745a16a","mod":1395372621.0},"/Users/renansep/Desktop/XcodeProjects/Games/MatchX.spritebuilder/MatchX.approj/targets/MatchX/Release.generated":{"hash":"127886c3175c5644777d3c4a27111a44","mod":1396718174.0},"/Users/renansep/Desktop/XcodeProjects/Games/MatchX.spritebuilder/MatchX.xcodeproj/project.pbxproj":{"hash":"ce1ba41be7bd8ce5610fad1ac3b2cb9f","mod":1396718137.0},"/Users/renansep/Desktop/XcodeProjects/Games/MatchX.spritebuilder/Source/libs/cocos2d-iphone/Chipmunk7-ios.approj/configuration.json":{"hash":"fffca53229b597618e8b24a6c884cd4e","mod":1394820250.0},"/Users/renansep/Desktop/XcodeProjects/Games/MatchX.spritebuilder/Source/libs/cocos2d-iphone/cocos2d-ios.approj/configuration.json":{"hash":"2e12d7904c991ef301c67a724be239e9","mod":1394820250.0}}
+{
+    "/Users/renan/Desktop/Xcode Projects/Games/MatchX.spritebuilder/MatchX.approj/configuration.json": {
+        "hash": "caa30b01183fd36e5bb2fd80f745a16a", 
+        "mod": 1395053957.0
+    }, 
+    "/Users/renan/Desktop/Xcode Projects/Games/MatchX.spritebuilder/MatchX.approj/targets/MatchX/Release.generated": {
+        "hash": "600ab027c683fd7c9ab57cdd0ae6bde4", 
+        "mod": 1395230754.0
+    }, 
+    "/Users/renan/Desktop/Xcode Projects/Games/MatchX.spritebuilder/MatchX.xcodeproj/project.pbxproj": {
+        "hash": "7516a8bd312be00ab8ff586676c296c0", 
+        "mod": 1397889918.0
+    }, 
+    "/Users/renan/Desktop/Xcode Projects/Games/MatchX.spritebuilder/Source/libs/cocos2d-iphone/Chipmunk7-ios.approj/configuration.json": {
+        "hash": "fffca53229b597618e8b24a6c884cd4e", 
+        "mod": 1395053957.0
+    }, 
+    "/Users/renan/Desktop/Xcode Projects/Games/MatchX.spritebuilder/Source/libs/cocos2d-iphone/cocos2d-ios.approj/configuration.json": {
+        "hash": "2e12d7904c991ef301c67a724be239e9", 
+        "mod": 1395053957.0
+    }, 
+    "/Users/renansep/Desktop/XcodeProjects/Games/MatchX.spritebuilder/MatchX.approj/configuration.json": {
+        "hash": "caa30b01183fd36e5bb2fd80f745a16a", 
+        "mod": 1395372621.0
+    }, 
+    "/Users/renansep/Desktop/XcodeProjects/Games/MatchX.spritebuilder/MatchX.approj/targets/MatchX/Release.generated": {
+        "hash": "127886c3175c5644777d3c4a27111a44", 
+        "mod": 1396718174.0
+    }, 
+    "/Users/renansep/Desktop/XcodeProjects/Games/MatchX.spritebuilder/MatchX.xcodeproj/project.pbxproj": {
+        "hash": "ce1ba41be7bd8ce5610fad1ac3b2cb9f", 
+        "mod": 1396718137.0
+    }, 
+    "/Users/renansep/Desktop/XcodeProjects/Games/MatchX.spritebuilder/Source/libs/cocos2d-iphone/Chipmunk7-ios.approj/configuration.json": {
+        "hash": "fffca53229b597618e8b24a6c884cd4e", 
+        "mod": 1394820250.0
+    }, 
+    "/Users/renansep/Desktop/XcodeProjects/Games/MatchX.spritebuilder/Source/libs/cocos2d-iphone/cocos2d-ios.approj/configuration.json": {
+        "hash": "2e12d7904c991ef301c67a724be239e9", 
+        "mod": 1394820250.0
+    }
+}

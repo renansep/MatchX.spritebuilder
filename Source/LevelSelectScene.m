@@ -18,6 +18,8 @@
     self  = [super init];
     if (self)
     {
+        [self loadAds];
+        
         CGSize viewSize = [[CCDirector sharedDirector] viewSize];
         
         background = [CCSprite spriteWithImageNamed:@"background.png"];
@@ -86,7 +88,7 @@
                 {
                     extraline = 2;
                 }
-                levelIconsNode = [CCNodeColor nodeWithColor:[CCColor clearColor] width:viewSize.width height:(levels.count / 3 + extraline) * [icon height] * 1.5];
+                levelIconsNode = [CCNodeColor nodeWithColor:[CCColor clearColor] width:viewSize.width height:(levels.count / 3 + extraline) * [icon height] * 1.5 + bannerView.bounds.size.height];
                 [levelIconsNode setAnchorPoint:ccp(0,1)];
                 [levelIconsNode setPosition:ccp(0, viewSize.height * 0.9)];
             }
@@ -120,24 +122,20 @@
     return self;
 }
 
-- (void)onEnter
+- (void)loadAds
 {
     bannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeBanner];
     bannerView.adUnitID = @"ca-app-pub-7716664418684772/3781724048";
     UIViewController *rootViewController = [UIApplication sharedApplication].keyWindow.rootViewController;
-    
-    
     bannerView.rootViewController = rootViewController;
-    
     [bannerView setFrame:CGRectMake(bannerView.rootViewController.view.bounds.size.width / 2 - bannerView.bounds.size.width / 2, bannerView.rootViewController.view.bounds.size.height - bannerView.bounds.size.height, bannerView.bounds.size.width, bannerView.bounds.size.height)];
-    
     [rootViewController.view addSubview:bannerView];
     
     GADRequest *request = [GADRequest request];
     [bannerView loadRequest: request];
 }
 
-- (void)onExit
+- (void)removeAds
 {
     if (bannerView != nil)
     {
@@ -164,6 +162,7 @@
         {
             if (![i locked])
             {
+                [self removeAds];
                 [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithFloat:scroll.scrollPosition.y] forKey:@"scrollLastPosition"];
                 [GameScene setCurrentLevel:[i levelNumber] - 1];
                 CCScene *gameScene = [CCBReader loadAsScene:@"GameScene"];
