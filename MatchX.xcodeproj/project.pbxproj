@@ -11,6 +11,51 @@
 		28AE8A2818DF5616002295D1 /* LevelsSavedData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28AE8A2718DF5616002295D1 /* LevelsSavedData.plist */; };
 		28AE8A2B18DF6384002295D1 /* LevelSelectScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 28AE8A2A18DF6384002295D1 /* LevelSelectScene.m */; };
 		28D209CA18D779C400D56D9C /* Levels.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28D209C918D779C400D56D9C /* Levels.plist */; };
+		7503BA34191CF4EA00DC1DEB /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 75F0E17618F2C33400D6A63D /* Game.m */; };
+		7503BA35191CF4EA00DC1DEB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B737893E1807617C0076A88C /* AppDelegate.m */; };
+		7503BA36191CF4EA00DC1DEB /* LevelIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 28AE8A2418DF4262002295D1 /* LevelIcon.m */; };
+		7503BA37191CF4EA00DC1DEB /* GameNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D37E9518D1DFDD008EEB88 /* GameNumber.m */; };
+		7503BA38191CF4EA00DC1DEB /* LevelSelectScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 28AE8A2A18DF6384002295D1 /* LevelSelectScene.m */; };
+		7503BA39191CF4EA00DC1DEB /* NumberLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D37E9F18D32098008EEB88 /* NumberLayer.m */; };
+		7503BA3A191CF4EA00DC1DEB /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D37E9C18D1E3D9008EEB88 /* GameScene.m */; };
+		7503BA3B191CF4EA00DC1DEB /* StartScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 7551DF0518C8BB3E000A2EBE /* StartScene.m */; };
+		7503BA3C191CF4EA00DC1DEB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B73789851807631A0076A88C /* main.m */; };
+		7503BA3D191CF4EA00DC1DEB /* GCHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 757DEBD518FD6E81009EAACE /* GCHelper.m */; };
+		7503BA3F191CF4EA00DC1DEB /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75BFB2CB190252FD00DD71AB /* CoreTelephony.framework */; };
+		7503BA40191CF4EA00DC1DEB /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 756BF3A4190252710000EE9E /* MessageUI.framework */; };
+		7503BA41191CF4EA00DC1DEB /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 756BF3A5190252710000EE9E /* StoreKit.framework */; };
+		7503BA42191CF4EA00DC1DEB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 756BF3A6190252710000EE9E /* SystemConfiguration.framework */; };
+		7503BA43191CF4EA00DC1DEB /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 756BF3A2190252410000EE9E /* AdSupport.framework */; };
+		7503BA44191CF4EA00DC1DEB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 753A58F519024D5900C736A0 /* CoreGraphics.framework */; };
+		7503BA45191CF4EA00DC1DEB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 753A58F319024D4E00C736A0 /* AVFoundation.framework */; };
+		7503BA46191CF4EA00DC1DEB /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 753A58F019024D4900C736A0 /* AudioToolbox.framework */; };
+		7503BA47191CF4EA00DC1DEB /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 753A58E819024CD400C736A0 /* GameKit.framework */; };
+		7503BA48191CF4EA00DC1DEB /* libcocos2d.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B737894B180761A90076A88C /* libcocos2d.a */; };
+		7503BA49191CF4EA00DC1DEB /* libGoogleAdMobAds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 756BF3A0190252290000EE9E /* libGoogleAdMobAds.a */; };
+		7503BA4A191CF4EA00DC1DEB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B3117B978D7009739AE /* QuartzCore.framework */; };
+		7503BA4B191CF4EA00DC1DEB /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B3317B978D7009739AE /* OpenGLES.framework */; };
+		7503BA4C191CF4EA00DC1DEB /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B3517B978D7009739AE /* OpenAL.framework */; };
+		7503BA4D191CF4EA00DC1DEB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B3B17B978D7009739AE /* UIKit.framework */; };
+		7503BA4E191CF4EA00DC1DEB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B3D17B978D7009739AE /* Foundation.framework */; };
+		7503BA4F191CF4EA00DC1DEB /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B4117B978D7009739AE /* CoreText.framework */; };
+		7503BA51191CF4EA00DC1DEB /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75ACCA0018F5B08900C7179A /* Default@2x.png */; };
+		7503BA52191CF4EA00DC1DEB /* Icon~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 751C4D2218E891BA00144D48 /* Icon~iphone.png */; };
+		7503BA53191CF4EA00DC1DEB /* Spotlight50.png in Resources */ = {isa = PBXBuildFile; fileRef = 751C4D2818E891BA00144D48 /* Spotlight50.png */; };
+		7503BA54191CF4EA00DC1DEB /* Icon~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 751C4D1F18E891BA00144D48 /* Icon~ipad.png */; };
+		7503BA55191CF4EA00DC1DEB /* Spotlight100.png in Resources */ = {isa = PBXBuildFile; fileRef = 751C4D2B18E891BA00144D48 /* Spotlight100.png */; };
+		7503BA56191CF4EA00DC1DEB /* Published-iOS in Resources */ = {isa = PBXBuildFile; fileRef = B737893A180761570076A88C /* Published-iOS */; };
+		7503BA57191CF4EA00DC1DEB /* Settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 751C4D2418E891BA00144D48 /* Settings.png */; };
+		7503BA58191CF4EA00DC1DEB /* Spotlight40.png in Resources */ = {isa = PBXBuildFile; fileRef = 751C4D2718E891BA00144D48 /* Spotlight40.png */; };
+		7503BA59191CF4EA00DC1DEB /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 751C4D2318E891BA00144D48 /* Icon@2x.png */; };
+		7503BA5A191CF4EA00DC1DEB /* LevelsSavedData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28AE8A2718DF5616002295D1 /* LevelsSavedData.plist */; };
+		7503BA5B191CF4EA00DC1DEB /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 75ACCA0C18F6D1CB00C7179A /* Info.plist */; };
+		7503BA5C191CF4EA00DC1DEB /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 75ACCB5318F6DEF800C7179A /* Default-568h@2x.png */; };
+		7503BA5D191CF4EA00DC1DEB /* Icon@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 751C4D2018E891BA00144D48 /* Icon@2x~ipad.png */; };
+		7503BA5E191CF4EA00DC1DEB /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 751C4D2118E891BA00144D48 /* Icon.png */; };
+		7503BA5F191CF4EA00DC1DEB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75506D7418EEF05B00A8B508 /* Images.xcassets */; };
+		7503BA60191CF4EA00DC1DEB /* Settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 751C4D2518E891BA00144D48 /* Settings@2x.png */; };
+		7503BA61191CF4EA00DC1DEB /* Icon@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 751C4D2A18E891BA00144D48 /* Icon@2x~iphone.png */; };
+		7503BA62191CF4EA00DC1DEB /* Levels.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28D209C918D779C400D56D9C /* Levels.plist */; };
 		751C4D2E18E891BA00144D48 /* Icon~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 751C4D1F18E891BA00144D48 /* Icon~ipad.png */; };
 		751C4D2F18E891BA00144D48 /* Icon@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 751C4D2018E891BA00144D48 /* Icon@2x~ipad.png */; };
 		751C4D3018E891BA00144D48 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 751C4D2118E891BA00144D48 /* Icon.png */; };
@@ -55,6 +100,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		7503BA32191CF4EA00DC1DEB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B7378940180761A80076A88C /* cocos2d-ios.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 5018F24C0DFDEAC400C013A5;
+			remoteInfo = cocos2d;
+		};
 		B737894A180761A90076A88C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B7378940180761A80076A88C /* cocos2d-ios.xcodeproj */;
@@ -78,6 +130,8 @@
 		28AE8A2918DF6384002295D1 /* LevelSelectScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LevelSelectScene.h; path = Source/LevelSelectScene.h; sourceTree = "<group>"; };
 		28AE8A2A18DF6384002295D1 /* LevelSelectScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LevelSelectScene.m; path = Source/LevelSelectScene.m; sourceTree = "<group>"; };
 		28D209C918D779C400D56D9C /* Levels.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Levels.plist; sourceTree = "<group>"; };
+		7503BA66191CF4EA00DC1DEB /* MatchX copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MatchX copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7503BA67191CF4EB00DC1DEB /* MatchX copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "MatchX copy-Info.plist"; path = "/Users/renan/Desktop/Xcode Projects/Games/MatchX.spritebuilder/MatchX copy-Info.plist"; sourceTree = "<absolute>"; };
 		751C4D1F18E891BA00144D48 /* Icon~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon~ipad.png"; sourceTree = "<group>"; };
 		751C4D2018E891BA00144D48 /* Icon@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x~ipad.png"; sourceTree = "<group>"; };
 		751C4D2118E891BA00144D48 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
@@ -142,6 +196,30 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		7503BA3E191CF4EA00DC1DEB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7503BA3F191CF4EA00DC1DEB /* CoreTelephony.framework in Frameworks */,
+				7503BA40191CF4EA00DC1DEB /* MessageUI.framework in Frameworks */,
+				7503BA41191CF4EA00DC1DEB /* StoreKit.framework in Frameworks */,
+				7503BA42191CF4EA00DC1DEB /* SystemConfiguration.framework in Frameworks */,
+				7503BA43191CF4EA00DC1DEB /* AdSupport.framework in Frameworks */,
+				7503BA44191CF4EA00DC1DEB /* CoreGraphics.framework in Frameworks */,
+				7503BA45191CF4EA00DC1DEB /* AVFoundation.framework in Frameworks */,
+				7503BA46191CF4EA00DC1DEB /* AudioToolbox.framework in Frameworks */,
+				7503BA47191CF4EA00DC1DEB /* GameKit.framework in Frameworks */,
+				7503BA48191CF4EA00DC1DEB /* libcocos2d.a in Frameworks */,
+				7503BA49191CF4EA00DC1DEB /* libGoogleAdMobAds.a in Frameworks */,
+				7503BA4A191CF4EA00DC1DEB /* QuartzCore.framework in Frameworks */,
+				7503BA4B191CF4EA00DC1DEB /* OpenGLES.framework in Frameworks */,
+				7503BA4C191CF4EA00DC1DEB /* OpenAL.framework in Frameworks */,
+				7503BA4D191CF4EA00DC1DEB /* UIKit.framework in Frameworks */,
+				7503BA4E191CF4EA00DC1DEB /* Foundation.framework in Frameworks */,
+				7503BA4F191CF4EA00DC1DEB /* CoreText.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B77F1B2B17B978D7009739AE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -258,6 +336,7 @@
 				B77F1CCF17B978D8009739AE /* Supporting Files */,
 				B77F1B3017B978D7009739AE /* Frameworks */,
 				B77F1B2F17B978D7009739AE /* Products */,
+				7503BA67191CF4EB00DC1DEB /* MatchX copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -265,6 +344,7 @@
 			isa = PBXGroup;
 			children = (
 				B77F1B2E17B978D7009739AE /* MatchX.app */,
+				7503BA66191CF4EA00DC1DEB /* MatchX copy.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -318,6 +398,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		7503BA30191CF4EA00DC1DEB /* MatchX Kids */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7503BA63191CF4EA00DC1DEB /* Build configuration list for PBXNativeTarget "MatchX Kids" */;
+			buildPhases = (
+				7503BA33191CF4EA00DC1DEB /* Sources */,
+				7503BA3E191CF4EA00DC1DEB /* Frameworks */,
+				7503BA50191CF4EA00DC1DEB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7503BA31191CF4EA00DC1DEB /* PBXTargetDependency */,
+			);
+			name = "MatchX Kids";
+			productName = Example;
+			productReference = 7503BA66191CF4EA00DC1DEB /* MatchX copy.app */;
+			productType = "com.apple.product-type.application";
+		};
 		B77F1B2D17B978D7009739AE /* MatchX */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B77F1CDE17B978D8009739AE /* Build configuration list for PBXNativeTarget "MatchX" */;
@@ -378,6 +476,7 @@
 			projectRoot = "";
 			targets = (
 				B77F1B2D17B978D7009739AE /* MatchX */,
+				7503BA30191CF4EA00DC1DEB /* MatchX Kids */,
 			);
 		};
 /* End PBXProject section */
@@ -393,6 +492,31 @@
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
+		7503BA50191CF4EA00DC1DEB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7503BA51191CF4EA00DC1DEB /* Default@2x.png in Resources */,
+				7503BA52191CF4EA00DC1DEB /* Icon~iphone.png in Resources */,
+				7503BA53191CF4EA00DC1DEB /* Spotlight50.png in Resources */,
+				7503BA54191CF4EA00DC1DEB /* Icon~ipad.png in Resources */,
+				7503BA55191CF4EA00DC1DEB /* Spotlight100.png in Resources */,
+				7503BA56191CF4EA00DC1DEB /* Published-iOS in Resources */,
+				7503BA57191CF4EA00DC1DEB /* Settings.png in Resources */,
+				7503BA58191CF4EA00DC1DEB /* Spotlight40.png in Resources */,
+				7503BA59191CF4EA00DC1DEB /* Icon@2x.png in Resources */,
+				7503BA5A191CF4EA00DC1DEB /* LevelsSavedData.plist in Resources */,
+				7503BA5B191CF4EA00DC1DEB /* Info.plist in Resources */,
+				7503BA5C191CF4EA00DC1DEB /* Default-568h@2x.png in Resources */,
+				7503BA5D191CF4EA00DC1DEB /* Icon@2x~ipad.png in Resources */,
+				7503BA5E191CF4EA00DC1DEB /* Icon.png in Resources */,
+				7503BA5F191CF4EA00DC1DEB /* Images.xcassets in Resources */,
+				7503BA60191CF4EA00DC1DEB /* Settings@2x.png in Resources */,
+				7503BA61191CF4EA00DC1DEB /* Icon@2x~iphone.png in Resources */,
+				7503BA62191CF4EA00DC1DEB /* Levels.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B77F1B2C17B978D7009739AE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -421,6 +545,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		7503BA33191CF4EA00DC1DEB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7503BA34191CF4EA00DC1DEB /* Game.m in Sources */,
+				7503BA35191CF4EA00DC1DEB /* AppDelegate.m in Sources */,
+				7503BA36191CF4EA00DC1DEB /* LevelIcon.m in Sources */,
+				7503BA37191CF4EA00DC1DEB /* GameNumber.m in Sources */,
+				7503BA38191CF4EA00DC1DEB /* LevelSelectScene.m in Sources */,
+				7503BA39191CF4EA00DC1DEB /* NumberLayer.m in Sources */,
+				7503BA3A191CF4EA00DC1DEB /* GameScene.m in Sources */,
+				7503BA3B191CF4EA00DC1DEB /* StartScene.m in Sources */,
+				7503BA3C191CF4EA00DC1DEB /* main.m in Sources */,
+				7503BA3D191CF4EA00DC1DEB /* GCHelper.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B77F1B2A17B978D7009739AE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -441,6 +582,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		7503BA31191CF4EA00DC1DEB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = cocos2d;
+			targetProxy = 7503BA32191CF4EA00DC1DEB /* PBXContainerItemProxy */;
+		};
 		B7378989180764180076A88C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = cocos2d;
@@ -449,6 +595,98 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		7503BA64191CF4EA00DC1DEB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = MatchX/MatchX.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					/Documents/FacebookSDK,
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Source/Prefix.pch;
+				HEADER_SEARCH_PATHS = (
+					"\"Source/libs/cocos2d-iphone/external/kazmath/include\"/**",
+					"\"Source/libs/cocos2d-iphone/cocos2d\"/**",
+					"Source/libs/cocos2d-iphone/external/Chipmunk/objectivec/include",
+					"Source/libs/cocos2d-iphone/external/Chipmunk/include",
+					"\"Source/libs/cocos2d-iphone/cocos2d-ui\"/**",
+					"\"Source/libs/cocos2d-iphone/external/ObjectAL\"/**",
+				);
+				INFOPLIST_FILE = "MatchX copy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Add-ons/GoogleAnalyticsServicesiOS_3.03",
+					"$(PROJECT_DIR)",
+					"/Users/renan/Desktop/GoogleAdMobAdsSdkiOS-6.8.0",
+				);
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-lz",
+					"-lsqlite3",
+					"-ObjC",
+				);
+				PRODUCT_NAME = "MatchX copy";
+				PROVISIONING_PROFILE = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		7503BA65191CF4EA00DC1DEB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = MatchX/MatchX.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					/Documents/FacebookSDK,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Source/Prefix.pch;
+				HEADER_SEARCH_PATHS = (
+					"\"Source/libs/cocos2d-iphone/external/kazmath/include\"/**",
+					"\"Source/libs/cocos2d-iphone/cocos2d\"/**",
+					"Source/libs/cocos2d-iphone/external/Chipmunk/objectivec/include",
+					"Source/libs/cocos2d-iphone/external/Chipmunk/include",
+					"\"Source/libs/cocos2d-iphone/cocos2d-ui\"/**",
+					"\"Source/libs/cocos2d-iphone/external/ObjectAL\"/**",
+				);
+				INFOPLIST_FILE = "MatchX copy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Add-ons/GoogleAnalyticsServicesiOS_3.03",
+					"$(PROJECT_DIR)",
+					"/Users/renan/Desktop/GoogleAdMobAdsSdkiOS-6.8.0",
+				);
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-lz",
+					"-lsqlite3",
+					"-ObjC",
+				);
+				PRODUCT_NAME = "MatchX copy";
+				PROVISIONING_PROFILE = "";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
 		B77F1CDC17B978D8009739AE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -603,6 +841,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		7503BA63191CF4EA00DC1DEB /* Build configuration list for PBXNativeTarget "MatchX Kids" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7503BA64191CF4EA00DC1DEB /* Debug */,
+				7503BA65191CF4EA00DC1DEB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		B77F1B2917B978D7009739AE /* Build configuration list for PBXProject "MatchX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
