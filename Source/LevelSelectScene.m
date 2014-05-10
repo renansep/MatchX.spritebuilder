@@ -18,8 +18,6 @@
     self  = [super init];
     if (self)
     {
-        [self loadAds];
-        
         CGSize viewSize = [[CCDirector sharedDirector] viewSize];
         
         background = [CCSprite spriteWithImageNamed:@"background.png"];
@@ -44,6 +42,8 @@
         [scroll setHorizontalScrollEnabled:NO];
         [scroll setBounces:NO];
         [self addChild:scroll];
+        
+        [self loadAds];
         
         //Title label
         CCLabelTTF *titleLabel = [CCLabelTTF labelWithString:@"Escolha uma Fase" fontName:@"NewAthleticM54" fontSize:32];
@@ -140,6 +140,7 @@
     if (bannerView != nil)
     {
         [bannerView removeFromSuperview];
+        [bannerView setHidden:YES];
         bannerView = nil;
     }
 }

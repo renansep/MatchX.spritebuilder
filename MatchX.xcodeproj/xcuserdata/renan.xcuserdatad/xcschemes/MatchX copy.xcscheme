@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7503BA30191CF4EA00DC1DEB"
-               BuildableName = "MatchX.app"
+               BuildableName = "MatchX copy.app"
                BlueprintName = "MatchX Kids"
                ReferencedContainer = "container:MatchX.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7503BA30191CF4EA00DC1DEB"
-            BuildableName = "MatchX.app"
+            BuildableName = "MatchX copy.app"
             BlueprintName = "MatchX Kids"
             ReferencedContainer = "container:MatchX.xcodeproj">
          </BuildableReference>
@@ -52,7 +52,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7503BA30191CF4EA00DC1DEB"
-            BuildableName = "MatchX.app"
+            BuildableName = "MatchX copy.app"
             BlueprintName = "MatchX Kids"
             ReferencedContainer = "container:MatchX.xcodeproj">
          </BuildableReference>
@@ -70,7 +70,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7503BA30191CF4EA00DC1DEB"
-            BuildableName = "MatchX.app"
+            BuildableName = "MatchX copy.app"
             BlueprintName = "MatchX Kids"
             ReferencedContainer = "container:MatchX.xcodeproj">
          </BuildableReference>
