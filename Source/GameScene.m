@@ -61,6 +61,7 @@ static int currentLevel;
 
 - (void)back:(id)sender
 {
+    [self unscheduleAllSelectors];
     LevelSelectScene *levelSelectScene = [LevelSelectScene new];
     [[CCDirector sharedDirector] replaceScene:levelSelectScene withTransition:[CCTransition transitionRevealWithDirection:CCTransitionDirectionDown duration:0.5f]];
 }

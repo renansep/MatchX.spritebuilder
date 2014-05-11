@@ -82,14 +82,18 @@
 
 - (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
-    CCScene *levelSelectionScene = [LevelSelectScene new];
-    [[CCDirector sharedDirector] replaceScene:levelSelectionScene withTransition:[CCTransition transitionRevealWithDirection:CCTransitionDirectionDown duration:0.5f]];
-    self.userInteractionEnabled = NO;
+    
 }
 
 - (void)touchEnded:(UITouch *)touch withEvent:(UIEvent *)event
 {
-    
+    if (levelSelectionScene == nil)
+    {
+        self.userInteractionEnabled = NO;
+        [self unscheduleAllSelectors];
+        levelSelectionScene = [LevelSelectScene new];
+        [[CCDirector sharedDirector] replaceScene:levelSelectionScene withTransition:[CCTransition transitionRevealWithDirection:CCTransitionDirectionDown duration:0.5f]];
+    }
 }
 
 - (void)update:(CCTime)delta

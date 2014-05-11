@@ -32,6 +32,8 @@
     NumberLayer *numberLayer;
     
     CCNodeColor *overlay;
+    
+    CCScene *levelSelectionScene;
 }
 
 @end
