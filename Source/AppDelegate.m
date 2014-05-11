@@ -132,6 +132,10 @@
     else
     {
         [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:YES] forKey:@"useiCloud"];
+        
+        [[NSUbiquitousKeyValueStore defaultStore] synchronize];
+        NSArray *iCloudSavedData = [[NSUbiquitousKeyValueStore defaultStore] objectForKey:@"LevelsSavedData"];
+        
         if (savedData != nil)
         {
             NSArray *iCloudSavedData = [[NSUbiquitousKeyValueStore defaultStore] objectForKey:@"LevelsSavedData"];
@@ -151,7 +155,8 @@
         }
         else
         {
-            [[NSUbiquitousKeyValueStore defaultStore] setObject:[NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"LevelsSavedData" ofType:@"plist"]] forKey:@"LevelsSavedData"];
+            if (iCloudSavedData == nil)
+                [[NSUbiquitousKeyValueStore defaultStore] setObject:[NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"LevelsSavedData" ofType:@"plist"]] forKey:@"LevelsSavedData"];
         }
     }
 }
