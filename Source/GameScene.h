@@ -32,6 +32,7 @@
     CCLabelTTF *resultLabel;
     CCLabelTTF *operationLabel;
     CCLabelTTF *scoreLabel;
+    CCLabelTTF *scoreTitleLabel;
     CCLabelTTF *calculationLabel;
     int calculationLabelOriginalFontSize;
     

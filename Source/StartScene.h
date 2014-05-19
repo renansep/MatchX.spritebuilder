@@ -15,6 +15,7 @@
     CCSprite *paper;
     CCSprite *notePaper;
     
+    CCLabelTTF *scoreTitleLabel;
     CCLabelTTF *scoreLabel;
     CCLabelTTF *clockLabel;
     CCNode *scoreNode;
@@ -34,6 +35,8 @@
     CCNodeColor *overlay;
     
     CCScene *levelSelectionScene;
+    
+    NSArray *tutorialText;
 }
 
 @end

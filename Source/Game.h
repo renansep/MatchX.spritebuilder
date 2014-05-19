@@ -14,5 +14,6 @@
 + (NSArray *)getArrayFromPlistFileInDocumentsFolderWithFileName:(NSString *)fileName;
 + (void)saveDictionary:(NSDictionary *)dictionary ToDocumentsFolderInPlistFile:(NSString *)fileName;
 + (void)saveArray:(NSArray *)array ToDocumentsFolderInPlistFile:(NSString *)fileName;
++ (NSString *)language;
 
 @end

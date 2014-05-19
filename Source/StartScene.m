@@ -9,6 +9,7 @@
 #import "StartScene.h"
 #import "LevelSelectScene.h"
 #import "NumberLayer.h"
+#import "Game.h"
 
 @implementation StartScene
 
@@ -18,6 +19,37 @@
     
     [background setScaleX:viewSize.width / background.contentSize.width];
     [background setScaleY:viewSize.height / background.contentSize.height];
+    
+    [tutorialLabel setFontName:@"Marker Felt"];
+    
+    if ([[Game language] isEqualToString:@"pt"])
+    {
+        [scoreTitleLabel setString:@"Pontos"];
+        [tutorialLabel setString:@"Como jogar"];
+        tutorialText = [NSArray arrayWithObjects:
+                        @"Usando os operadores...",
+                        @"Caminhe entre os números...",
+                        @"Para calcular X!",
+                        @"Fique de olho no tempo!",
+                        @"Seja rápido para \nganhar mais pontos!",
+                        @"Como jogar",
+                        nil];
+        [tapAnywhereLabel setString:@"Toque para jogar"];
+    }
+    else
+    {
+        [scoreTitleLabel setString:@"Score"];
+        [tutorialLabel setString:@"How to play"];
+        tutorialText = [NSArray arrayWithObjects:
+                        @"Using the operators...",
+                        @"Trace your path \nthrough the numbers...",
+                        @"To Match X!",
+                        @"Hurry! Time's running out!",
+                        @"Be fast to increase your score!",
+                        @"How to play",
+                        nil];
+        [tapAnywhereLabel setString:@"Tap to play"];
+    }
     
     [tapAnywhereLabel setZOrder:2];
     
@@ -108,7 +140,7 @@
 - (void)updateTutorialLabel:(NSString *)newText
 {
     [tutorialLabel setString:newText];
-    if ([newText isEqualToString:@"Como jogar"])
+    if ([newText isEqualToString:[tutorialText lastObject]])
     {
         [self startTutorialAnimation];
     }
@@ -118,12 +150,12 @@
 {
     [overlay setVisible:NO];
     
-    [self performSelector:@selector(updateTutorialLabel:) withObject:@"Usando os operadores..." afterDelay:2];
-    [self performSelector:@selector(updateTutorialLabel:) withObject:@"Caminhe entre os números..." afterDelay:5];
-    [self performSelector:@selector(updateTutorialLabel:) withObject:@"Para encontrar o X!" afterDelay:8];
-    [self performSelector:@selector(updateTutorialLabel:) withObject:@"Fique de olho no tempo!" afterDelay:11];
-    [self performSelector:@selector(updateTutorialLabel:) withObject:@"Seja rápido para \nganhar mais pontos!" afterDelay:14];
-    [self performSelector:@selector(updateTutorialLabel:) withObject:@"Como jogar" afterDelay:17];
+    [self performSelector:@selector(updateTutorialLabel:) withObject:[tutorialText objectAtIndex:0] afterDelay:2];
+    [self performSelector:@selector(updateTutorialLabel:) withObject:[tutorialText objectAtIndex:1] afterDelay:5];
+    [self performSelector:@selector(updateTutorialLabel:) withObject:[tutorialText objectAtIndex:2] afterDelay:8];
+    [self performSelector:@selector(updateTutorialLabel:) withObject:[tutorialText objectAtIndex:3] afterDelay:11];
+    [self performSelector:@selector(updateTutorialLabel:) withObject:[tutorialText objectAtIndex:4] afterDelay:14];
+    [self performSelector:@selector(updateTutorialLabel:) withObject:[tutorialText objectAtIndex:5] afterDelay:17];
     
     [self performSelector:@selector(darkScreenExcept:) withObject:notePaper afterDelay:2];
     [self performSelector:@selector(darkScreenExcept:) withObject:paper afterDelay:5];

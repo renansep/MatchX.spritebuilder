@@ -10,6 +10,8 @@
 
 @implementation Game
 
+static NSString *language;
+
 + (NSDictionary *)getDictionaryFromPlistFileInDocumentsFolderWithFileName:(NSString *)fileName
 {
     // get paths from root direcory
@@ -68,6 +70,11 @@
     {
         [plistData writeToFile:plistPath atomically:YES];
     }
+}
+
++ (NSString *)language
+{
+    return [[NSLocale preferredLanguages] objectAtIndex:0];
 }
 
 @end

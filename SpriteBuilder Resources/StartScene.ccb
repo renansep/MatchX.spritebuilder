@@ -737,9 +737,9 @@
 						<key>displayName</key>
 						<string>scoreTitle</string>
 						<key>memberVarAssignmentName</key>
-						<string></string>
+						<string>scoreTitleLabel</string>
 						<key>memberVarAssignmentType</key>
-						<integer>0</integer>
+						<integer>1</integer>
 						<key>properties</key>
 						<array>
 							<dict>
@@ -795,7 +795,7 @@
 								<string>Text</string>
 								<key>value</key>
 								<array>
-									<string>PONTOS</string>
+									<string></string>
 									<false/>
 								</array>
 							</dict>
@@ -1293,7 +1293,7 @@
 								<string>Text</string>
 								<key>value</key>
 								<array>
-									<string>TEMPO</string>
+									<string>10</string>
 									<false/>
 								</array>
 							</dict>

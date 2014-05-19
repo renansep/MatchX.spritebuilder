@@ -20,8 +20,6 @@
     {
         CGSize viewSize = [[CCDirector sharedDirector] viewSize];
         
-        [self loadAds];
-        
         background = [CCSprite spriteWithImageNamed:@"background.png"];
         [background setPosition:ccp(viewSize.width * 0.5, viewSize.height * 0.5)];
         [background setScaleX:viewSize.width / background.contentSize.width];
@@ -103,7 +101,17 @@
         [self addChild:scroll];
         
         //Title label
-        CCLabelTTF *titleLabel = [CCLabelTTF labelWithString:@"Escolha uma Fase" fontName:@"NewAthleticM54" fontSize:32];
+        NSString *title;
+        if ([[Game language] isEqualToString:@"pt"])
+        {
+            title = @"Escolha uma fase";
+        }
+        else
+        {
+            title = @"Select a level";
+        }
+        
+        CCLabelTTF *titleLabel = [CCLabelTTF labelWithString:title fontName:@"NewAthleticM54" fontSize:32];
         [titleLabel setOutlineColor:[CCColor blackColor]];
         [titleLabel setOutlineWidth:3];
         [titleLabel setPosition:ccp(viewSize.width * 0.5, viewSize.height - titleLabel.contentSize.height)];
@@ -117,6 +125,8 @@
         [self addChild:backgroundOverlay];
         
         [self addChild:titleLabel];
+        
+        [self loadAds];
         
         self.userInteractionEnabled = YES;
     }

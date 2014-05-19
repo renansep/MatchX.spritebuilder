@@ -23,6 +23,15 @@ static int currentLevel;
     
     self.userInteractionEnabled = YES;
     
+    if ([[Game language] isEqualToString:@"pt"])
+    {
+        [scoreTitleLabel setString:@"Pontos"];
+    }
+    else
+    {
+        [scoreTitleLabel setString:@"Score"];
+    }
+    
     NSArray *levelsArray = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Levels" ofType:@"plist"]];
     NSDictionary *level = [levelsArray objectAtIndex:currentLevel];
     
