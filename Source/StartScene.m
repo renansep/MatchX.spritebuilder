@@ -20,8 +20,6 @@
     [background setScaleX:viewSize.width / background.contentSize.width];
     [background setScaleY:viewSize.height / background.contentSize.height];
     
-    [tutorialLabel setFontName:@"Marker Felt"];
-    
     if ([[Game language] isEqualToString:@"pt"])
     {
         [scoreTitleLabel setString:@"Pontos"];
@@ -51,13 +49,10 @@
         [tapAnywhereLabel setString:@"Tap to play"];
     }
     
-    [tapAnywhereLabel setZOrder:2];
-    
     //Creates the tutorial level
     tutorialLevel = [NSMutableDictionary new];
     [tutorialLevel setObject:[NSArray arrayWithObjects:@"+", nil] forKey:@"operations"];
     [tutorialLevel setObject:[NSNumber numberWithInt:20] forKey:@"calculationTime"];
-    [tutorialLevel setObject:[NSNumber numberWithInt:10000] forKey:@"calculationNumber"];
     [tutorialLevel setObject:[NSNumber numberWithInt:2] forKey:@"maxOperands"];
     [tutorialLevel setObject:[NSArray arrayWithObjects:@"111", @"111", @"111", nil] forKey:@"map"];
     [tutorialLevel setObject:[NSNumber numberWithInt:1] forKey:@"minNumber"];
@@ -67,7 +62,6 @@
     [tutorialLabel setZOrder:2];
     
     numberLayer = [[NumberLayer alloc] initWithLevel:tutorialLevel];
-    [numberLayer setAnchorPoint:CGPointMake(0.5, 0.5)];
     [numberLayer setPosition:ccp(paper.contentSize.width / 2, paper.contentSize.height / 2)];
     if (numberLayer.contentSize.width > numberLayer.contentSize.height)
     {
@@ -82,25 +76,9 @@
     result = [numberLayer result];
     [resultLabel setString:[NSString stringWithFormat:@"X = %d", result]];
     
-    for (NSString *op in [numberLayer operations])
-    {
-        if (op == [[numberLayer operations] firstObject])
-        {
-            [operatorsLabel setString:op];
-        }
-        else
-        {
-            [operatorsLabel setString:[NSString stringWithFormat:@"%@ %@", operatorsLabel.string, op]];
-        }
-    }
+    [operatorsLabel setString:[[numberLayer operations] firstObject]];
     
     [self schedule:@selector(blinkTapAnywhereLabel) interval:0.75];
-    
-    //Overlay
-    overlay = [CCNodeColor nodeWithColor:[CCColor colorWithRed:0 green:0 blue:0 alpha:0.5] width:viewSize.width height:viewSize.height];
-    [overlay setVisible:NO];
-    [overlay setZOrder:1];
-    [self addChild:overlay];
     
     [self startTutorialAnimation];
     
@@ -148,20 +126,12 @@
 
 - (void)startTutorialAnimation
 {
-    [overlay setVisible:NO];
-    
     [self performSelector:@selector(updateTutorialLabel:) withObject:[tutorialText objectAtIndex:0] afterDelay:2];
     [self performSelector:@selector(updateTutorialLabel:) withObject:[tutorialText objectAtIndex:1] afterDelay:5];
     [self performSelector:@selector(updateTutorialLabel:) withObject:[tutorialText objectAtIndex:2] afterDelay:8];
     [self performSelector:@selector(updateTutorialLabel:) withObject:[tutorialText objectAtIndex:3] afterDelay:11];
     [self performSelector:@selector(updateTutorialLabel:) withObject:[tutorialText objectAtIndex:4] afterDelay:14];
     [self performSelector:@selector(updateTutorialLabel:) withObject:[tutorialText objectAtIndex:5] afterDelay:17];
-    
-    [self performSelector:@selector(darkScreenExcept:) withObject:notePaper afterDelay:2];
-    [self performSelector:@selector(darkScreenExcept:) withObject:paper afterDelay:5];
-    [self performSelector:@selector(darkScreenExcept:) withObject:notePaper afterDelay:8];
-    [self performSelector:@selector(darkScreenExcept:) withObject:clockNode afterDelay:11];
-    [self performSelector:@selector(darkScreenExcept:) withObject:scoreNode afterDelay:14];
     
     [self runScaleAnimationWithNode:operatorsLabel andDelay:2 andScaleMax:3 andScaleMin:0.5];
     [self runScaleAnimationWithNode:resultLabel andDelay:8 andScaleMax:1.5 andScaleMin:0.5];
@@ -178,20 +148,6 @@
     CCActionSequence *scaleAnimation = [CCActionSequence actions:scaleToMax, scaleToMin, scaleToMax, scaleToMin, scaleToMax, scaleToBack, nil];
     
     [node runAction:[CCActionSequence actions:[CCActionDelay actionWithDuration:delay], scaleAnimation, nil]];
-}
-
-- (void)darkScreenExcept:(CCNode *)node
-{
-    CCActionCallBlock *overlayInFront = [CCActionCallBlock actionWithBlock:^{
-        [overlay setVisible:YES];
-        [node setZOrder:1];
-    }];
-    CCActionDelay *interval = [CCActionDelay actionWithDuration:3];
-    CCActionCallBlock *hideOverlay = [CCActionCallBlock actionWithBlock:^{
-        [node setZOrder:0];
-    }];
-    CCActionSequence *sequence = [CCActionSequence actions:overlayInFront, interval, hideOverlay, nil];
-    [self runAction:sequence];
 }
 
 @end

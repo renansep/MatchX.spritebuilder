@@ -21,8 +21,6 @@ static int currentLevel;
     [background setScaleX:([[CCDirector sharedDirector] viewSize].width / background.contentSize.width)];
     [background setScaleY:([[CCDirector sharedDirector] viewSize].height / background.contentSize.height)];
     
-    self.userInteractionEnabled = YES;
-    
     if ([[Game language] isEqualToString:@"pt"])
     {
         [scoreTitleLabel setString:@"Pontos"];
@@ -35,21 +33,22 @@ static int currentLevel;
     NSArray *levelsArray = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Levels" ofType:@"plist"]];
     NSDictionary *level = [levelsArray objectAtIndex:currentLevel];
     
-    calculationTime = [(NSNumber *) [level objectForKeyedSubscript:@"calculationTime"] intValue];
-    remainingTime = calculationTime;
+    calculationTime = [(NSNumber *) [level objectForKey:@"calculationTime"] intValue];
     calculationNumber = [[level objectForKey:@"calculationNumber"] intValue];
     maxOperands = [[level objectForKey:@"maxOperands"] intValue];
-    calculationsCompleted = 0;
     
+    remainingTime = calculationTime;
     [clockLabel setString:[NSString stringWithFormat:@"%d", remainingTime]];
     
     [calculationLabel setString:@""];
-    calculationLabelOriginalFontSize = calculationLabel.fontSize;
+    calculationsCompleted = 0;
     score = 0;
     [self updateScore];
     
+    //Stores the board label original font size
+    calculationLabelOriginalFontSize = calculationLabel.fontSize;
+    
     numbersLayer = [[NumberLayer alloc] initWithLevel:level];
-    [numbersLayer setAnchorPoint:CGPointMake(0.5, 0.5)];
     [numbersLayer setPosition:ccp(paper.contentSize.width / 2, paper.contentSize.height / 2)];
     if (numbersLayer.contentSize.width > numbersLayer.contentSize.height)
     {
@@ -66,6 +65,8 @@ static int currentLevel;
     [self updateOperation:[numbersLayer operations]];
     
     [self schedule:@selector(decreaseRemainingTime) interval:1];
+    
+    self.userInteractionEnabled = YES;
 }
 
 - (void)back:(id)sender
@@ -74,6 +75,8 @@ static int currentLevel;
     LevelSelectScene *levelSelectScene = [LevelSelectScene new];
     [[CCDirector sharedDirector] replaceScene:levelSelectScene withTransition:[CCTransition transitionRevealWithDirection:CCTransitionDirectionDown duration:0.5f]];
 }
+
+#pragma mark - updateMethods
 
 - (void)updateResult:(int)newResult
 {
@@ -96,33 +99,35 @@ static int currentLevel;
     }
 }
 
+- (void)updateScore
+{
+    [scoreLabel setString:[NSString stringWithFormat:@"%lld", score]];
+}
+
 - (void)increaseScoreWithMultiplier:(NSUInteger)multiplier
 {
     score += remainingTime * multiplier;
     [self updateScore];
 }
 
-- (void)updateScore
+- (void)updateCalculationLabel:(NSString *)text
 {
-    [scoreLabel setString:[NSString stringWithFormat:@"%lld", score]];
-}
-
-- (void)decreaseRemainingTime
-{
-    remainingTime--;
-    [clockLabel setString:[NSString stringWithFormat:@"%d", remainingTime]];
-    if (remainingTime == 0)
+    if ([calculationLabel string] == nil)
     {
-        [self unschedule:@selector(decreaseRemainingTime)];
-        [self back:nil];
+        calculationLabel.fontSize = calculationLabelOriginalFontSize;
+        [calculationLabel setString:text];
+    }
+    else
+    {
+        [calculationLabel setString:[NSString stringWithFormat:@"%@%@", calculationLabel.string, text]];
+    }
+    while (calculationLabel.contentSize.width > board.contentSize.width * 0.9 * board.scaleX)
+    {
+        calculationLabel.fontSize -= 0.1;
     }
 }
 
-- (void)increaseRemainingTime
-{
-    remainingTime = calculationTime;
-    [clockLabel setString:[NSString stringWithFormat:@"%d", remainingTime]];
-}
+#pragma mark -gamePlay control
 
 - (void)increaseCalculationsCompleted
 {
@@ -141,6 +146,32 @@ static int currentLevel;
         [self performSelector:@selector(back:) withObject:nil afterDelay:3];
     }
 }
+
+- (void)clearCalculationLabel
+{
+    [calculationLabel setString:@""];
+}
+
+#pragma mark - remainingTime
+- (void)decreaseRemainingTime
+{
+    remainingTime--;
+    [clockLabel setString:[NSString stringWithFormat:@"%d", remainingTime]];
+    if (remainingTime == 0)
+    {
+        self.userInteractionEnabled = NO;
+        [self unschedule:@selector(decreaseRemainingTime)];
+        [self back:nil];
+    }
+}
+
+- (void)increaseRemainingTime
+{
+    remainingTime = calculationTime;
+    [clockLabel setString:[NSString stringWithFormat:@"%d", remainingTime]];
+}
+
+#pragma mark -scoreHandling
 
 - (void)saveScore
 {
@@ -189,28 +220,6 @@ static int currentLevel;
     [[GCHelper sharedInstance] submitScore:totalStars forCategory:@"Stars"];
 }
 
-- (void)updateCalculationLabel:(NSString *)text
-{
-    if ([calculationLabel string] == nil)
-    {
-        calculationLabel.fontSize = calculationLabelOriginalFontSize;
-        [calculationLabel setString:text];
-    }
-    else
-    {
-        [calculationLabel setString:[NSString stringWithFormat:@"%@%@", calculationLabel.string, text]];
-    }
-    while (calculationLabel.contentSize.width > board.contentSize.width * 0.9 * board.scaleX)
-    {
-        calculationLabel.fontSize -= 0.1;
-    }
-}
-
-- (void)clearCalculationLabel
-{
-    [calculationLabel setString:@""];
-}
-
 - (void)showScore
 {
     CCLabelTTF *finalScore = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Pontos: %lld", score] fontName:@"Helvetica" fontSize:32];
@@ -238,6 +247,8 @@ static int currentLevel;
     else
         return 1;
 }
+
+#pragma mark -get/set
 
 + (void)setCurrentLevel:(int)l
 {

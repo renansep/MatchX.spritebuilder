@@ -51,18 +51,6 @@ static int maxNumber;
     return self;
 }
 
-- (BOOL)selected
-{
-    if (isEmpty)
-        return YES;
-    return [background visible];
-}
-
-- (void)setSelected:(BOOL)s
-{
-    [background setVisible:s];
-}
-
 - (void)runDestroyAnimation
 {
     intValue = (arc4random() % (maxNumber - minNumber + 1)) + minNumber;
@@ -103,6 +91,18 @@ static int maxNumber;
 + (void)setMaxNumber:(int)n
 {
     maxNumber = n;
+}
+
+- (BOOL)selected
+{
+    if (isEmpty)
+        return YES;
+    return [background visible];
+}
+
+- (void)setSelected:(BOOL)s
+{
+    [background setVisible:s];
 }
 
 @end

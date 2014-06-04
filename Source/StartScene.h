@@ -32,8 +32,6 @@
     
     NumberLayer *numberLayer;
     
-    CCNodeColor *overlay;
-    
     CCScene *levelSelectionScene;
     
     NSArray *tutorialText;

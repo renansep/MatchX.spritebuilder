@@ -20,6 +20,8 @@
     {
         CGSize viewSize = [[CCDirector sharedDirector] viewSize];
         
+        [Game showBanner];
+        
         background = [CCSprite spriteWithImageNamed:@"background.png"];
         [background setPosition:ccp(viewSize.width * 0.5, viewSize.height * 0.5)];
         [background setScaleX:viewSize.width / background.contentSize.width];
@@ -69,7 +71,7 @@
                 {
                     extraline = 2;
                 }
-                levelIconsNode = [CCNodeColor nodeWithColor:[CCColor clearColor] width:viewSize.width height:(levels.count / 3 + extraline) * [icon height] * 1.5 + bannerView.bounds.size.height];
+                levelIconsNode = [CCNodeColor nodeWithColor:[CCColor clearColor] width:viewSize.width height:(levels.count / 3 + extraline) * [icon height] * 1.5 + [Game bannerView].bounds.size.height];
                 [levelIconsNode setAnchorPoint:ccp(0,1)];
                 [levelIconsNode setPosition:ccp(0, viewSize.height * 0.9)];
             }
@@ -126,34 +128,9 @@
         
         [self addChild:titleLabel];
         
-        [self loadAds];
-        
         self.userInteractionEnabled = YES;
     }
     return self;
-}
-
-- (void)loadAds
-{
-    bannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeBanner];
-    bannerView.adUnitID = @"ca-app-pub-7716664418684772/3781724048";
-    UIViewController *rootViewController = [UIApplication sharedApplication].keyWindow.rootViewController;
-    bannerView.rootViewController = rootViewController;
-    [bannerView setFrame:CGRectMake(bannerView.rootViewController.view.bounds.size.width / 2 - bannerView.bounds.size.width / 2, bannerView.rootViewController.view.bounds.size.height - bannerView.bounds.size.height, bannerView.bounds.size.width, bannerView.bounds.size.height)];
-    [rootViewController.view addSubview:bannerView];
-    
-    GADRequest *request = [GADRequest request];
-    [bannerView loadRequest: request];
-}
-
-- (void)removeAds
-{
-    if (bannerView != nil)
-    {
-        [bannerView removeFromSuperview];
-        [bannerView setHidden:YES];
-        bannerView = nil;
-    }
 }
 
 - (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event
@@ -179,7 +156,7 @@
             if (![i locked])
             {
                 self.userInteractionEnabled = NO;
-                [self removeAds];
+                [Game hideBanner];
                 [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithFloat:scroll.scrollPosition.y] forKey:@"scrollLastPosition"];
                 [GameScene setCurrentLevel:[i levelNumber] - 1];
                 CCScene *gameScene = [CCBReader loadAsScene:@"GameScene"];

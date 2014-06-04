@@ -27,6 +27,7 @@
     
     if (self)
     {
+        [self setAnchorPoint:CGPointMake(0.5, 0.5)];
         [GameNumber setMinNumber:[[level objectForKey:@"minNumber"] intValue]];
         [GameNumber setMaxNumber:[[level objectForKey:@"maxNumber"] intValue]];
         maxOperands = [[level objectForKey:@"maxOperands"] intValue];
