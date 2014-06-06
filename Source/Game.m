@@ -11,7 +11,6 @@
 @implementation Game
 
 static NSString *language;
-static GADBannerView *bannerView;
 
 + (NSDictionary *)getDictionaryFromPlistFileInDocumentsFolderWithFileName:(NSString *)fileName
 {
@@ -76,35 +75,6 @@ static GADBannerView *bannerView;
 + (NSString *)language
 {
     return [[NSLocale preferredLanguages] objectAtIndex:0];
-}
-
-+ (void)loadAds
-{
-    bannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeBanner];
-    bannerView.adUnitID = @"ca-app-pub-7716664418684772/3781724048";
-    UIViewController *rootViewController = [UIApplication sharedApplication].keyWindow.rootViewController;
-    bannerView.rootViewController = rootViewController;
-    [bannerView setFrame:CGRectMake(bannerView.rootViewController.view.bounds.size.width / 2 - bannerView.bounds.size.width / 2, bannerView.rootViewController.view.bounds.size.height - bannerView.bounds.size.height, bannerView.bounds.size.width, bannerView.bounds.size.height)];
-    [rootViewController.view addSubview:bannerView];
-    
-    GADRequest *request = [GADRequest request];
-    [bannerView loadRequest:request];
-    [bannerView setHidden:YES];
-}
-
-+ (void)showBanner
-{
-    [bannerView setHidden:NO];
-}
-
-+ (void)hideBanner
-{
-    [bannerView setHidden:YES];
-}
-
-+ (GADBannerView *)bannerView
-{
-    return bannerView;
 }
 
 @end

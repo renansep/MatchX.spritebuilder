@@ -59,8 +59,6 @@
     GCHelper *gcHelper = [GCHelper sharedInstance];
     [gcHelper authenticateLocalUser];
     
-    [Game loadAds];
-    
     // iCloud setup
     // register to observe notifications from the store
     [[NSNotificationCenter defaultCenter]

@@ -7,18 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "GADBannerView.h"
 
-@interface Game : NSObject <GADBannerViewDelegate>
+@interface Game : NSObject
 
 + (NSDictionary *)getDictionaryFromPlistFileInDocumentsFolderWithFileName:(NSString *)fileName;
 + (NSArray *)getArrayFromPlistFileInDocumentsFolderWithFileName:(NSString *)fileName;
 + (void)saveDictionary:(NSDictionary *)dictionary ToDocumentsFolderInPlistFile:(NSString *)fileName;
 + (void)saveArray:(NSArray *)array ToDocumentsFolderInPlistFile:(NSString *)fileName;
 + (NSString *)language;
-+ (void)showBanner;
-+ (void)hideBanner;
-+ (void)loadAds;
-+ (GADBannerView *)bannerView;
 
 @end
